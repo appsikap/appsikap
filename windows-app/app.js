@@ -3,6 +3,30 @@
  * Full JSON Interoperability with Android SIKAP App
  */
 
+// Theme Management
+function initTheme() {
+  const savedTheme = localStorage.getItem('sikap-theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+  updateThemeIcon();
+}
+
+function updateThemeIcon() {
+  const isLight = document.body.classList.contains('light-mode');
+  const icon = document.getElementById('icon-theme');
+  if (icon) {
+    icon.className = isLight ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+  }
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('light-mode');
+  const isLight = document.body.classList.contains('light-mode');
+  localStorage.setItem('sikap-theme', isLight ? 'light' : 'dark');
+  updateThemeIcon();
+}
+
 // Global State Storage Key
 const STORAGE_KEY = 'SIKAP_DESKTOP_DB_V1';
 
@@ -62,6 +86,7 @@ let currentUserId = null;
 
 // Initialize Application
 document.addEventListener('DOMContentLoaded', async () => {
+  initTheme();
   setupNavigation();
   setupEventListeners();
   
@@ -445,6 +470,12 @@ function renderPengaturan() {
 
 // Setup Event Listeners
 function setupEventListeners() {
+  // Theme Toggle
+  const btnThemeToggle = document.getElementById('btn-theme-toggle');
+  if (btnThemeToggle) {
+    btnThemeToggle.addEventListener('click', toggleTheme);
+  }
+
   // Search & Filter Siswa
   document.getElementById('siswa-search').addEventListener('input', renderSiswa);
   document.getElementById('siswa-filter-kelas').addEventListener('change', renderSiswa);

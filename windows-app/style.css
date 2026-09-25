@@ -40,6 +40,35 @@
   --shadow-glow-amber: 0 0 20px rgba(245, 158, 11, 0.25);
 }
 
+/* Light Mode Variables Override */
+body.light-mode {
+  --bg-main: #f0f2f5;
+  --bg-sidebar: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --text-dim: #9ca3af;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .card, body.light-mode .stat-card, body.light-mode .modal-content {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+body.light-mode .search-box input, body.light-mode .form-group input, body.light-mode .form-group select, body.light-mode .form-group textarea {
+  background: #f9fafb;
+  color: #1f2937;
+  border-color: #e5e7eb;
+}
+
+body.light-mode .search-box, body.light-mode .school-badge {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -718,6 +747,10 @@ body {
     padding: 0.55rem 0.5rem;
   }
 
+  .hide-mobile {
+    display: none !important;
+  }
+
   /* Grid Layouts Stacked on Mobile */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -750,7 +783,7 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     height: 68px;
     background: rgba(17, 24, 39, 0.95);
     backdrop-filter: blur(16px);
@@ -760,7 +793,20 @@ body {
     z-index: 999;
     align-items: center;
     justify-content: space-around;
-    padding: 0 4px;
+    padding: 0; /* Changed from 0 4px to prevent overflow */
+  }
+
+  body.light-mode .mobile-bottom-nav {
+    background: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  body.light-mode .mobile-nav-item {
+    color: var(--text-muted);
+  }
+  body.light-mode .mobile-nav-item.active {
+    color: var(--accent-indigo);
   }
 
   .mobile-nav-item {
