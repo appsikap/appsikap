@@ -1221,13 +1221,13 @@ window.openStudentPinModal = async function(idSiswa) {
   try {
     const { data } = await supabaseClient
       .from('student_access')
-      .select('pin_code')
-      .eq('teacher_id', currentUserId)
-      .eq('student_id', idSiswa)
+      .select('pin')
+      .eq('guru_id', currentUserId)
+      .eq('id_siswa', idSiswa.toString())
       .maybeSingle();
 
-    if (data && data.pin_code) {
-      document.getElementById('pin-display-box').textContent = data.pin_code;
+    if (data && data.pin) {
+      document.getElementById('pin-display-box').textContent = data.pin;
     } else {
       document.getElementById('pin-display-box').textContent = 'Belum Ada PIN';
     }
@@ -1248,13 +1248,21 @@ if (btnGenPin) {
     document.getElementById('pin-display-box').textContent = newPin;
 
     try {
+      // Because 'pin' is the Primary Key, we must delete old pins for this student first to avoid duplicates
+      await supabaseClient
+        .from('student_access')
+        .delete()
+        .eq('guru_id', currentUserId)
+        .eq('id_siswa', idSiswa.toString());
+
+      // Insert new PIN
       const { error } = await supabaseClient
         .from('student_access')
-        .upsert({
-          teacher_id: currentUserId,
-          student_id: idSiswa,
-          pin_code: newPin
-        }, { onConflict: 'teacher_id,student_id' });
+        .insert({
+          guru_id: currentUserId,
+          id_siswa: idSiswa.toString(),
+          pin: newPin
+        });
 
       if (error) throw error;
       showToast(`PIN Akses untuk ${siswa.nama} berhasil dibuat: ${newPin}`);
