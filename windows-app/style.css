@@ -785,14 +785,14 @@ body {
 
   /* New Figma-like Mobile Header */
   .mobile-header-blue {
-    background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+    background: #0f172a; /* Solid dark blue matching logo */
+    border-top: 4px solid var(--accent-rose); /* Visual merah di bagian atas */
     color: white;
-    padding: calc(1.5rem + env(safe-area-inset-top, 24px)) 1.5rem 4rem 1.5rem;
-    border-radius: 0 0 32px 32px;
+    padding: calc(1.5rem + env(safe-area-inset-top, 24px)) 1.5rem 2rem 1.5rem;
     margin: -1.5rem -1.5rem 1rem -1.5rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -881,11 +881,7 @@ body {
 
   /* Quick Actions */
   .mobile-quick-actions {
-    display: flex;
-    gap: 1rem;
-    margin: -3rem 0.5rem 1.5rem 0.5rem;
-    position: relative;
-    z-index: 20;
+    display: none !important;
   }
 
   .m-action-btn {
