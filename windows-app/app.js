@@ -242,6 +242,7 @@ function renderAll() {
   renderKategori();
   renderHadiah();
   renderPengaturan();
+  renderAkun();
   renderNotifications();
 }
 
@@ -560,6 +561,16 @@ function renderPengaturan() {
   document.getElementById('setting-batas-peringatan').value = p.batas_peringatan;
 }
 
+// Render Akun Tab
+function renderAkun() {
+  if(document.getElementById('setting-nama-guru')) {
+    document.getElementById('setting-nama-guru').value = db.guru_profile?.name || '';
+  }
+  if(document.getElementById('setting-nama-sekolah-akun')) {
+    document.getElementById('setting-nama-sekolah-akun').value = db.guru_profile?.school || '';
+  }
+}
+
 // Setup Event Listeners
 function setupEventListeners() {
   // Theme Toggle
@@ -760,6 +771,18 @@ function setupEventListeners() {
     saveState();
     showToast('Konfigurasi sekolah diperbarui!');
   });
+
+  // Form Pengaturan Profil Guru
+  const formProfil = document.getElementById('form-pengaturan-profil');
+  if (formProfil) {
+    formProfil.addEventListener('submit', (e) => {
+      e.preventDefault();
+      db.guru_profile.name = document.getElementById('setting-nama-guru').value.trim();
+      db.guru_profile.school = document.getElementById('setting-nama-sekolah-akun').value.trim();
+      saveState();
+      alert('Profil berhasil diperbarui!');
+    });
+  }
 
   // Form Pengaturan Password
   const formPassword = document.getElementById('form-pengaturan-password');

@@ -51,6 +51,10 @@
           <i class="fa-solid fa-sliders"></i>
           <span>Pengaturan Sekolah</span>
         </button>
+        <button class="nav-item" data-tab="akun">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>Pengaturan Akun</span>
+        </button>
         <button class="nav-item highlight-btn" data-tab="backup">
           <i class="fa-solid fa-database"></i>
           <span>Backup & Restore Center</span>
@@ -495,20 +499,41 @@
 
               <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Simpan Konfigurasi</button>
             </form>
+          </div>
+        </div>
+      </section>
 
-            <hr class="divider" style="margin: 2rem 0;">
+      <!-- TAB AKUN: PENGATURAN PROFIL & PASSWORD -->
+      <section id="tab-akun" class="tab-pane">
+        <div class="card glass-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-user-gear text-indigo"></i> Pengaturan Profil & Keamanan</h3>
+          </div>
+          <div class="card-body" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            
+            <!-- Profil Setup -->
+            <form id="form-pengaturan-profil">
+              <h4 style="margin-bottom: 1rem; color: var(--accent-indigo);"><i class="fa-solid fa-id-badge"></i> Data Diri</h4>
+              <div class="form-group">
+                <label>Nama Lengkap Guru</label>
+                <input type="text" id="setting-nama-guru" required>
+              </div>
+              <div class="form-group">
+                <label>Nama Sekolah</label>
+                <input type="text" id="setting-nama-sekolah-akun" required>
+              </div>
+              <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Simpan Profil</button>
+            </form>
 
             <!-- Password Setup -->
             <form id="form-pengaturan-password">
               <h4 style="margin-bottom: 1rem; color: var(--accent-rose);"><i class="fa-solid fa-lock"></i> Keamanan (Ubah Password Akun)</h4>
-              <div class="form-row">
-                <div class="form-group col" style="max-width: 400px;">
-                  <label>Password Baru (Minimal 6 karakter)</label>
-                  <input type="password" id="setting-new-password" required minlength="6" placeholder="Masukkan password baru">
-                </div>
+              <div class="form-group">
+                <label>Password Baru (Minimal 6 karakter)</label>
+                <input type="password" id="setting-new-password" required minlength="6" placeholder="Masukkan password baru">
               </div>
               <button type="submit" class="btn btn-danger"><i class="fa-solid fa-key"></i> Perbarui Password</button>
-              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">Catatan: Anda akan otomatis *logout* dan diminta masuk kembali setelah password berhasil diubah.</p>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">Catatan: Anda akan diminta login kembali jika password berhasil diubah.</p>
             </form>
 
           </div>
@@ -554,6 +579,17 @@
         </div>
       </section>
     </main>
+
+    <!-- SIDEBAR NOTIFICATIONS -->
+    <div id="notif-sidebar" style="position: fixed; top: 0; right: -400px; width: 100%; max-width: 400px; height: 100vh; background: var(--bg-card); backdrop-filter: blur(20px); border-left: 1px solid var(--border-color); z-index: 10000; transition: right var(--transition-normal); display: flex; flex-direction: column; box-shadow: -10px 0 30px rgba(0,0,0,0.5);">
+      <div style="padding: 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0;"><i class="fa-solid fa-bullhorn text-amber"></i> Pengumuman</h3>
+        <button id="btn-close-notif" style="background: transparent; border: none; color: var(--text-main); font-size: 1.5rem; cursor: pointer;">&times;</button>
+      </div>
+      <div id="notif-list" style="flex: 1; overflow-y: auto; padding: 1rem;">
+        <!-- Notif items go here -->
+      </div>
+    </div>
 
     <!-- Mobile Bottom Navigation Bar (Shown on Mobile screens <= 768px) -->
     <nav class="mobile-bottom-nav">
