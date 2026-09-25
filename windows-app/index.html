@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>SIKAP Desktop - Sistem Informasi Karakter & Poin Siswa</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -451,6 +451,50 @@
         </div>
       </section>
 
+      <!-- TAB LAINNYA (MOBILE ONLY MENU) -->
+      <section id="tab-lainnya" class="tab-pane">
+        <div class="lainnya-menu-container">
+          <div class="lainnya-header">
+            <h2>Menu Lainnya</h2>
+            <p>Akses fitur tambahan SIKAP</p>
+          </div>
+          
+          <div class="lainnya-list">
+            <button class="lainnya-item nav-item" data-tab="kategori">
+              <div class="lainnya-icon" style="background: var(--accent-amber);">
+                <i class="fa-solid fa-list-check"></i>
+              </div>
+              <div class="lainnya-text">
+                <h4>Kategori Aktivitas</h4>
+                <p>Atur poin dan pelanggaran</p>
+              </div>
+              <i class="fa-solid fa-chevron-right chevron"></i>
+            </button>
+            
+            <button class="lainnya-item nav-item" data-tab="pengaturan">
+              <div class="lainnya-icon" style="background: var(--accent-indigo);">
+                <i class="fa-solid fa-gear"></i>
+              </div>
+              <div class="lainnya-text">
+                <h4>Pengaturan Sekolah</h4>
+                <p>Konfigurasi data institusi</p>
+              </div>
+              <i class="fa-solid fa-chevron-right chevron"></i>
+            </button>
+            
+            <button class="lainnya-item" id="btn-lainnya-logout" style="margin-top: 2rem;">
+              <div class="lainnya-icon" style="background: var(--accent-rose);">
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </div>
+              <div class="lainnya-text">
+                <h4 style="color: var(--accent-rose);">Keluar (Logout)</h4>
+                <p>Akhiri sesi Anda</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <!-- TAB 6: PENGATURAN SEKOLAH -->
       <section id="tab-pengaturan" class="tab-pane">
         <div class="card glass-card">
@@ -616,16 +660,16 @@
         <div class="fab-circle">
           <i class="fa-solid fa-plus"></i>
         </div>
-        <span class="fab-label">Catat Poin</span>
+        <span class="fab-label">Catat</span>
       </button>
 
-      <button class="mobile-nav-item nav-item" data-tab="kategori">
-        <i class="fa-solid fa-list-check"></i>
-        <span>Kategori</span>
+      <button class="mobile-nav-item nav-item" data-tab="hadiah">
+        <i class="fa-solid fa-gift"></i>
+        <span>Hadiah</span>
       </button>
-      <button class="mobile-nav-item nav-item" data-tab="pengaturan">
-        <i class="fa-solid fa-gear"></i>
-        <span>Pengaturan</span>
+      <button class="mobile-nav-item nav-item" data-tab="lainnya">
+        <i class="fa-solid fa-ellipsis-h"></i>
+        <span>Lainnya</span>
       </button>
     </nav>
   </div>

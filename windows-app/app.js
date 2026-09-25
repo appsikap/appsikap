@@ -935,6 +935,12 @@ function setupNavigation() {
       
       navItems.forEach(n => n.classList.remove('active'));
       item.classList.add('active');
+      
+      // If the tab is inside "Lainnya" menu, also keep the Lainnya bottom nav active
+      if (['kategori', 'pengaturan'].includes(tabId)) {
+        const lainnyaBtn = document.querySelector('.mobile-bottom-nav .nav-item[data-tab="lainnya"]');
+        if (lainnyaBtn) lainnyaBtn.classList.add('active');
+      }
 
       document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
       const activePane = document.getElementById(`tab-${tabId}`);
@@ -972,6 +978,10 @@ function setupNavigation() {
         case 'backup':
           pageTitle.textContent = 'Backup & Restore Center';
           pageSubtitle.textContent = 'Integrasi dan sinkronisasi berkas backup JSON dengan HP Android.';
+          break;
+        case 'lainnya':
+          pageTitle.textContent = 'Menu Lainnya';
+          pageSubtitle.textContent = 'Akses fitur tambahan SIKAP.';
           break;
       }
     });
@@ -1333,12 +1343,19 @@ if (btnGenPin) {
 
 // Logout Guru Handler
 const btnLogoutGuru = document.getElementById('btn-logout-guru');
+const btnLainnyaLogout = document.getElementById('btn-lainnya-logout');
+
+const performLogout = async () => {
+  if (confirm('Apakah Anda yakin ingin keluar dari akun?')) {
+    await supabaseClient.auth.signOut();
+    window.location.href = 'login.html';
+  }
+};
+
 if (btnLogoutGuru) {
-  btnLogoutGuru.addEventListener('click', async () => {
-    if (confirm('Apakah Anda yakin ingin keluar dari akun?')) {
-      await supabaseClient.auth.signOut();
-      window.location.href = 'login.html';
-    }
-  });
+  btnLogoutGuru.addEventListener('click', performLogout);
+}
+if (btnLainnyaLogout) {
+  btnLainnyaLogout.addEventListener('click', performLogout);
 }
 

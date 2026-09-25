@@ -894,3 +894,78 @@ body {
   }
 }
 
+/* --- MENU LAINNYA (MOBILE) --- */
+.lainnya-menu-container {
+  padding: 1rem;
+  padding-bottom: 90px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lainnya-header {
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+.lainnya-header h2 { margin: 0; font-size: 1.8rem; }
+.lainnya-header p { margin: 0; color: var(--text-muted); font-size: 0.9rem; }
+
+.lainnya-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.lainnya-item {
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+body.light-mode .lainnya-item {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.lainnya-item:active {
+  transform: scale(0.98);
+}
+
+.lainnya-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.2);
+}
+
+.lainnya-text {
+  flex: 1;
+}
+.lainnya-text h4 {
+  margin: 0 0 2px 0;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+.lainnya-text p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.lainnya-item .chevron {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
