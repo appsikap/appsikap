@@ -98,6 +98,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
     currentUserId = session.user.id;
+
+    // Auto-register to user_roles if not exists (for new Google logins)
+    supabaseClient.from('user_roles').select('role').eq('user_id', currentUserId).maybeSingle().then(async ({ data }) => {
+      if (!data) {
+        await supabaseClient.from('user_roles').insert({ user_id: currentUserId, role: 'guru' });
+      }
+    });
   } catch (e) {
     window.location.href = 'login.html';
     return;

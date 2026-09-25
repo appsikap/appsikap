@@ -103,6 +103,14 @@
         return;
       }
 
+      // PIN Proteksi Super Admin
+      const adminPin = prompt("Masukkan PIN Rahasia Super Admin:");
+      if (adminPin !== "123456") {
+        alert("PIN Salah! Anda akan dialihkan kembali.");
+        window.location.href = 'index.html';
+        return;
+      }
+
       loadAdminData();
 
       document.getElementById('btn-admin-logout').addEventListener('click', async () => {
