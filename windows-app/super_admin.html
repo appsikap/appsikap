@@ -14,7 +14,19 @@
 </head>
 <body class="dark-mode">
 
-  <div class="app-container" style="display: block;">
+  <!-- FULL SCREEN PIN LOCK -->
+  <div id="pin-overlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0b0f19; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <div style="text-align: center; max-width: 400px; padding: 2rem;">
+      <i class="fa-solid fa-shield-halved text-amber" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+      <h2 style="color: white; margin-bottom: 0.5rem;">Akses Super Admin</h2>
+      <p class="text-muted" style="margin-bottom: 2rem;">Masukkan PIN rahasia untuk melanjutkan.</p>
+      <input type="password" id="admin-pin-input" placeholder="PIN 6 Digit" maxlength="6" style="text-align: center; font-size: 2rem; letter-spacing: 8px; width: 100%; padding: 1rem; border-radius: var(--radius-md); border: 2px solid var(--border-color); background: rgba(0,0,0,0.5); color: var(--accent-amber); margin-bottom: 1.5rem;">
+      <button class="btn btn-primary btn-block" id="btn-submit-pin" style="padding: 1rem; font-size: 1.1rem;">Buka Kunci</button>
+      <button class="btn btn-outline btn-block mt-3" onclick="window.location.href='index.html'">Kembali ke Dashboard</button>
+    </div>
+  </div>
+
+  <div class="app-container" style="display: none;" id="admin-main-container">
     <div class="main-content" style="margin-left: 0; max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
       
       <!-- Top Bar -->
@@ -31,31 +43,40 @@
       </header>
 
       <!-- Overview Cards -->
-      <div class="stats-grid">
+      <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
         <div class="stat-card blue shadow-glow">
           <div class="stat-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
           <div class="stat-info">
-            <span class="stat-label">Akun Guru Terdaftar</span>
+            <span class="stat-label">Guru Terdaftar</span>
             <h2 class="stat-value" id="admin-stat-guru">0</h2>
-            <span class="stat-desc">Guru aktif di sistem</span>
+            <span class="stat-desc">Akun terdaftar</span>
           </div>
         </div>
 
         <div class="stat-card emerald shadow-glow">
           <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
           <div class="stat-info">
-            <span class="stat-label">Total Data Murid</span>
+            <span class="stat-label">Total Murid</span>
             <h2 class="stat-value" id="admin-stat-murid">0</h2>
-            <span class="stat-desc">Di seluruh kelas</span>
+            <span class="stat-desc">Di seluruh sekolah</span>
           </div>
         </div>
 
         <div class="stat-card amber shadow-glow">
-          <div class="stat-icon"><i class="fa-solid fa-key"></i></div>
+          <div class="stat-icon"><i class="fa-solid fa-coins"></i></div>
           <div class="stat-info">
-            <span class="stat-label">PIN Murid Diterbitkan</span>
-            <h2 class="stat-value" id="admin-stat-pin">0</h2>
-            <span class="stat-desc">Akses portal murid</span>
+            <span class="stat-label">Poin Beredar</span>
+            <h2 class="stat-value" id="admin-stat-poin">0</h2>
+            <span class="stat-desc">Total saldo poin</span>
+          </div>
+        </div>
+        
+        <div class="stat-card rose shadow-glow">
+          <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Total Kategori</span>
+            <h2 class="stat-value" id="admin-stat-kategori">0</h2>
+            <span class="stat-desc">Tercatat di sistem</span>
           </div>
         </div>
       </div>
@@ -72,9 +93,10 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>User ID</th>
-                  <th>Peran Saat Ini</th>
-                  <th>Aksi Ubah Role</th>
+                  <th>User ID / Email</th>
+                  <th>Profil Guru</th>
+                  <th>Peran</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody id="admin-user-tbody">
@@ -95,6 +117,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script>
+    let globalRoles = [];
+    let globalStores = [];
+
     document.addEventListener('DOMContentLoaded', async () => {
       // Check session
       const { data: { session } } = await supabaseClient.auth.getSession();
@@ -103,15 +128,20 @@
         return;
       }
 
-      // PIN Proteksi Super Admin
-      const adminPin = prompt("Masukkan PIN Rahasia Super Admin:");
-      if (adminPin !== "123456") {
-        alert("PIN Salah! Anda akan dialihkan kembali.");
-        window.location.href = 'index.html';
-        return;
-      }
+      // PIN Logic
+      const btnSubmitPin = document.getElementById('btn-submit-pin');
+      const pinInput = document.getElementById('admin-pin-input');
 
-      loadAdminData();
+      btnSubmitPin.addEventListener('click', () => {
+        if (pinInput.value === '123456') {
+          document.getElementById('pin-overlay').style.display = 'none';
+          document.getElementById('admin-main-container').style.display = 'block';
+          loadAdminData();
+        } else {
+          alert('PIN Salah!');
+          pinInput.value = '';
+        }
+      });
 
       document.getElementById('btn-admin-logout').addEventListener('click', async () => {
         await supabaseClient.auth.signOut();
@@ -123,38 +153,78 @@
 
     async function loadAdminData() {
       try {
+        const tbody = document.getElementById('admin-user-tbody');
+        tbody.innerHTML = `<tr><td colspan="5" class="text-center text-muted">Memuat data pengguna...</td></tr>`;
+
         // Fetch roles
         const { data: roles, error } = await supabaseClient.from('user_roles').select('*');
         if (error) throw error;
+        globalRoles = roles || [];
 
-        document.getElementById('admin-stat-guru').textContent = roles ? roles.length : 0;
+        document.getElementById('admin-stat-guru').textContent = globalRoles.length;
 
-        // Fetch total datastores
-        const { data: stores } = await supabaseClient.from('sikap_datastore').select('user_id');
-        document.getElementById('admin-stat-murid').textContent = stores ? stores.length * 4 : 0;
+        // Fetch datastores to calculate advanced stats & extract profiles
+        const { data: stores } = await supabaseClient.from('sikap_datastore').select('user_id, state');
+        globalStores = stores || [];
 
-        // Fetch PINs count
-        const { data: pins } = await supabaseClient.from('student_access').select('id');
-        document.getElementById('admin-stat-pin').textContent = pins ? pins.length : 0;
+        let totalMurid = 0;
+        let totalPoin = 0;
+        let totalKategori = 0;
+        let userProfiles = {};
 
-        const tbody = document.getElementById('admin-user-tbody');
-        if (!roles || roles.length === 0) {
-          tbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted">Belum ada data role terdaftar.</td></tr>`;
+        globalStores.forEach(store => {
+          if (store.state) {
+            try {
+              const stateObj = typeof store.state === 'string' ? JSON.parse(store.state) : store.state;
+              
+              if (stateObj.siswa) {
+                totalMurid += stateObj.siswa.length;
+                totalPoin += stateObj.siswa.reduce((sum, s) => sum + (s.saldo_poin || 0), 0);
+              }
+              
+              if (stateObj.kategoriAktivitas) {
+                totalKategori += stateObj.kategoriAktivitas.length;
+              }
+
+              if (stateObj.guru_profile) {
+                userProfiles[store.user_id] = stateObj.guru_profile;
+              }
+            } catch(e) {}
+          }
+        });
+
+        document.getElementById('admin-stat-murid').textContent = totalMurid;
+        document.getElementById('admin-stat-poin').textContent = totalPoin;
+        document.getElementById('admin-stat-kategori').textContent = totalKategori;
+
+        if (globalRoles.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="5" class="text-center text-muted">Belum ada data role terdaftar.</td></tr>`;
           return;
         }
 
-        tbody.innerHTML = roles.map((r, idx) => `
+        tbody.innerHTML = globalRoles.map((r, idx) => {
+          const profile = userProfiles[r.user_id] || {};
+          const emailStr = profile.email ? `<div><strong>Email:</strong> ${profile.email}</div>` : '';
+          const nameStr = profile.name ? `<div><strong>Nama:</strong> ${profile.name}</div>` : '';
+          const schoolStr = profile.school ? `<div><strong>Sekolah:</strong> ${profile.school}</div>` : '';
+          const profileHTML = (nameStr || schoolStr) ? `${nameStr}${schoolStr}` : '<span class="text-muted">Profil belum diisi</span>';
+          
+          return `
           <tr>
             <td>${idx + 1}</td>
-            <td><code>${r.user_id}</code></td>
+            <td>
+              <code style="font-size:0.75rem;">${r.user_id}</code>
+              ${emailStr}
+            </td>
+            <td>${profileHTML}</td>
             <td><span class="badge ${r.role === 'super_admin' ? 'badge-danger' : 'badge-info'}">${r.role}</span></td>
             <td>
-              <button class="btn btn-sm btn-outline" onclick="changeRole('${r.user_id}', '${r.role === 'super_admin' ? 'guru' : 'super_admin'}')">
+              <button class="btn btn-sm btn-outline mb-1" onclick="changeRole('${r.user_id}', '${r.role === 'super_admin' ? 'guru' : 'super_admin'}')">
                 Ubah ke ${r.role === 'super_admin' ? 'Guru' : 'Super Admin'}
               </button>
             </td>
           </tr>
-        `).join('');
+        `}).join('');
 
       } catch (err) {
         console.error('Error loading admin data:', err);
@@ -166,7 +236,6 @@
         await supabaseClient.from('user_roles').upsert({ user_id: userId, role: newRole });
         loadAdminData();
       }
-
     };
   </script>
 </body>

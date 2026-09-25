@@ -35,6 +35,7 @@ const defaultState = {
   app: 'SIKAP',
   version: 1,
   exportTimestamp: Date.now(),
+  guru_profile: { name: '', school: '', email: '' },
   siswa: [
     { id_siswa: 1, nama: 'Ahmad Ridwan', kelas: '5A', jenis_kelamin: 'Laki-laki', saldo_poin: 125, is_petugas: false },
     { id_siswa: 2, nama: 'Siti Aminah', kelas: '5A', jenis_kelamin: 'Perempuan', saldo_poin: 110, is_petugas: false },
@@ -114,6 +115,32 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Fetch actual data from Supabase for logged-in user
   await loadState();
+
+  // Inject email from session into profile
+  const { data: { session: currentSession } } = await supabaseClient.auth.getSession();
+  if (currentSession && currentSession.user) {
+    if (!db.guru_profile) db.guru_profile = { name: '', school: '', email: '' };
+    db.guru_profile.email = currentSession.user.email;
+    saveState(); // silently save email
+  }
+
+  // Show profile completion modal if incomplete
+  if (!db.guru_profile.name || !db.guru_profile.school) {
+    document.getElementById('modal-profil-guru').classList.add('active');
+  }
+
+  // Setup Profile Form Listener
+  const formProfil = document.getElementById('form-profil-guru');
+  if (formProfil) {
+    formProfil.addEventListener('submit', (e) => {
+      e.preventDefault();
+      db.guru_profile.name = document.getElementById('profil-nama-guru').value.trim();
+      db.guru_profile.school = document.getElementById('profil-nama-sekolah').value.trim();
+      saveState();
+      document.getElementById('modal-profil-guru').classList.remove('active');
+      showToast('Profil berhasil disimpan!');
+    });
+  }
 });
 
 // Load State from Supabase
