@@ -36,6 +36,7 @@ const defaultState = {
   version: 1,
   exportTimestamp: Date.now(),
   guru_profile: { name: '', school: '', email: '' },
+  notifications: [],
   siswa: [
     { id_siswa: 1, nama: 'Ahmad Ridwan', kelas: '5A', jenis_kelamin: 'Laki-laki', saldo_poin: 125, is_petugas: false },
     { id_siswa: 2, nama: 'Siti Aminah', kelas: '5A', jenis_kelamin: 'Perempuan', saldo_poin: 110, is_petugas: false },
@@ -241,7 +242,64 @@ function renderAll() {
   renderKategori();
   renderHadiah();
   renderPengaturan();
+  renderNotifications();
 }
+
+// Render Notifications
+function renderNotifications() {
+  const notifList = document.getElementById('notif-list');
+  const notifBadge = document.getElementById('notif-badge');
+  if (!notifList || !notifBadge) return;
+
+  db.notifications = db.notifications || [];
+  const unreadCount = db.notifications.filter(n => !n.isRead).length;
+
+  if (unreadCount > 0) {
+    notifBadge.style.display = 'flex';
+    notifBadge.textContent = unreadCount;
+  } else {
+    notifBadge.style.display = 'none';
+  }
+
+  if (db.notifications.length === 0) {
+    notifList.innerHTML = '<div class="text-center text-muted" style="margin-top: 2rem;"><i class="fa-solid fa-bell-slash fa-2x mb-2"></i><br>Belum ada pengumuman.</div>';
+    return;
+  }
+
+  // Sort descending by timestamp
+  const sortedNotifs = [...db.notifications].reverse();
+
+  notifList.innerHTML = sortedNotifs.map((n, idx) => {
+    // We must find the original index in db.notifications to update it correctly
+    const originalIdx = db.notifications.indexOf(n);
+    return `
+    <div style="background: ${n.isRead ? 'var(--bg-card)' : 'rgba(99, 102, 241, 0.1)'}; border: 1px solid ${n.isRead ? 'var(--border-color)' : 'var(--accent-indigo)'}; border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1rem; position: relative;">
+      ${!n.isRead ? '<span style="position: absolute; top: 10px; right: 10px; width: 8px; height: 8px; background: var(--accent-rose); border-radius: 50%;"></span>' : ''}
+      <h4 style="margin-bottom: 5px; font-size: 1rem; color: var(--text-main);">${escapeHtml(n.title)}</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">${escapeHtml(n.message)}</p>
+      <div style="display: flex; gap: 10px;">
+        ${!n.isRead ? `<button class="btn btn-sm btn-outline" style="font-size: 0.7rem; padding: 4px 8px;" onclick="markNotifRead(${originalIdx})"><i class="fa-solid fa-check"></i> Tandai Dibaca</button>` : ''}
+        <button class="btn btn-sm btn-danger" style="font-size: 0.7rem; padding: 4px 8px;" onclick="deleteNotif(${originalIdx})"><i class="fa-solid fa-trash"></i> Hapus</button>
+      </div>
+    </div>
+  `}).join('');
+}
+
+window.markNotifRead = function(idx) {
+  if (db.notifications[idx]) {
+    db.notifications[idx].isRead = true;
+    saveState();
+    renderNotifications();
+  }
+};
+
+window.deleteNotif = function(idx) {
+  if (confirm('Hapus pengumuman ini?')) {
+    db.notifications.splice(idx, 1);
+    saveState();
+    renderNotifications();
+  }
+};
 
 // Render School Header Info
 function renderSchoolInfo() {
@@ -702,6 +760,40 @@ function setupEventListeners() {
     saveState();
     showToast('Konfigurasi sekolah diperbarui!');
   });
+
+  // Form Pengaturan Password
+  const formPassword = document.getElementById('form-pengaturan-password');
+  if (formPassword) {
+    formPassword.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const newPassword = document.getElementById('setting-new-password').value;
+      if (!newPassword || newPassword.length < 6) return;
+
+      try {
+        const { error } = await supabaseClient.auth.updateUser({ password: newPassword });
+        if (error) throw error;
+        alert('Password berhasil diubah! Silakan login kembali.');
+        await supabaseClient.auth.signOut();
+        window.location.href = 'login.html';
+      } catch (err) {
+        alert('Gagal merubah password: ' + err.message);
+      }
+    });
+  }
+
+  // Notifikasi Sidebar Toggle
+  const btnNotif = document.getElementById('btn-notifications');
+  const notifSidebar = document.getElementById('notif-sidebar');
+  const btnCloseNotif = document.getElementById('btn-close-notif');
+  
+  if (btnNotif && notifSidebar && btnCloseNotif) {
+    btnNotif.addEventListener('click', () => {
+      notifSidebar.style.right = '0px';
+    });
+    btnCloseNotif.addEventListener('click', () => {
+      notifSidebar.style.right = '-400px';
+    });
+  }
 
   // JSON Export Buttons
   document.getElementById('btn-quick-export').addEventListener('click', exportBackupJSON);

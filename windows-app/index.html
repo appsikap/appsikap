@@ -78,6 +78,10 @@
         </div>
 
         <div class="header-actions">
+          <button class="btn btn-secondary" id="btn-notifications" style="position: relative;" title="Notifikasi Pengumuman">
+            <i class="fa-solid fa-bell"></i>
+            <span id="notif-badge" style="position: absolute; top: -5px; right: -5px; background: var(--accent-rose); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 0.65rem; display: none; align-items: center; justify-content: center; font-weight: bold;">0</span>
+          </button>
           <button class="btn btn-secondary" id="btn-theme-toggle" title="Ganti Tema (Gelap/Terang)">
             <i class="fa-solid fa-moon" id="icon-theme"></i> <span class="hide-mobile">Tema</span>
           </button>
@@ -491,6 +495,22 @@
 
               <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Simpan Konfigurasi</button>
             </form>
+
+            <hr class="divider" style="margin: 2rem 0;">
+
+            <!-- Password Setup -->
+            <form id="form-pengaturan-password">
+              <h4 style="margin-bottom: 1rem; color: var(--accent-rose);"><i class="fa-solid fa-lock"></i> Keamanan (Ubah Password Akun)</h4>
+              <div class="form-row">
+                <div class="form-group col" style="max-width: 400px;">
+                  <label>Password Baru (Minimal 6 karakter)</label>
+                  <input type="password" id="setting-new-password" required minlength="6" placeholder="Masukkan password baru">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-danger"><i class="fa-solid fa-key"></i> Perbarui Password</button>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">Catatan: Anda akan otomatis *logout* dan diminta masuk kembali setelah password berhasil diubah.</p>
+            </form>
+
           </div>
         </div>
       </section>

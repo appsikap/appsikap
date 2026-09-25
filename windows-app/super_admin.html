@@ -107,6 +107,47 @@
         </div>
       </div>
 
+      <!-- Action Forms: Pengumuman & PIN -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        
+        <!-- Kirim Pengumuman -->
+        <div class="card glass-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-bullhorn text-amber"></i> Kirim Pengumuman Massal</h3>
+          </div>
+          <div class="card-body">
+            <form id="form-pengumuman">
+              <div class="form-group">
+                <label>Judul Pengumuman</label>
+                <input type="text" id="notif-title" required placeholder="Contoh: Pemeliharaan Server">
+              </div>
+              <div class="form-group">
+                <label>Isi Pesan</label>
+                <textarea id="notif-message" required rows="3" placeholder="Pesan akan dikirim ke seluruh akun guru..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Kirim ke Semua Akun</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Ubah PIN Admin -->
+        <div class="card glass-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-shield-halved text-rose"></i> Keamanan Super Admin</h3>
+          </div>
+          <div class="card-body">
+            <form id="form-ubah-pin">
+              <div class="form-group">
+                <label>PIN Super Admin Baru (6 Digit)</label>
+                <input type="password" id="new-admin-pin" required maxlength="6" minlength="6" placeholder="Masukkan 6 angka">
+              </div>
+              <button type="submit" class="btn btn-danger btn-block"><i class="fa-solid fa-key"></i> Perbarui PIN</button>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">PIN standar bawaan adalah 123456. PIN baru akan tersimpan di profil akun Anda.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -119,6 +160,8 @@
   <script>
     let globalRoles = [];
     let globalStores = [];
+    let currentAdminId = null;
+    let actualAdminPin = '123456';
 
     document.addEventListener('DOMContentLoaded', async () => {
       // Check session
@@ -127,13 +170,23 @@
         window.location.href = 'login.html';
         return;
       }
+      currentAdminId = session.user.id;
+
+      // Fetch super admin PIN from their own datastore if exists
+      try {
+        const { data: myStore } = await supabaseClient.from('sikap_datastore').select('state').eq('user_id', currentAdminId).maybeSingle();
+        if (myStore && myStore.state) {
+          const myState = typeof myStore.state === 'string' ? JSON.parse(myStore.state) : myStore.state;
+          if (myState.super_admin_pin) actualAdminPin = myState.super_admin_pin;
+        }
+      } catch(e) {}
 
       // PIN Logic
       const btnSubmitPin = document.getElementById('btn-submit-pin');
       const pinInput = document.getElementById('admin-pin-input');
 
       btnSubmitPin.addEventListener('click', () => {
-        if (pinInput.value === '123456') {
+        if (pinInput.value === actualAdminPin) {
           document.getElementById('pin-overlay').style.display = 'none';
           document.getElementById('admin-main-container').style.display = 'block';
           loadAdminData();
@@ -149,6 +202,68 @@
       });
 
       document.getElementById('btn-refresh-admin').addEventListener('click', loadAdminData);
+
+      // Handle Ubah PIN
+      document.getElementById('form-ubah-pin').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const newPin = document.getElementById('new-admin-pin').value;
+        if(newPin.length !== 6) return alert("PIN harus 6 digit");
+
+        try {
+          const { data: myStore } = await supabaseClient.from('sikap_datastore').select('state').eq('user_id', currentAdminId).maybeSingle();
+          let stateObj = myStore && myStore.state ? (typeof myStore.state === 'string' ? JSON.parse(myStore.state) : myStore.state) : {};
+          
+          stateObj.super_admin_pin = newPin;
+          
+          await supabaseClient.from('sikap_datastore').upsert({
+            user_id: currentAdminId,
+            state: JSON.stringify(stateObj),
+            updated_at: new Date().toISOString()
+          });
+
+          actualAdminPin = newPin;
+          alert("PIN Super Admin berhasil diperbarui!");
+          document.getElementById('new-admin-pin').value = '';
+        } catch(err) {
+          alert("Gagal memperbarui PIN: " + err.message);
+        }
+      });
+
+      // Handle Kirim Pengumuman
+      document.getElementById('form-pengumuman').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!confirm("Kirim pengumuman ini ke seluruh akun guru?")) return;
+        
+        const title = document.getElementById('notif-title').value;
+        const msg = document.getElementById('notif-message').value;
+        const newNotif = {
+          title: title,
+          message: msg,
+          isRead: false,
+          timestamp: Date.now()
+        };
+
+        let successCount = 0;
+        try {
+          // Note: To update everyone, we need to iterate over globalStores
+          // Since client-side auth might only allow RLS updates to their own rows,
+          // If RLS allows UPDATE to all, this loop will work.
+          for (const store of globalStores) {
+            let stateObj = typeof store.state === 'string' ? JSON.parse(store.state) : store.state;
+            stateObj.notifications = stateObj.notifications || [];
+            stateObj.notifications.push(newNotif);
+            
+            await supabaseClient.from('sikap_datastore').update({
+              state: JSON.stringify(stateObj)
+            }).eq('user_id', store.user_id);
+            successCount++;
+          }
+          alert(`Berhasil mengirim pengumuman ke ${successCount} akun!`);
+          document.getElementById('form-pengumuman').reset();
+        } catch(err) {
+          alert("Gagal mengirim pengumuman ke beberapa/semua akun (Pastikan RLS Supabase mengizinkan update oleh super admin): " + err.message);
+        }
+      });
     });
 
     async function loadAdminData() {
