@@ -390,9 +390,9 @@ function renderDashboard() {
       <tr>
         <td><strong>#${idx + 1}</strong></td>
         <td><strong>${escapeHtml(s.nama)}</strong></td>
-        <td><span class="badge badge-info">${escapeHtml(s.kelas)}</span></td>
+        <td class="hide-mobile-col"><span class="badge badge-info">${escapeHtml(s.kelas)}</span></td>
         <td><strong class="text-emerald">${s.saldo_poin} Poin</strong></td>
-        <td><span class="badge ${getStatusBadgeClass(getCharacterStatus(s.saldo_poin))}">${getCharacterStatus(s.saldo_poin)}</span></td>
+        <td class="hide-mobile-col"><span class="badge ${getStatusBadgeClass(getCharacterStatus(s.saldo_poin))}">${getCharacterStatus(s.saldo_poin)}</span></td>
       </tr>
     `).join('');
   }
@@ -406,9 +406,9 @@ function renderDashboard() {
     alertTbody.innerHTML = alertSiswa.map(s => `
       <tr>
         <td><strong>${escapeHtml(s.nama)}</strong></td>
-        <td>${escapeHtml(s.kelas)}</td>
+        <td class="hide-mobile-col">${escapeHtml(s.kelas)}</td>
         <td><strong class="text-rose">${s.saldo_poin} Poin</strong></td>
-        <td><span class="badge badge-danger">${getCharacterStatus(s.saldo_poin)}</span></td>
+        <td class="hide-mobile-col"><span class="badge badge-danger">${getCharacterStatus(s.saldo_poin)}</span></td>
       </tr>
     `).join('');
   }
@@ -435,11 +435,11 @@ function renderDashboard() {
         <tr>
           <td><small class="text-muted">${formatDate(r.tanggal)}</small></td>
           <td><strong>${escapeHtml(s.nama)}</strong></td>
-          <td>${escapeHtml(s.kelas)}</td>
+          <td class="hide-mobile-col">${escapeHtml(s.kelas)}</td>
           <td>${escapeHtml(r.keterangan || r.jenis_catatan)}</td>
           <td><strong class="${isBaik ? 'text-emerald' : 'text-rose'}">${isBaik ? '+' : ''}${r.nilai_poin}</strong></td>
-          <td><small>${escapeHtml(r.guru_pencatat)}</small></td>
-          <td><small class="text-muted">${escapeHtml(r.keterangan || '-')}</small></td>
+          <td class="hide-mobile-col"><small>${escapeHtml(r.guru_pencatat)}</small></td>
+          <td class="hide-mobile-col"><small class="text-muted">${escapeHtml(r.keterangan || '-')}</small></td>
         </tr>
       `;
     }).join('');
@@ -493,12 +493,12 @@ function renderSiswa() {
 
   tbody.innerHTML = filtered.map((s, idx) => `
     <tr>
-      <td>${idx + 1}</td>
+      <td class="hide-mobile-col">${idx + 1}</td>
       <td><strong>${escapeHtml(s.nama)}</strong></td>
-      <td><span class="badge badge-info">${escapeHtml(s.kelas)}</span></td>
-      <td>${escapeHtml(s.jenis_kelamin)}</td>
+      <td class="hide-mobile-col"><span class="badge badge-info">${escapeHtml(s.kelas)}</span></td>
+      <td class="hide-mobile-col">${escapeHtml(s.jenis_kelamin)}</td>
       <td><strong class="text-emerald">${s.saldo_poin} Poin</strong></td>
-      <td><span class="badge ${getStatusBadgeClass(getCharacterStatus(s.saldo_poin))}">${getCharacterStatus(s.saldo_poin)}</span></td>
+      <td class="hide-mobile-col"><span class="badge ${getStatusBadgeClass(getCharacterStatus(s.saldo_poin))}">${getCharacterStatus(s.saldo_poin)}</span></td>
       <td>
         <button class="btn btn-sm btn-outline text-amber" onclick="openStudentPinModal(${s.id_siswa})" title="Lihat / Buat PIN Login Murid"><i class="fa-solid fa-key"></i> PIN</button>
         <button class="btn btn-sm btn-outline" onclick="editSiswa(${s.id_siswa})" title="Edit Siswa"><i class="fa-solid fa-pen"></i></button>

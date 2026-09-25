@@ -793,8 +793,9 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   .mobile-header-top {
@@ -1135,4 +1136,23 @@ body.light-mode .lainnya-item {
   color: var(--text-muted);
   font-size: 0.9rem;
   opacity: 0.6;
+}
+
+/* Make tables fit on mobile without horizontal scroll */
+@media (max-width: 768px) {
+  .data-table th, .data-table td {
+    padding: 0.5rem 0.35rem !important;
+    font-size: 0.72rem !important;
+  }
+  .data-table th {
+    font-size: 0.65rem !important;
+    letter-spacing: 0 !important;
+  }
+  .badge {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.65rem !important;
+  }
+  .hide-mobile-col {
+    display: none !important;
+  }
 }
