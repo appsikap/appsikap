@@ -771,12 +771,21 @@ function setupEventListeners() {
       batas_sangat_baik: parseInt(document.getElementById('setting-batas-sangat-baik').value) || 100,
       batas_baik: parseInt(document.getElementById('setting-batas-baik').value) || 70,
       batas_pembinaan: parseInt(document.getElementById('setting-batas-pembinaan').value) || 40,
-      batas_peringatan: parseInt(document.getElementById('setting-batas-peringatan').value) || 0,
-      fitur_hadiah_aktif: document.getElementById('setting-fitur-hadiah') ? document.getElementById('setting-fitur-hadiah').checked : false
+      batas_peringatan: parseInt(document.getElementById('setting-batas-peringatan').value) || 0
     };
     saveState();
     showToast('Konfigurasi sekolah diperbarui!');
   });
+
+  // Toggle Fitur Hadiah Auto-Save
+  const chkHadiah = document.getElementById('setting-fitur-hadiah');
+  if (chkHadiah) {
+    chkHadiah.addEventListener('change', (e) => {
+      db.pengaturanSekolah.fitur_hadiah_aktif = e.target.checked;
+      saveState();
+      showToast('Pengaturan fitur hadiah disimpan!');
+    });
+  }
 
   // Form Pengaturan Profil Guru
   const formProfil = document.getElementById('form-pengaturan-profil');

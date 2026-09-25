@@ -389,6 +389,16 @@
 
       <!-- TAB 5: HADIAH & PENUKARAN -->
       <section id="tab-hadiah" class="tab-pane">
+        
+        <!-- Toggle Fitur Hadiah -->
+        <div class="card glass-card" style="margin-bottom: 1.5rem; padding: 1.5rem;">
+          <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+            <input type="checkbox" id="setting-fitur-hadiah" style="width: 24px; height: 24px;">
+            <span style="font-weight: 700; font-size: 1.2rem; color: var(--accent-amber);">Aktifkan Fitur Penukaran Hadiah untuk Murid</span>
+          </label>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-left: 2.25rem;">Jika dicentang, menu "Katalog Hadiah" akan muncul di Dashboard Murid. (Otomatis Tersimpan)</p>
+        </div>
+
         <div class="grid-2-cols">
           <!-- Daftar Hadiah -->
           <div class="card glass-card">
@@ -495,14 +505,6 @@
                   <label>Batas Peringatan ($\ge$)</label>
                   <input type="number" id="setting-batas-peringatan" required>
                 </div>
-              </div>
-
-              <div class="form-group" style="margin-top: 1rem;">
-                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                  <input type="checkbox" id="setting-fitur-hadiah" style="width: 20px; height: 20px;">
-                  <span style="font-weight: 600; font-size: 1.1rem;">Aktifkan Fitur Penukaran Hadiah untuk Murid</span>
-                </label>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Jika dicentang, menu "Katalog Hadiah" akan muncul di Dashboard Murid.</p>
               </div>
               <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Simpan Konfigurasi</button>
             </form>
