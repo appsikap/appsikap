@@ -11,6 +11,7 @@ import android.webkit.CookieManager
 import android.webkit.DownloadListener
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -19,12 +20,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 
 class MainActivity : ComponentActivity() {
     private var fileUploadCallback: ValueCallback<Array<Uri>>? = null
+    var currentUrl by mutableStateOf("https://appsikap-rho.vercel.app/")
 
     private val fileChooserLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
@@ -40,18 +42,31 @@ class MainActivity : ComponentActivity() {
         fileUploadCallback = null
     }
 
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        val data = intent.data
+        if (data != null) {
+            currentUrl = data.toString()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        intent?.data?.let {
+            currentUrl = it.toString()
+        }
+
         setContent {
             WebViewScreen(
-                url = "https://appsikap-rho.vercel.app/",
+                url = currentUrl,
                 onShowFileChooser = { callback ->
                     fileUploadCallback = callback
-                    val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
+                    val chooserIntent = Intent(Intent.ACTION_GET_CONTENT).apply {
                         addCategory(Intent.CATEGORY_OPENABLE)
                         type = "*/*"
                     }
-                    fileChooserLauncher.launch(Intent.createChooser(intent, "Pilih File JSON"))
+                    fileChooserLauncher.launch(Intent.createChooser(chooserIntent, "Pilih File JSON"))
                 },
                 context = this
             )
@@ -74,7 +89,17 @@ fun WebViewScreen(url: String, onShowFileChooser: (ValueCallback<Array<Uri>>) ->
                     allowContentAccess = true
                 }
                 
-                webViewClient = WebViewClient()
+                webViewClient = object : WebViewClient() {
+                    override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                        val urlStr = request?.url?.toString() ?: ""
+                        if (urlStr.contains("accounts.google.com") || urlStr.contains("supabase.co/auth/v1/authorize")) {
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(urlStr))
+                            ctx.startActivity(intent)
+                            return true
+                        }
+                        return super.shouldOverrideUrlLoading(view, request)
+                    }
+                }
                 
                 webChromeClient = object : WebChromeClient() {
                     override fun onShowFileChooser(
@@ -90,7 +115,6 @@ fun WebViewScreen(url: String, onShowFileChooser: (ValueCallback<Array<Uri>>) ->
                 setDownloadListener { downloadUrl, userAgent, contentDisposition, mimetype, contentLength ->
                     try {
                         if (downloadUrl.startsWith("data:")) {
-                            // Extract Base64 from Data URI (e.g. data:application/json;base64,.....)
                             val base64Data = downloadUrl.substring(downloadUrl.indexOf(",") + 1)
                             val bytes = android.util.Base64.decode(base64Data, android.util.Base64.DEFAULT)
                             
@@ -103,7 +127,6 @@ fun WebViewScreen(url: String, onShowFileChooser: (ValueCallback<Array<Uri>>) ->
                             java.io.FileOutputStream(file).use { it.write(bytes) }
                             Toast.makeText(ctx, "Berhasil! File $fileName disimpan di folder Downloads HP Anda.", Toast.LENGTH_LONG).show()
                         } else {
-                            // Fallback to normal download manager for HTTP links
                             val request = DownloadManager.Request(Uri.parse(downloadUrl)).apply {
                                 setMimeType(mimetype)
                                 addRequestHeader("cookie", CookieManager.getInstance().getCookie(downloadUrl))
@@ -125,7 +148,11 @@ fun WebViewScreen(url: String, onShowFileChooser: (ValueCallback<Array<Uri>>) ->
                 loadUrl(url)
             }
         },
+        update = { webView ->
+            if (webView.url != url) {
+                webView.loadUrl(url)
+            }
+        },
         modifier = Modifier.fillMaxSize()
     )
 }
-
