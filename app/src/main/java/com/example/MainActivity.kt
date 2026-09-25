@@ -1,49 +1,45 @@
 package com.example
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.webkit.WebChromeClient
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.lifecycle.ViewModelProvider
-import com.example.data.local.AppDatabase
-import com.example.data.repository.AppRepository
-import com.example.ui.AppNavigation
-import com.example.ui.MainViewModel
-import com.example.ui.MainViewModelFactory
-import com.example.ui.theme.MyApplicationTheme
-
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.viewinterop.AndroidView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
-        // Initialize Room Database, DAOs, repository, and modern ViewModel
-        val database = AppDatabase.getDatabase(this)
-        val repository = AppRepository(
-            adminDao = database.adminDao(),
-            siswaDao = database.siswaDao(),
-            kategoriDao = database.kategoriAktivitasDao(),
-            riwayatDao = database.riwayatPoinDao(),
-            pengaturanDao = database.pengaturanSekolahDao(),
-            hadiahDao = database.hadiahDao(),
-            pengajuanHadiahDao = database.pengajuanHadiahDao()
-        )
-        val viewModelFactory = MainViewModelFactory(repository)
-        val viewModel = ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
-        
-        // Load settings & sessions
-        viewModel.loadThemeSettings(this)
-        viewModel.initSession(this)
-        
-        enableEdgeToEdge()
-        
         setContent {
-            val isDark by viewModel.isDarkMode.collectAsState()
-            MyApplicationTheme(darkTheme = isDark) {
-                AppNavigation(viewModel)
-            }
+            WebViewScreen(url = "https://appsikap-rho.vercel.app/")
         }
     }
+}
+
+@SuppressLint("SetJavaScriptEnabled")
+@Composable
+fun WebViewScreen(url: String) {
+    AndroidView(
+        factory = { context ->
+            WebView(context).apply {
+                settings.apply {
+                    javaScriptEnabled = true
+                    domStorageEnabled = true
+                    databaseEnabled = true
+                    cacheMode = WebSettings.LOAD_DEFAULT
+                    allowFileAccess = true
+                }
+                webViewClient = WebViewClient()
+                webChromeClient = WebChromeClient()
+                loadUrl(url)
+            }
+        },
+        modifier = Modifier.fillMaxSize()
+    )
 }
