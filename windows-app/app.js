@@ -58,41 +58,56 @@ const defaultState = {
 // Current Active State
 let db = JSON.parse(JSON.stringify(defaultState));
 
+let currentUserId = null;
+
 // Initialize Application
 document.addEventListener('DOMContentLoaded', async () => {
   setupNavigation();
   setupEventListeners();
+  
+  // Auth Guard: Check user session
+  try {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (!session || !session.user) {
+      window.location.href = 'login.html';
+      return;
+    }
+    currentUserId = session.user.id;
+  } catch (e) {
+    window.location.href = 'login.html';
+    return;
+  }
+
   renderAll();
   
-  // Fetch actual data from Supabase
+  // Fetch actual data from Supabase for logged-in user
   await loadState();
 });
 
 // Load State from Supabase
 async function loadState() {
+  if (!currentUserId) return;
   try {
-    // Attempt to fetch from Supabase
     const { data, error } = await supabaseClient
       .from('sikap_datastore')
       .select('data')
-      .eq('id', 1)
-      .single();
+      .eq('user_id', currentUserId)
+      .maybeSingle();
 
     if (error) {
       console.error('Error fetching from Supabase:', error);
-      // Fallback to local storage
-      const saved = localStorage.getItem(STORAGE_KEY);
+      const saved = localStorage.getItem(STORAGE_KEY + '_' + currentUserId);
       if (saved) db = normalizeState(JSON.parse(saved));
-    } else if (data && data.data) {
-      if (Object.keys(data.data).length === 0) {
-        db = JSON.parse(JSON.stringify(defaultState));
-      } else {
-        db = normalizeState(data.data);
-      }
+    } else if (data && data.data && Object.keys(data.data).length > 0) {
+      db = normalizeState(data.data);
+    } else {
+      // First time initialization for new teacher account
+      db = JSON.parse(JSON.stringify(defaultState));
+      await saveState();
     }
   } catch (e) {
     console.error('Failed to parse state:', e);
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = localStorage.getItem(STORAGE_KEY + '_' + currentUserId);
     if (saved) db = normalizeState(JSON.parse(saved));
   }
   renderAll();
@@ -100,15 +115,13 @@ async function loadState() {
 
 // Save State to Supabase
 async function saveState() {
-  // Save to local backup
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+  if (!currentUserId) return;
+  localStorage.setItem(STORAGE_KEY + '_' + currentUserId, JSON.stringify(db));
   
-  // Save to Supabase
   try {
     const { error } = await supabaseClient
       .from('sikap_datastore')
-      .update({ data: db, updated_at: new Date().toISOString() })
-      .eq('id', 1);
+      .upsert({ user_id: currentUserId, data: db, updated_at: new Date().toISOString() });
       
     if (error) console.error('Error saving to Supabase:', error);
   } catch (e) {
@@ -286,8 +299,9 @@ function renderSiswa() {
       <td><strong class="text-emerald">${s.saldo_poin} Poin</strong></td>
       <td><span class="badge ${getStatusBadgeClass(getCharacterStatus(s.saldo_poin))}">${getCharacterStatus(s.saldo_poin)}</span></td>
       <td>
-        <button class="btn btn-sm btn-outline" onclick="editSiswa(${s.id_siswa})"><i class="fa-solid fa-pen"></i></button>
-        <button class="btn btn-sm btn-danger" onclick="deleteSiswa(${s.id_siswa})"><i class="fa-solid fa-trash"></i></button>
+        <button class="btn btn-sm btn-outline text-amber" onclick="openStudentPinModal(${s.id_siswa})" title="Lihat / Buat PIN Login Murid"><i class="fa-solid fa-key"></i> PIN</button>
+        <button class="btn btn-sm btn-outline" onclick="editSiswa(${s.id_siswa})" title="Edit Siswa"><i class="fa-solid fa-pen"></i></button>
+        <button class="btn btn-sm btn-danger" onclick="deleteSiswa(${s.id_siswa})" title="Hapus Siswa"><i class="fa-solid fa-trash"></i></button>
       </td>
     </tr>
   `).join('');
@@ -1012,3 +1026,72 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
+
+// Student PIN Access Modal
+window.openStudentPinModal = async function(idSiswa) {
+  const siswa = db.siswa.find(x => x.id_siswa === idSiswa);
+  if (!siswa) return;
+
+  document.getElementById('pin-student-id').value = idSiswa;
+  document.getElementById('pin-student-name').textContent = `${siswa.nama} (${siswa.kelas})`;
+  document.getElementById('pin-display-box').textContent = 'Memuat...';
+
+  openModal('modal-pin-siswa');
+
+  try {
+    const { data } = await supabaseClient
+      .from('student_access')
+      .select('pin_code')
+      .eq('teacher_id', currentUserId)
+      .eq('student_id', idSiswa)
+      .maybeSingle();
+
+    if (data && data.pin_code) {
+      document.getElementById('pin-display-box').textContent = data.pin_code;
+    } else {
+      document.getElementById('pin-display-box').textContent = 'Belum Ada PIN';
+    }
+  } catch (err) {
+    document.getElementById('pin-display-box').textContent = '------';
+  }
+};
+
+// Generate Random 6-digit PIN
+const btnGenPin = document.getElementById('btn-generate-pin');
+if (btnGenPin) {
+  btnGenPin.addEventListener('click', async () => {
+    const idSiswa = parseInt(document.getElementById('pin-student-id').value);
+    const siswa = db.siswa.find(x => x.id_siswa === idSiswa);
+    if (!siswa || !currentUserId) return;
+
+    const newPin = Math.floor(100000 + Math.random() * 900000).toString();
+    document.getElementById('pin-display-box').textContent = newPin;
+
+    try {
+      const { error } = await supabaseClient
+        .from('student_access')
+        .upsert({
+          teacher_id: currentUserId,
+          student_id: idSiswa,
+          pin_code: newPin
+        }, { onConflict: 'teacher_id,student_id' });
+
+      if (error) throw error;
+      showToast(`PIN Akses untuk ${siswa.nama} berhasil dibuat: ${newPin}`);
+    } catch (err) {
+      showToast('Gagal simpan PIN: ' + (err.message || 'Error'));
+    }
+  });
+}
+
+// Logout Guru Handler
+const btnLogoutGuru = document.getElementById('btn-logout-guru');
+if (btnLogoutGuru) {
+  btnLogoutGuru.addEventListener('click', async () => {
+    if (confirm('Apakah Anda yakin ingin keluar dari akun?')) {
+      await supabaseClient.auth.signOut();
+      window.location.href = 'login.html';
+    }
+  });
+}
+

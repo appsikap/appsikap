@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Murid - SIKAP Karakter</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      padding-bottom: 30px;
+    }
+
+    .murid-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem;
+    }
+
+    .student-profile-header {
+      text-align: center;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(16, 185, 129, 0.15));
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .student-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-indigo), var(--accent-blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px auto;
+      font-size: 2rem;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    }
+
+    .student-name {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .student-sub {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .points-hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .points-hero-card::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 120px;
+      height: 120px;
+      background: rgba(16, 185, 129, 0.15);
+      border-radius: 50%;
+      filter: blur(20px);
+    }
+
+    .points-value {
+      font-family: var(--font-title);
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      line-height: 1.1;
+      margin: 8px 0;
+    }
+
+    .points-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-logout-murid {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: var(--radius-md);
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    .btn-logout-murid:hover {
+      color: var(--accent-rose);
+      border-color: var(--accent-rose);
+    }
+
+    .history-card-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 8px;
+    }
+
+    .history-card-item.baik {
+      border-left: 4px solid var(--accent-emerald);
+    }
+
+    .history-card-item.buruk {
+      border-left: 4px solid var(--accent-rose);
+    }
+
+    .history-info strong {
+      display: block;
+      font-size: 0.92rem;
+    }
+
+    .history-info small {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .history-badge {
+      font-family: var(--font-title);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .history-badge.baik { color: var(--accent-emerald); }
+    .history-badge.buruk { color: var(--accent-rose); }
+  </style>
+</head>
+<body class="dark-mode">
+
+  <div class="murid-container">
+    <!-- Student Header -->
+    <div class="student-profile-header">
+      <button class="btn-logout-murid" id="btn-logout-murid">
+        <i class="fa-solid fa-right-from-bracket"></i> Keluar
+      </button>
+      <div class="student-avatar">
+        <i class="fa-solid fa-user-graduate"></i>
+      </div>
+      <h2 class="student-name" id="murid-nama">Nama Murid</h2>
+      <div class="student-sub">
+        <span id="murid-kelas">Kelas --</span> • <span id="murid-sekolah">Sekolah</span>
+      </div>
+    </div>
+
+    <!-- Saldo Poin Hero Card -->
+    <div class="points-hero-card">
+      <span class="points-label">Total Saldo Poin Karakter</span>
+      <div class="points-value" id="murid-poin">0</div>
+      <div style="margin-top: 6px;">
+        <span class="badge badge-success" id="murid-status-badge">Sangat Baik</span>
+      </div>
+    </div>
+
+    <!-- Tab Section: Riwayat vs Hadiah -->
+    <div class="card glass-card">
+      <div class="card-header" style="margin-bottom: 1rem;">
+        <h3><i class="fa-solid fa-clock-rotate-left text-indigo"></i> Catatan Poin Saya</h3>
+      </div>
+
+      <div id="murid-history-list">
+        <div class="text-center text-muted" style="padding: 2rem;">Memuat catatan poin...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sessionData = sessionStorage.getItem('SIKAP_MURID_SESSION');
+      if (!sessionData) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      const data = JSON.parse(sessionData);
+      const student = data.student;
+      const riwayat = data.riwayat || [];
+      const pengaturan = data.pengaturan || {};
+
+      document.getElementById('murid-nama').textContent = student.nama;
+      document.getElementById('murid-kelas').textContent = `Kelas ${student.kelas}`;
+      document.getElementById('murid-sekolah').textContent = pengaturan.nama_sekolah || 'SIKAP';
+      document.getElementById('murid-poin').textContent = student.saldo_poin;
+
+      // Status badge
+      const badge = document.getElementById('murid-status-badge');
+      const pts = student.saldo_poin;
+      if (pts >= (pengaturan.batas_sangat_baik || 100)) {
+        badge.textContent = 'Sangat Baik';
+        badge.className = 'badge badge-success';
+      } else if (pts >= (pengaturan.batas_baik || 70)) {
+        badge.textContent = 'Baik';
+        badge.className = 'badge badge-info';
+      } else if (pts >= (pengaturan.batas_pembinaan || 40)) {
+        badge.textContent = 'Perlu Pembinaan';
+        badge.className = 'badge badge-warning';
+      } else {
+        badge.textContent = 'Peringatan / Atensi Guru';
+        badge.className = 'badge badge-danger';
+      }
+
+      // Render History List
+      const container = document.getElementById('murid-history-list');
+      if (riwayat.length === 0) {
+        container.innerHTML = `<div class="text-center text-muted" style="padding: 1.5rem;">Belum ada catatan poin untuk Anda.</div>`;
+      } else {
+        container.innerHTML = riwayat.map(r => {
+          const isBaik = r.jenis_catatan === 'Perbuatan Baik';
+          const tgl = r.tanggal ? new Date(r.tanggal).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }) : '-';
+          return `
+            <div class="history-card-item ${isBaik ? 'baik' : 'buruk'}">
+              <div class="history-info">
+                <strong>${escapeHtml(r.keterangan || r.jenis_catatan)}</strong>
+                <small><i class="fa-solid fa-calendar-day"></i> ${tgl} • Oleh: ${escapeHtml(r.guru_pencatat || 'Guru')}</small>
+              </div>
+              <div class="history-badge ${isBaik ? 'baik' : 'buruk'}">
+                ${isBaik ? '+' : ''}${r.nilai_poin}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Logout
+      document.getElementById('btn-logout-murid').addEventListener('click', () => {
+        sessionStorage.removeItem('SIKAP_MURID_SESSION');
+        window.location.href = 'login.html';
+      });
+    });
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+  </script>
+</body>
+</html>

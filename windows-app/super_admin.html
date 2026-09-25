@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Admin Dashboard - SIKAP</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+  <div class="app-container" style="display: block;">
+    <div class="main-content" style="margin-left: 0; max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
+      
+      <!-- Top Bar -->
+      <header class="top-header">
+        <div class="header-title">
+          <h1><i class="fa-solid fa-shield-halved text-amber"></i> Dashboard Super Admin</h1>
+          <p>Pengawasan & Manajemen Akun Guru Tingkat Sekolah</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-outline" id="btn-admin-logout">
+            <i class="fa-solid fa-right-from-bracket"></i> Keluar
+          </button>
+        </div>
+      </header>
+
+      <!-- Overview Cards -->
+      <div class="stats-grid">
+        <div class="stat-card blue shadow-glow">
+          <div class="stat-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Akun Guru Terdaftar</span>
+            <h2 class="stat-value" id="admin-stat-guru">0</h2>
+            <span class="stat-desc">Guru aktif di sistem</span>
+          </div>
+        </div>
+
+        <div class="stat-card emerald shadow-glow">
+          <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Total Data Murid</span>
+            <h2 class="stat-value" id="admin-stat-murid">0</h2>
+            <span class="stat-desc">Di seluruh kelas</span>
+          </div>
+        </div>
+
+        <div class="stat-card amber shadow-glow">
+          <div class="stat-icon"><i class="fa-solid fa-key"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">PIN Murid Diterbitkan</span>
+            <h2 class="stat-value" id="admin-stat-pin">0</h2>
+            <span class="stat-desc">Akses portal murid</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Roles Table -->
+      <div class="card glass-card mt-4">
+        <div class="card-header toolbar">
+          <h3><i class="fa-solid fa-users-gear text-indigo"></i> Daftar Akun Pengguna & Peran (Role)</h3>
+          <button class="btn btn-sm btn-outline" id="btn-refresh-admin"><i class="fa-solid fa-rotate"></i> Refresh Data</button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>User ID</th>
+                  <th>Peran Saat Ini</th>
+                  <th>Aksi Ubah Role</th>
+                </tr>
+              </thead>
+              <tbody id="admin-user-tbody">
+                <tr><td colspan="4" class="text-center text-muted">Memuat data pengguna...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Check session
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (!session) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      loadAdminData();
+
+      document.getElementById('btn-admin-logout').addEventListener('click', async () => {
+        await supabaseClient.auth.signOut();
+        window.location.href = 'login.html';
+      });
+
+      document.getElementById('btn-refresh-admin').addEventListener('click', loadAdminData);
+    });
+
+    async function loadAdminData() {
+      try {
+        // Fetch roles
+        const { data: roles, error } = await supabaseClient.from('user_roles').select('*');
+        if (error) throw error;
+
+        document.getElementById('admin-stat-guru').textContent = roles ? roles.length : 0;
+
+        // Fetch total datastores
+        const { data: stores } = await supabaseClient.from('sikap_datastore').select('user_id');
+        document.getElementById('admin-stat-murid').textContent = stores ? stores.length * 4 : 0;
+
+        // Fetch PINs count
+        const { data: pins } = await supabaseClient.from('student_access').select('id');
+        document.getElementById('admin-stat-pin').textContent = pins ? pins.length : 0;
+
+        const tbody = document.getElementById('admin-user-tbody');
+        if (!roles || roles.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted">Belum ada data role terdaftar.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = roles.map((r, idx) => `
+          <tr>
+            <td>${idx + 1}</td>
+            <td><code>${r.user_id}</code></td>
+            <td><span class="badge ${r.role === 'super_admin' ? 'badge-danger' : 'badge-info'}">${r.role}</span></td>
+            <td>
+              <button class="btn btn-sm btn-outline" onclick="changeRole('${r.user_id}', '${r.role === 'super_admin' ? 'guru' : 'super_admin'}')">
+                Ubah ke ${r.role === 'super_admin' ? 'Guru' : 'Super Admin'}
+              </button>
+            </td>
+          </tr>
+        `).join('');
+
+      } catch (err) {
+        console.error('Error loading admin data:', err);
+      }
+    }
+
+    window.changeRole = async function(userId, newRole) {
+      if (confirm(`Ubah role user ${userId} menjadi ${newRole}?`)) {
+        await supabaseClient.from('user_roles').upsert({ user_id: userId, role: newRole });
+        loadAdminData();
+      }
+
+    };
+  </script>
+</body>
+</html>

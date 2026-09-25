@@ -79,13 +79,16 @@
 
         <div class="header-actions">
           <button class="btn btn-outline" id="btn-quick-import">
-            <i class="fa-solid fa-file-import"></i> Impor Backup Android (.json)
+            <i class="fa-solid fa-file-import"></i> Impor Backup (.json)
           </button>
           <button class="btn btn-success" id="btn-quick-export">
             <i class="fa-solid fa-file-export"></i> Ekspor Backup (.json)
           </button>
           <button class="btn btn-primary" id="btn-export-excel">
-            <i class="fa-solid fa-file-excel"></i> Cetak Laporan CSV/Excel
+            <i class="fa-solid fa-file-excel"></i> Cetak Laporan
+          </button>
+          <button class="btn btn-danger" id="btn-logout-guru" title="Keluar dari Akun">
+            <i class="fa-solid fa-right-from-bracket"></i> Keluar
           </button>
         </div>
       </header>
@@ -528,6 +531,35 @@
         </div>
       </section>
     </main>
+
+    <!-- Mobile Bottom Navigation Bar (Shown on Mobile screens <= 768px) -->
+    <nav class="mobile-bottom-nav">
+      <button class="mobile-nav-item nav-item active" data-tab="dashboard">
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>Dashboard</span>
+      </button>
+      <button class="mobile-nav-item nav-item" data-tab="siswa">
+        <i class="fa-solid fa-users"></i>
+        <span>Siswa</span>
+      </button>
+
+      <!-- Center Floating Action Button (+) for Quick Point Entry -->
+      <button class="mobile-fab nav-item" data-tab="catat-poin" title="Catat Poin Baru">
+        <div class="fab-circle">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <span class="fab-label">Catat Poin</span>
+      </button>
+
+      <button class="mobile-nav-item nav-item" data-tab="kategori">
+        <i class="fa-solid fa-list-check"></i>
+        <span>Kategori</span>
+      </button>
+      <button class="mobile-nav-item nav-item" data-tab="pengaturan">
+        <i class="fa-solid fa-gear"></i>
+        <span>Pengaturan</span>
+      </button>
+    </nav>
   </div>
 
   <!-- MODAL: ADD / EDIT SISWA -->
@@ -638,6 +670,30 @@
           <button type="submit" class="btn btn-primary">Simpan Hadiah</button>
         </div>
       </form>
+    </div>
+  <!-- MODAL: PIN AKSES MURID -->
+  <div class="modal" id="modal-pin-siswa">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-key text-emerald"></i> PIN Akses Login Murid</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div style="text-align: center; padding: 1rem 0;">
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Berikan kode PIN 6-digit ini kepada murid agar dapat login di Portal Murid SIKAP.</p>
+        <div style="margin: 1.5rem 0;">
+          <input type="hidden" id="pin-student-id">
+          <small id="pin-student-name" style="font-weight: 600; color: var(--text-main); font-size: 1.1rem; display: block; margin-bottom: 8px;">Nama Murid</small>
+          <div id="pin-display-box" style="font-size: 2.2rem; font-weight: 800; letter-spacing: 6px; color: var(--accent-emerald); background: rgba(0,0,0,0.4); border: 1px dashed var(--accent-emerald); padding: 12px; border-radius: var(--radius-md);">
+            ------
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block" id="btn-generate-pin">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Buat / Reset PIN Baru (6-Digit)
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary close-modal">Tutup</button>
+      </div>
     </div>
   </div>
 

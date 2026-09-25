@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Akses - SIKAP Sistem Informasi Karakter Murid</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+
+    .auth-wrapper {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .auth-brand {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .auth-logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px auto;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+    }
+
+    .auth-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+    }
+
+    .auth-brand h1 {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ffffff, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .auth-brand p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .auth-tabs {
+      display: flex;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .auth-tab-btn {
+      flex: 1;
+      padding: 0.7rem;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.88rem;
+      border-radius: calc(var(--radius-md) - 2px);
+      cursor: pointer;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .auth-tab-btn.active {
+      background: var(--accent-indigo);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
+    .auth-form-container {
+      display: none;
+    }
+
+    .auth-form-container.active {
+      display: block;
+      animation: fadeIn var(--transition-fast);
+    }
+
+    .divider-text {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      margin: 1.25rem 0;
+    }
+
+    .divider-text::before, .divider-text::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .divider-text span {
+      padding: 0 10px;
+    }
+
+    .btn-google {
+      background: #ffffff;
+      color: #1f2937;
+      font-weight: 600;
+      border: 1px solid #e5e7eb;
+      width: 100%;
+      justify-content: center;
+      padding: 0.75rem;
+    }
+
+    .btn-google:hover {
+      background: #f9fafb;
+      box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+    }
+
+    .google-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .auth-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      font-size: 0.82rem;
+    }
+
+    .auth-links a {
+      color: var(--accent-indigo);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .auth-links a:hover {
+      text-decoration: underline;
+    }
+
+    .pin-input-group {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+
+    .pin-input {
+      width: 48px;
+      height: 56px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      outline: none;
+    }
+
+    .pin-input:focus {
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+    }
+  </style>
+</head>
+<body class="dark-mode">
+
+  <div class="auth-wrapper">
+    <div class="auth-brand">
+      <div class="auth-logo">
+        <img src="icon.png" alt="SIKAP Logo">
+      </div>
+      <h1>SIKAP</h1>
+      <p>Sistem Informasi Karakter & Poin Siswa</p>
+    </div>
+
+    <div class="card glass-card">
+      <!-- Tabs Toggle: Guru vs Murid -->
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tab-btn-guru" data-target="form-guru">
+          <i class="fa-solid fa-chalkboard-user"></i> Portal Guru / Admin
+        </button>
+        <button class="auth-tab-btn" id="tab-btn-murid" data-target="form-murid">
+          <i class="fa-solid fa-graduation-cap"></i> Portal Murid
+        </button>
+      </div>
+
+      <!-- FORM GURU / ADMIN -->
+      <div id="form-guru" class="auth-form-container active">
+        <form id="login-guru-form">
+          <div class="form-group">
+            <label><i class="fa-solid fa-envelope"></i> Email Guru / Admin</label>
+            <input type="email" id="guru-email" placeholder="nama@sekolah.sch.id" required>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-lock"></i> Kata Sandi (Password)</label>
+            <input type="password" id="guru-password" placeholder="••••••••" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btn-login-guru">
+            <i class="fa-solid fa-right-to-bracket"></i> Masuk Sekarang
+          </button>
+        </form>
+
+        <div class="divider-text">
+          <span>atau masuk dengan</span>
+        </div>
+
+        <button class="btn btn-google" id="btn-google-login">
+          <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          Login dengan Google
+        </button>
+
+        <div class="auth-links">
+          <a href="#" id="link-forgot-password">Lupa Password?</a>
+          <a href="#" id="link-register">Buat Akun Baru</a>
+        </div>
+      </div>
+
+      <!-- FORM MURID (PIN LOGIN) -->
+      <div id="form-murid" class="auth-form-container">
+        <form id="login-murid-form">
+          <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-bottom: 1rem;">
+            Masukkan Kode PIN 6-Digit yang diberikan oleh Guru Anda untuk melihat saldo poin.
+          </p>
+
+          <div class="form-group">
+            <label style="text-align: center;"><i class="fa-solid fa-key"></i> Kode PIN Murid</label>
+            <input type="text" id="murid-pin" maxlength="6" placeholder="Contoh: 123456" style="text-align: center; font-size: 1.4rem; letter-spacing: 4px; font-weight: 700; color: var(--accent-emerald);" required>
+          </div>
+
+          <button type="submit" class="btn btn-success btn-block" id="btn-login-murid">
+            <i class="fa-solid fa-user-check"></i> Masuk Dashboard Murid
+          </button>
+        </form>
+
+        <div style="margin-top: 1.5rem; text-align: center; font-size: 0.8rem; color: var(--text-dim);">
+          <i class="fa-solid fa-circle-info"></i> Belum punya PIN? Minta guru wali kelas Anda untuk membuatkan PIN akun murid.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: DAFTAR AKUN BARU GURU -->
+  <div class="modal" id="modal-register">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-user-plus text-indigo"></i> Buat Akun Guru Baru</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <form id="register-form">
+        <div class="form-group">
+          <label>Nama Lengkap Guru *</label>
+          <input type="text" id="reg-nama" placeholder="Contoh: Achmad, S.Pd." required>
+        </div>
+        <div class="form-group">
+          <label>Nama Sekolah *</label>
+          <input type="text" id="reg-sekolah" placeholder="Contoh: SD Negeri 1 Harapan" required>
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="reg-email" placeholder="guru@sekolah.sch.id" required>
+        </div>
+        <div class="form-group">
+          <label>Kata Sandi (Password) *</label>
+          <input type="password" id="reg-password" placeholder="Minimal 6 karakter" minlength="6" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Batal</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit-register">Daftar Akun</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: LUPA PASSWORD -->
+  <div class="modal" id="modal-forgot">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-key text-amber"></i> Lupa Kata Sandi</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <form id="forgot-form">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Masukkan email akun Anda. Kami akan mengirimkan tautan reset kata sandi ke email Anda.
+        </p>
+        <div class="form-group">
+          <label>Email Terdaftar *</label>
+          <input type="email" id="forgot-email" required placeholder="email@sekolah.sch.id">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Batal</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit-forgot">Kirim Reset Link</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
