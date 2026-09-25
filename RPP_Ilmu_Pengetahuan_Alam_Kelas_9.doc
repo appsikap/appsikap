@@ -1,0 +1,299 @@
+﻿<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset='utf-8'>
+  <title>Rencana Pembelajaran Mendalam</title>
+  <style>
+    @page { size: A4 portrait; margin: 2.5cm; }
+    body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; line-height: 1.5; color: #000; }
+    h2, h3, h4 { font-family: 'Times New Roman', Times, serif; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; table-layout: fixed; word-wrap: break-word; }
+    th, td { border: 1px solid #000; padding: 8px; vertical-align: top; text-align: left; }
+    th { background-color: #f2f2f2; font-weight: bold; text-align: center; }
+    ol, ul { margin-top: 5px; margin-bottom: 5px; padding-left: 25px; }
+    li { margin-bottom: 8px; }
+    .section-title { background-color: #e6e6e6; padding: 5px; font-weight: bold; border: 1px solid #000; margin-top: 20px; text-transform: uppercase; }
+    .sub-section { font-weight: bold; text-decoration: underline; margin-top: 15px; margin-bottom: 5px; display: block; }
+    .signature-container { margin-top: 50px; width: 100%; }
+    .signature-box { width: 45%; display: inline-block; text-align: center; }
+    .underline { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0; font-size: 16pt;">RENCANA PEMBELAJARAN MENDALAM (MODUL AJAR)</h2>
+    <h3 style="margin: 0; font-size: 14pt; text-transform: uppercase;">ILMU PENGETAHUAN ALAM TINGKAT SMP/MTs KELAS 9 SEMESTER GANJIL</h3>
+    <h4 style="margin: 0; font-size: 12pt;">TAHUN AJARAN 2026/2027</h4>
+  </div>
+
+  <div class="section-title">1. INFORMASI UMUM</div>
+  
+  <span class="sub-section">A. Identitas Modul</span>
+  <table>
+    <tr>
+      <td width="30%">Nama Penyusun</td>
+      <td width="70%">Budi Santoso, S.Pd.</td>
+    </tr>
+    <tr>
+      <td>NIP</td>
+      <td>198501012010011001</td>
+    </tr>
+    <tr>
+      <td>Satuan Pendidikan</td>
+      <td>SD Negeri 1 Nusantara</td>
+    </tr>
+    <tr>
+      <td>Fase / Kelas</td>
+      <td>C / 9 (Sembilan)</td>
+    </tr>
+    <tr>
+      <td>Mata Pelajaran</td>
+      <td>Ilmu Pengetahuan Alam (IPA)</td>
+    </tr>
+    <tr>
+      <td>Bab / Topik</td>
+      <td>Bab 8 / Keanekaragaman Gen</td>
+    </tr>
+    <tr>
+      <td>Alokasi Waktu</td>
+      <td>8 JP (320 Menit) - Terbagi dalam 3 Pertemuan</td>
+    </tr>
+  </table>
+
+  <span class="sub-section">B. Identifikasi Murid</span>
+  <table>
+    <tr>
+      <th>Aspek</th>
+      <th>Deskripsi Identifikasi</th>
+    </tr>
+    <tr>
+      <td>Pengetahuan Awal</td>
+      <td>Murid telah memahami konsep sel sebagai unit terkecil kehidupan dan memiliki gambaran umum bahwa sifat anak diturunkan dari orang tua, namun belum memahami mekanisme molekuler genetik.</td>
+    </tr>
+    <tr>
+      <td>Minat</td>
+      <td>Sebagian besar murid tertarik pada isu-isu kemiripan fisik (fenotipe), hobi mengamati perbedaan ras/suku, dan rasa ingin tahu yang tinggi terhadap teknologi rekayasa genetika.</td>
+    </tr>
+    <tr>
+      <td>Kebutuhan Belajar</td>
+      <td>Visualizer (membutuhkan diagram DNA), Kinestetik (membutuhkan simulasi pemodelan struktur gen), dan Auditori (diskusi kelompok tentang variasi makhluk hidup).</td>
+    </tr>
+  </table>
+
+  <span class="sub-section">C. Materi Pelajaran</span>
+  <ol>
+    <li>Struktur Dasar Materi Genetik
+      <ol type="a">
+        <li>Kromosom dan Lokus Gen</li>
+        <li>Struktur DNA (Double Helix) dan RNA</li>
+        <li>Hubungan Gen dengan Protein</li>
+      </ol>
+    </li>
+    <li>Konsep Keanekaragaman Gen
+      <ol type="a">
+        <li>Variasi Genetik dalam Satu Spesies</li>
+        <li>Alel Dominan dan Resesif</li>
+        <li>Genotipe (Susunan Gen) vs Fenotipe (Sifat Tampak)</li>
+      </ol>
+    </li>
+    <li>Faktor Penyebab Keanekaragaman
+      <ol type="a">
+        <li>Mutasi Genetik</li>
+        <li>Rekombinasi Genetik melalui Reproduksi Seksual</li>
+      </ol>
+    </li>
+  </ol>
+
+  <span class="sub-section">D. Dimensi Profil Lulusan (Permendikdasmen No 10 Thn 2025)</span>
+  <table>
+    <tr>
+      <th>No</th>
+      <th>Dimensi</th>
+      <th>Elemen Kunci yang Dikembangkan</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Bernalar Kritis</td>
+      <td>Menganalisis keterkaitan antara struktur DNA dengan variasi fisik yang muncul pada makhluk hidup.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Kreatif</td>
+      <td>Membuat model struktur DNA atau diagram silsilah keluarga (pedigree) secara inovatif.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Gotong Royong</td>
+      <td>Berkolaborasi dalam melakukan investigasi variasi genetik di lingkungan sekolah.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Beriman, Bertakwa kepada Tuhan YME, dan Berakhlak Mulia</td>
+      <td>Mensyukuri keunikan setiap individu sebagai ciptaan Tuhan yang luar biasa dan menjaga harmoni dalam keberagaman.</td>
+    </tr>
+  </table>
+
+  <span class="sub-section">E. Desain Pembelajaran</span>
+  <table>
+    <tr>
+      <th width="25%">Komponen</th>
+      <th>Deskripsi</th>
+    </tr>
+    <tr>
+      <td>Capaian Pembelajaran (CP)</td>
+      <td>Peserta didik mampu memahami proses pewarisan sifat, mendeskripsikan struktur materi genetik, dan menganalisis penyebab serta dampak keanekaragaman gen bagi kelangsungan hidup.</td>
+    </tr>
+    <tr>
+      <td>Lintas Disiplin</td>
+      <td>Matematika (Peluang/Probabilitas Hukum Mendel) dan Informatika (Literasi data genetik digital).</td>
+    </tr>
+    <tr>
+      <td>Tujuan Pembelajaran (TP)</td>
+      <td>1. Menjelaskan struktur DNA dan fungsinya sebagai pembawa informasi genetik.<br>2. Membedakan antara genotipe dan fenotipe melalui observasi.<br>3. Menganalisis penyebab terjadinya variasi genetik pada populasi manusia.</td>
+    </tr>
+    <tr>
+      <td>Praktik Pedagogis</td>
+      <td>Inquiry-Based Learning (Pembelajaran Inkuiri) dan Problem Based Learning (PBL).</td>
+    </tr>
+    <tr>
+      <td>Pemanfaatan Teknologi</td>
+      <td>Penggunaan simulasi interaktif "PhET Simulation" dan platform "Canva" untuk presentasi hasil observasi.</td>
+    </tr>
+  </table>
+
+  <div class="section-title">2. PENGALAMAN BELAJAR</div>
+
+  <h4 style="background-color: #f9f9f9; padding: 5px; border-left: 5px solid #333;">Pertemuan 1: Arsitektur Kehidupan - DNA dan Gen (3 JP / 120 Menit)</h4>
+  <strong>Kegiatan Awal (20 Menit):</strong>
+  <ol>
+    <li>Guru membuka kelas dengan salam hangat dan menanyakan kabar murid <u>(Joyful Learning)</u>.</li>
+    <li>Apersepsi: Guru menunjukkan foto dua anak kembar dan bertanya, "Mengapa meskipun kembar, mereka tetap memiliki perbedaan kecil?" <u>(Critical Thinking)</u>.</li>
+    <li>Guru menyampaikan tujuan pembelajaran dan pentingnya memahami "cetak biru" tubuh manusia.</li>
+    <li>Pre-test singkat menggunakan aplikasi kuis interaktif atau kartu benar/salah.</li>
+  </ol>
+  <strong>Kegiatan Inti (85 Menit):</strong>
+  <ol>
+    <li>Guru menayangkan video animasi 3D tentang struktur DNA double helix <u>(Pemanfaatan Teknologi)</u>.</li>
+    <li>Murid dibagi menjadi kelompok heterogen (4-5 orang) untuk melakukan simulasi pembuatan model DNA sederhana menggunakan bahan bekas (kawat, manik-manik, atau sedotan) <u>(4C - Collaboration)</u>.</li>
+    <li>Guru memberikan tantangan: "Susunlah urutan basa nitrogen yang berbeda dan amati apa yang terjadi pada 'kode' yang terbentuk" <u>(Inquiry)</u>.</li>
+    <li>Setiap kelompok mendiskusikan hubungan antara urutan kode tersebut dengan sifat yang mungkin muncul <u>(Communication)</u>.</li>
+    <li>Guru berkeliling memberikan scaffolding bagi kelompok yang kesulitan memahami konsep pasangan basa (A-T, G-C).</li>
+  </ol>
+  <strong>Kegiatan Penutup (15 Menit):</strong>
+  <ol>
+    <li>Murid melakukan galeri walk untuk melihat model DNA kelompok lain <u>(Appreciation)</u>.</li>
+    <li>Guru memberikan penguatan bahwa gen adalah unit terkecil yang menentukan siapa kita.</li>
+    <li>Refleksi singkat: "Satu hal baru yang saya temukan hari ini adalah..."</li>
+  </ol>
+
+  <h4 style="background-color: #f9f9f9; padding: 5px; border-left: 5px solid #333;">Pertemuan 2: Eksplorasi Variasi - Genotipe vs Fenotipe (3 JP / 120 Menit)</h4>
+  <strong>Kegiatan Awal (15 Menit):</strong>
+  <ol>
+    <li>Guru mengajak murid melakukan permainan "Cari Kembaran": Murid harus mencari teman yang memiliki bentuk ibu jari atau jenis rambut yang sama <u>(Joyful Learning)</u>.</li>
+    <li>Guru mengaitkan hasil permainan dengan konsep fenotipe yang tampak secara fisik.</li>
+  </ol>
+  <strong>Kegiatan Inti (90 Menit):</strong>
+  <ol>
+    <li>Murid melakukan investigasi mandiri di lingkungan sekolah untuk mendata variasi fenotipe (warna kulit, bentuk hidung, lesung pipi, kemampuan menggulung lidah) pada setidaknya 10 orang teman <u>(Data Literacy)</u>.</li>
+    <li>Murid memasukkan data ke dalam tabel pengamatan yang telah disediakan.</li>
+    <li>Guru menjelaskan konsep Genotipe (simbol huruf seperti AA, Aa, aa) dan bagaimana genotipe menentukan fenotipe <u>(Direct Instruction)</u>.</li>
+    <li>Diskusi kelompok: Mengapa ada sifat yang sering muncul (dominan) dan ada yang jarang muncul (resesif)? <u>(4C - Critical Thinking)</u>.</li>
+    <li>Murid menyusun laporan sederhana dalam bentuk infografis atau tabel komparasi <u>(4C - Creativity)</u>.</li>
+  </ol>
+  <strong>Kegiatan Penutup (15 Menit):</strong>
+  <ol>
+    <li>Guru memberikan kuis cepat tentang perbedaan genotipe dan fenotipe.</li>
+    <li>Murid menyimpulkan bahwa keanekaragaman gen membuat setiap manusia unik dan tidak ada yang benar-benar sama.</li>
+    <li>Doa penutup dan motivasi untuk pertemuan berikutnya.</li>
+  </ol>
+
+  <h4 style="background-color: #f9f9f9; padding: 5px; border-left: 5px solid #333;">Pertemuan 3: Pentingnya Keanekaragaman & Evaluasi (2 JP / 80 Menit)</h4>
+  <strong>Kegiatan Awal (10 Menit):</strong>
+  <ol>
+    <li>Review materi pertemuan 1 dan 2 melalui tanya jawab interaktif.</li>
+    <li>Guru memaparkan masalah: "Apa yang terjadi jika semua padi di dunia memiliki gen yang sama persis dan tiba-tiba datang satu jenis hama?" <u>(Problem Based Learning)</u>.</li>
+  </ol>
+  <strong>Kegiatan Inti (55 Menit):</strong>
+  <ol>
+    <li>Diskusi panel: Murid berdiskusi tentang manfaat keanekaragaman gen untuk ketahanan pangan dan kelestarian spesies <u>(Global Awareness)</u>.</li>
+    <li>Murid mempresentasikan hasil proyek "Pohon Silsilah Keluarga" yang menunjukkan penurunan sifat fisik dari kakek/nenek ke cucu <u>(Personal Connection)</u>.</li>
+    <li>Guru memberikan umpan balik konstruktif terhadap setiap presentasi.</li>
+    <li>Pelaksanaan Sumatif Bab 8: Mengerjakan instrumen soal pilihan ganda kompleks dan esai penalaran <u>(Accountability)</u>.</li>
+  </ol>
+  <strong>Kegiatan Penutup (15 Menit):</strong>
+  <ol>
+    <li>Guru memberikan apresiasi kepada seluruh murid atas partisipasi aktifnya.</li>
+    <li>Refleksi Akhir: Murid menuliskan pesan singkat tentang bagaimana mereka akan menghargai perbedaan fisik di masyarakat.</li>
+    <li>Informasi mengenai topik bab selanjutnya.</li>
+  </ol>
+
+  <div class="section-title">3. ASESMEN</div>
+  <table>
+    <tr>
+      <th>Jenis Asesmen</th>
+      <th>Metode & Bentuk</th>
+      <th>Indikator Keberhasilan</th>
+    </tr>
+    <tr>
+      <td>Asesmen Awal (Diagnostic)</td>
+      <td>Kuis singkat (Mentimeter/Kahoot) dan tanya jawab lisan.</td>
+      <td>Mengukur kesiapan murid terkait konsep dasar sel dan keturunan.</td>
+    </tr>
+    <tr>
+      <td>Asesmen Formatif (Proses)</td>
+      <td>Lembar Observasi Kinerja (saat membuat model DNA) dan Jurnal Refleksi.</td>
+      <td>Murid mampu bekerja sama dan menunjukkan pemahaman prosedur ilmiah.</td>
+    </tr>
+    <tr>
+      <td>Asesmen Sumatif (Akhir)</td>
+      <td>Tes Tertulis (Pilihan Ganda & Esai) dan Produk (Model DNA/Infografis).</td>
+      <td>Murid mencapai kriteria ketercapaian tujuan pembelajaran minimal 75%.</td>
+    </tr>
+  </table>
+
+  <div class="section-title">4. PENGAYAAN DAN REMEDIAL</div>
+  <ol>
+    <li><strong>Strategi Pengayaan:</strong>
+      <ul>
+        <li>Diberikan kepada murid dengan pencapaian tinggi (di atas rata-rata).</li>
+        <li>Tugas: Menganalisis artikel ilmiah populer tentang teknologi CRISPR (edit gen) dan dampaknya secara etis bagi manusia.</li>
+      </ul>
+    </li>
+    <li><strong>Strategi Remedial:</strong>
+      <ul>
+        <li>Diberikan kepada murid yang belum mencapai Kriteria Ketercapaian Tujuan Pembelajaran (KKTP).</li>
+        <li>Metode: Bimbingan perorangan atau tutor sebaya, fokus pada penyederhanaan konsep genotipe-fenotipe menggunakan alat peraga kancing genetika.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="section-title">5. REFLEKSI DIRI</div>
+  <span class="sub-section">A. Refleksi Peserta Didik</span>
+  <ul>
+    <li>Bagian mana dari materi keanekaragaman gen ini yang menurutmu paling menakjubkan?</li>
+    <li>Apakah kamu merasa kesulitan saat membedakan antara DNA, Gen, dan Kromosom? Apa yang kamu lakukan untuk mengatasinya?</li>
+    <li>Bagaimana perasaanmu setelah mengetahui bahwa perbedaan fisik antar manusia adalah anugerah genetik?</li>
+  </ul>
+  <span class="sub-section">B. Refleksi Pendidik</span>
+  <ul>
+    <li>Apakah alokasi waktu 8 JP sudah efektif untuk mencakup kedalaman materi ini?</li>
+    <li>Aktivitas mana yang paling berhasil memicu rasa ingin tahu (curiosity) murid secara maksimal?</li>
+    <li>Bagaimana saya dapat meningkatkan kualitas scaffolding bagi murid yang memiliki kecepatan belajar lebih lambat pada pertemuan berikutnya?</li>
+  </ul>
+
+  <div class="signature-container">
+    <div class="signature-box" style="float: left;">
+      Mengetahui,<br>
+      Kepala Sekolah SD Negeri 1 Nusantara<br><br><br><br>
+      <strong><u>Dra. Siti Aminah, M.Pd.</u></strong><br>
+      NIP. 197002021995122001
+    </div>
+    <div class="signature-box" style="float: right;">
+      Jakarta, 15 Juli 2026<br>
+      Guru Mata Pelajaran IPA<br><br><br><br>
+      <strong><u>Budi Santoso, S.Pd.</u></strong><br>
+      NIP. 198501012010011001
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+</body>
+</html>

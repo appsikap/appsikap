@@ -1,0 +1,282 @@
+﻿<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+	<meta charset='utf-8'>
+	<title>Rencana Pembelajaran Mendalam - IPAS Kelas 5</title>
+	<style>
+		@page { size: A4 portrait; margin: 2.5cm; }
+		body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; line-height: 1.5; color: #000; }
+		h2, h3, h4 { font-family: 'Times New Roman', Times, serif; margin-top: 20px; margin-bottom: 10px; }
+		table { width: 100%; border-collapse: collapse; margin-bottom: 20px; table-layout: fixed; }
+		th, td { border: 1px solid #000; padding: 10px; vertical-align: top; word-wrap: break-word; }
+		th { background-color: #f2f2f2; font-weight: bold; text-align: center; }
+		ol, ul { margin-top: 5px; margin-bottom: 5px; padding-left: 25px; }
+		li { margin-bottom: 8px; text-align: justify; }
+		.text-center { text-align: center; }
+		.underline { text-decoration: underline; }
+		.signature-container { margin-top: 50px; width: 100%; }
+		.signature-box { width: 45%; display: inline-block; text-align: center; }
+	</style>
+</head>
+<body>
+	<div style="text-align: center; margin-bottom: 30px;">
+		<h2 style="margin: 0; font-size: 16pt;">RENCANA PEMBELAJARAN MENDALAM (MODUL AJAR)</h2>
+		<h3 style="margin: 0; font-size: 14pt; text-transform: uppercase;">IPAS TINGKAT SD KELAS 5 SEMESTER GANJIL</h3>
+		<h4 style="margin: 0; font-size: 12pt;">TAHUN AJARAN 2026/2027</h4>
+	</div>
+
+	<h3>1. INFORMASI UMUM</h3>
+	
+	<h4>A. Identitas Modul</h4>
+	<table>
+		<tr>
+			<th width="30%">Nama Penyusun</th>
+			<td>Budi Santoso, S.Pd</td>
+			<th width="20%">Satuan Pendidikan</th>
+			<td>SD Negeri 1 Nusantara</td>
+		</tr>
+		<tr>
+			<th>NIP</th>
+			<td>198501012010011001</td>
+			<th>Fase / Kelas</th>
+			<td>Fase C / Kelas 5</td>
+		</tr>
+		<tr>
+			<th>Mata Pelajaran</th>
+			<td>Ilmu Pengetahuan Alam dan Sosial (IPAS)</td>
+			<th>Materi Pokok</th>
+			<td>Keanekaragaman Hayati</td>
+		</tr>
+		<tr>
+			<th>Alokasi Waktu</th>
+			<td>8 JP (3 Pertemuan)</td>
+			<th>Semester</th>
+			<td>1 (Ganjil)</td>
+		</tr>
+	</table>
+
+	<h4>B. Identifikasi Murid</h4>
+	<table>
+		<tr>
+			<th>Kategori</th>
+			<th>Deskripsi Kondisi Murid</th>
+		</tr>
+		<tr>
+			<td>Pengetahuan Awal</td>
+			<td>Murid umumnya telah mengenal nama-nama hewan dan tumbuhan di lingkungan sekitar, namun belum memahami konsep tingkatan biodiversitas (gen, jenis, ekosistem) secara saintifik.</td>
+		</tr>
+		<tr>
+			<td>Minat</td>
+			<td>Mayoritas murid memiliki ketertarikan tinggi pada aktivitas luar ruangan, pengamatan visual melalui video dokumenter alam, dan kegiatan berbasis proyek kelompok.</td>
+		</tr>
+		<tr>
+			<td>Kebutuhan Belajar</td>
+			<td>Terdapat keragaman gaya belajar: 40% visual (butuh gambar/diagram), 30% auditori (butuh penjelasan lisan/diskusi), dan 30% kinestetik (butuh observasi lapangan/manipulasi objek).</td>
+		</tr>
+	</table>
+
+	<h4>C. Materi Pelajaran</h4>
+	<ol>
+		<li>Konsep Dasar Keanekaragaman Hayati
+			<ol type="a">
+				<li>Pengertian Biodiversitas sebagai kekayaan mahluk hidup.</li>
+				<li>Tingkatan Keanekaragaman Hayati:
+					<ol type="1">
+						<li>Tingkat Gen (Variasi dalam satu spesies, contoh: jenis-jenis mangga).</li>
+						<li>Tingkat Jenis/Spesies (Perbedaan antar spesies, contoh: kucing, harimau, singa).</li>
+						<li>Tingkat Ekosistem (Keragaman habitat, contoh: hutan, sawah, laut).</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+		<li>Kekayaan Hayati Indonesia
+			<ol type="a">
+				<li>Penyebaran Flora dan Fauna di Indonesia (Asiatis, Peralihan, Australis).</li>
+				<li>Garis Wallace dan Garis Weber sebagai pembatas biogeografi.</li>
+			</ol>
+		</li>
+		<li>Ancaman dan Pelestarian
+			<ol type="a">
+				<li>Faktor penyebab penurunan keanekaragaman hayati (perburuan, polusi, alih fungsi lahan).</li>
+				<li>Upaya Pelestarian: In-situ (Taman Nasional) dan Ex-situ (Kebun Binatang/Kebun Raya).</li>
+			</ol>
+		</li>
+	</ol>
+
+	<h4>D. Dimensi Profil Lulusan (Permendikdasmen No 10 Thn 2025)</h4>
+	<table>
+		<tr>
+			<th>Dimensi</th>
+			<th>Elemen / Sub-Elemen yang Dikembangkan</th>
+		</tr>
+		<tr>
+			<td>Beriman, Bertakwa kepada Tuhan YME, dan Berakhlak Mulia</td>
+			<td>Akhlak kepada alam: Memahami keterhubungan ekosistem bumi dan menjaga lingkungan alam sekitar.</td>
+		</tr>
+		<tr>
+			<td>Bernalar Kritis</td>
+			<td>Memperoleh dan memproses informasi: Mengidentifikasi, mengklarifikasi, dan mengolah informasi tentang persebaran hayati.</td>
+		</tr>
+		<tr>
+			<td>Bergotong Royong</td>
+			<td>Kolaborasi: Bekerja sama dalam kelompok untuk memecahkan masalah ancaman kepunahan spesies.</td>
+		</tr>
+		<tr>
+			<td>Berkontribusi pada Masyarakat dan Lingkungan</td>
+			<td>Menghasilkan gagasan atau tindakan nyata untuk pelestarian lingkungan di sekitar sekolah/rumah.</td>
+		</tr>
+	</table>
+
+	<h4>E. Desain Pembelajaran</h4>
+	<table>
+		<tr>
+			<th width="25%">Capaian Pembelajaran (CP)</th>
+			<td>Peserta didik menganalisis hubungan antar mahluk hidup pada suatu ekosistem dan mengaitkan peran keanekaragaman hayati terhadap kestabilan lingkungan serta melakukan upaya pelestariannya.</td>
+		</tr>
+		<tr>
+			<th>Kaitan Lintas Disiplin</th>
+			<td>Bahasa Indonesia (Menyusun laporan observasi) dan Seni Budaya (Membuat poster kampanye pelestarian).</td>
+		</tr>
+		<tr>
+			<th>Tujuan Pembelajaran (TP)</th>
+			<td>1. Peserta didik mampu membedakan tingkatan keanekaragaman hayati melalui pengamatan langsung.<br>2. Peserta didik mampu memetakan persebaran flora fauna Indonesia berdasarkan garis Wallace-Weber.<br>3. Peserta didik mampu merancang solusi kreatif untuk menjaga kelestarian mahluk hidup endemik.</td>
+		</tr>
+		<tr>
+			<th>Praktik Pedagogis</th>
+			<td>Inquiry-Based Learning, Contextual Teaching and Learning (CTL), dan Collaborative Learning.</td>
+		</tr>
+		<tr>
+			<th>Pemanfaatan Teknologi</th>
+			<td>Penggunaan Google Earth untuk observasi ekosistem, QR Code untuk identifikasi tanaman sekolah, dan Canva untuk media presentasi.</td>
+		</tr>
+	</table>
+
+	<div style="page-break-after: always;"></div>
+
+	<h3>2. PENGALAMAN BELAJAR (RINCIAN PER PERTEMUAN)</h3>
+
+	<h4>Pertemuan 1: Mengenal Tingkatan Kehidupan (3 JP x 35 Menit = 105 Menit)</h4>
+	<p><strong>A. Kegiatan Awal (15 Menit)</strong></p>
+	<ol>
+		<li>Guru membuka kelas dengan salam, doa, dan pengecekan kehadiran <u>(Social Emotional Learning)</u>.</li>
+		<li>Apersepsi: Guru menunjukkan dua buah jeruk yang berbeda (Jeruk Nipis dan Jeruk Bali) serta dua lembar daun yang berbeda bentuk. Guru bertanya: "Mengapa mereka mirip tapi tidak sama?" <u>(Problem Based Introduction)</u>.</li>
+		<li>Guru menyampaikan tujuan pembelajaran dan memotivasi murid tentang pentingnya keragaman bagi ketahanan pangan.</li>
+	</ol>
+	<p><strong>B. Kegiatan Inti (75 Menit)</strong></p>
+	<ol>
+		<li>Guru membagi murid ke dalam kelompok kecil "Detektif Alam" (4-5 orang).</li>
+		<li>Aktivitas <i>Outdoor Learning</i>: Kelompok mengeksplorasi taman sekolah untuk menemukan 5 jenis tumbuhan yang berbeda dan 3 variasi dalam satu jenis tumbuhan (misal: bunga kembang sepatu merah dan kuning) <u>(Discovery Learning)</u>.</li>
+		<li>Murid mencatat hasil temuan dalam lembar kerja "Tabel Biodiversitas" <u>(4C - Critical Thinking)</u>.</li>
+		<li>Guru menjelaskan konsep Tingkat Gen, Jenis, dan Ekosistem menggunakan alat peraga visual di kelas setelah observasi selesai.</li>
+		<li>Setiap kelompok mempresentasikan satu contoh tingkatan hayati yang mereka temukan di lapangan <u>(4C - Communication)</u>.</li>
+		<li>Diskusi interaktif: Bagaimana jika di dunia ini hanya ada satu jenis tumbuhan saja? <u>(Deep Thinking)</u>.</li>
+	</ol>
+	<p><strong>C. Kegiatan Penutup (15 Menit)</strong></p>
+	<ol>
+		<li>Murid bersama guru menyimpulkan perbedaan tiga tingkatan keanekaragaman hayati.</li>
+		<li>Refleksi singkat: Murid menuliskan satu kata yang menggambarkan perasaan mereka saat belajar di luar kelas <u>(Joyful Learning)</u>.</li>
+		<li>Guru memberikan tugas membaca materi persebaran flora fauna untuk pertemuan berikutnya.</li>
+	</ol>
+
+	<h4>Pertemuan 2: Menjelajahi Kekayaan Hayati Indonesia (3 JP x 35 Menit = 105 Menit)</h4>
+	<p><strong>A. Kegiatan Awal (15 Menit)</strong></p>
+	<ol>
+		<li>Guru memutar video singkat "Wonderful Indonesia: Wildlife Edition" sebagai pemancing minat <u>(Visual Stimulation)</u>.</li>
+		<li>Kuis cepat menggunakan <i>flashcard</i> gambar hewan (Gajah, Komodo, Kanguru Pohon) dan murid menebak asal pulau hewan tersebut.</li>
+	</ol>
+	<p><strong>B. Kegiatan Inti (75 Menit)</strong></p>
+	<ol>
+		<li>Guru menempelkan peta buta Indonesia berukuran besar di papan tulis.</li>
+		<li>Murid secara berkelompok menerima amplop berisi gambar hewan dan tumbuhan endemik Indonesia <u>(Hands-on Activity)</u>.</li>
+		<li>Tantangan: Murid harus menempelkan gambar tersebut pada zona yang tepat (Asiatis, Peralihan, Australis) berdasarkan instruksi ciri-ciri yang dibacakan guru <u>(Active Learning)</u>.</li>
+		<li>Guru menjelaskan peran Garis Wallace dan Garis Weber dalam membagi zona tersebut melalui peta digital <u>(Pemanfaatan Teknologi)</u>.</li>
+		<li>Diskusi Kelompok: Mengapa hewan di Papua lebih mirip dengan hewan di Australia daripada hewan di Sumatra? <u>(4C - Collaboration & Critical Thinking)</u>.</li>
+		<li>Murid membuat "Peta Harta Karun Hayati" pada kertas A3 dengan warna berbeda untuk setiap zona <u>(Creativity)</u>.</li>
+	</ol>
+	<p><strong>C. Kegiatan Penutup (15 Menit)</strong></p>
+	<ol>
+		<li>Guru memberikan apresiasi pada peta terbaik.</li>
+		<li>Latihan formatif singkat menggunakan aplikasi kuis interaktif (Wordwall/Quizizz) <u>(Gamification)</u>.</li>
+		<li>Doa penutup dan pesan moral tentang kebanggaan menjadi anak Indonesia yang kaya sumber daya alam.</li>
+	</ol>
+
+	<h4>Pertemuan 3: Menjadi Penjaga Kelestarian (2 JP x 35 Menit = 70 Menit)</h4>
+	<p><strong>A. Kegiatan Awal (10 Menit)</strong></p>
+	<ol>
+		<li>Guru menampilkan foto hutan yang gundul dan hewan yang terjebak sampah plastik.</li>
+		<li>Tanya jawab: "Apa yang akan terjadi jika hewan-hewan ini kehilangan rumahnya?" <u>(Empathy Building)</u>.</li>
+	</ol>
+	<p><strong>B. Kegiatan Inti (50 Menit)</strong></p>
+	<ol>
+		<li>Guru menjelaskan perbedaan konservasi In-situ dan Ex-situ melalui tabel perbandingan.</li>
+		<li>Simulasi Peran: Murid dibagi menjadi peran "Pemerintah", "Masyarakat Adat", dan "Pengusaha". Mereka berdiskusi mencari solusi membangun jalan tol tanpa merusak habitat Orangutan <u>(4C - Collaboration & Problem Solving)</u>.</li>
+		<li>Murid merancang satu poster kampanye digital atau manual tentang perlindungan satu hewan langka pilihan mereka <u>(Productive Learning)</u>.</li>
+		<li>Poster harus memuat: Nama hewan, status kelangkaan, alasan harus dilindungi, dan satu aksi nyata yang bisa dilakukan <u>(Contextual Learning)</u>.</li>
+	</ol>
+	<p><strong>C. Kegiatan Penutup (10 Menit)</strong></p>
+	<ol>
+		<li>Galeri Walk: Murid menempelkan poster di dinding kelas dan murid lain memberikan stiker "Bintang" untuk karya yang paling inspiratif <u>(Appreciative Learning)</u>.</li>
+		<li>Guru memberikan penguatan bahwa menjaga alam adalah bagian dari ibadah kepada Tuhan YME.</li>
+	</ol>
+
+	<div style="page-break-after: always;"></div>
+
+	<h3>3. ASESMEN</h3>
+	<table>
+		<tr>
+			<th>Jenis Asesmen</th>
+			<th>Metode</th>
+			<th>Instrumen / Indikator Penilaian</th>
+		</tr>
+		<tr>
+			<td>Asesmen Awal (Diagnostic)</td>
+			<td>Tanya Jawab & Kuis Lisan</td>
+			<td>Mengukur sejauh mana murid mengenal istilah ekosistem dan nama hewan endemik sebelum materi dimulai.</td>
+		</tr>
+		<tr>
+			<td>Asesmen Formatif (Proses)</td>
+			<td>Observasi & Lembar Kerja</td>
+			<td>Keaktifan dalam diskusi kelompok, ketepatan menempelkan gambar pada peta, dan kerjasama tim <u>(Rubrik Kerjasama)</u>.</td>
+		</tr>
+		<tr>
+			<td>Asesmen Sumatif (Akhir)</td>
+			<td>Produk (Poster) & Tes Tertulis</td>
+			<td>1. Kualitas poster (konten, estetika, orisinalitas).<br>2. Tes pilihan ganda dan esai tentang tingkatan hayati dan garis biogeografi.</td>
+		</tr>
+	</table>
+
+	<h3>4. PENGAYAAN DAN REMEDIAL</h3>
+	<ul>
+		<li><strong>Strategi Pengayaan:</strong> Murid yang telah mencapai kriteria ketuntasan diberikan tugas tambahan menjadi "Duta Lingkungan Sekolah" untuk membuat video pendek (Reels/TikTok Edukasi) tentang cara memilah sampah guna menjaga mikro-ekosistem di sekolah.</li>
+		<li><strong>Strategi Remedial:</strong> Murid yang belum mencapai kriteria diberikan pendampingan <i>peer-tutoring</i> (tutor sebaya) dan diberikan media belajar berupa kartu pasangkan (<i>matching card</i>) antara gambar hewan dengan zona asalnya secara berulang hingga paham.</li>
+	</ul>
+
+	<h3>5. REFLEKSI DIRI</h3>
+	<h4>A. Refleksi Peserta Didik</h4>
+	<ol>
+		<li>Bagian mana dari pembelajaran hari ini yang paling membuatmu merasa kagum dengan ciptaan Tuhan?</li>
+		<li>Apakah kamu merasa sudah cukup bekerja sama dengan teman kelompokmu? Apa yang ingin kamu perbaiki?</li>
+		<li>Satu aksi nyata apa yang akan kamu lakukan mulai besok untuk menjaga mahluk hidup di sekitarmu?</li>
+	</ol>
+	<h4>B. Refleksi Pendidik</h4>
+	<ol>
+		<li>Apakah distribusi waktu 8 JP sudah efektif untuk mencakup kedalaman materi keanekaragaman hayati?</li>
+		<li>Sejauh mana penggunaan media visual dan observasi luar kelas mampu meningkatkan pemahaman murid yang bergaya belajar kinestetik?</li>
+		<li>Kendala apa yang muncul saat simulasi peran (debat) dan bagaimana cara mengatasinya di pertemuan mendatang?</li>
+	</ol>
+
+	<div class="signature-container">
+		<div class="signature-box">
+			Mengetahui,<br>
+			Kepala SD Negeri 1 Nusantara<br><br><br><br>
+			<strong><u>Dra. Siti Aminah, M.Pd.</u></strong><br>
+			NIP. 197002021995122001
+		</div>
+		<div class="signature-box" style="float: right;">
+			Jakarta, 15 Juli 2026<br>
+			Guru Kelas 5<br><br><br><br>
+			<strong><u>Budi Santoso, S.Pd</u></strong><br>
+			NIP. 198501012010011001
+		</div>
+	</div>
+</body>
+</html>

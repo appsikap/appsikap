@@ -1,0 +1,461 @@
+﻿<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset='utf-8'>
+  <title>Rencana Pembelajaran Mendalam</title>
+  <style>
+    @page { size: A4 portrait; margin: 2.5cm; }
+    body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; line-height: 1.5; color: #000; }
+    h2, h3, h4 { font-family: 'Times New Roman', Times, serif; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 15px; table-layout: fixed; word-wrap: break-word; }
+    th, td { border: 1px solid #000; padding: 8px; vertical-align: top; }
+    th { background-color: #f2f2f2; font-weight: bold; text-align: center; }
+    ol, ul { margin-top: 5px; margin-bottom: 5px; padding-left: 25px; }
+    li { margin-bottom: 5px; }
+    .lkpd-container { border: 2px solid #000; padding: 20px; margin-top: 20px; page-break-inside: avoid; background-color: #ffffff; }
+    .lkpd-header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 15px; background-color: #e0f7fa; }
+    .lkpd-title { font-size: 16pt; font-weight: bold; margin: 0; }
+    .lkpd-subtitle { font-size: 12pt; margin: 0; }
+    .page-break { page-break-before: always; }
+    .underline { text-decoration: underline; }
+    .signature-table { border: none !important; margin-top: 50px; }
+    .signature-table td { border: none !important; text-align: center; }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0; font-size: 16pt;">RENCANA PEMBELAJARAN MENDALAM (MODUL AJAR)</h2>
+    <h3 style="margin: 0; font-size: 14pt; text-transform: uppercase;">IPAS KELAS 5 - KURIKULUM MERDEKA</h3>
+  </div>
+
+  <h3>1. INFORMASI UMUM</h3>
+  
+  <h4>A. Identitas Modul</h4>
+  <table>
+    <tr>
+      <td width="30%">Nama Penyusun</td>
+      <td width="70%">Budi Santoso, S.Pd.</td>
+    </tr>
+    <tr>
+      <td>NIP</td>
+      <td>198501012010011001</td>
+    </tr>
+    <tr>
+      <td>Satuan Pendidikan</td>
+      <td>SD Negeri 1 Nusantara</td>
+    </tr>
+    <tr>
+      <td>Kelas / Fase</td>
+      <td>5 (Lima) / C</td>
+    </tr>
+    <tr>
+      <td>Mata Pelajaran</td>
+      <td>Ilmu Pengetahuan Alam dan Sosial (IPAS)</td>
+    </tr>
+    <tr>
+      <td>Bab / Topik</td>
+      <td>Bab 2 / Keanekaragaman Hayati</td>
+    </tr>
+    <tr>
+      <td>Alokasi Waktu</td>
+      <td>8 JP (8 x 35 Menit)</td>
+    </tr>
+    <tr>
+      <td>Tahun Ajaran</td>
+      <td>2026/2027</td>
+    </tr>
+  </table>
+
+  <h4>B. Identifikasi Murid</h4>
+  <table>
+    <tr>
+      <th>Aspek</th>
+      <th>Keterangan Deskriptif</th>
+    </tr>
+    <tr>
+      <td>Pengetahuan Awal</td>
+      <td>Murid telah memahami konsep dasar makhluk hidup dan lingkungan tempat tinggalnya (habitat) di kelas sebelumnya.</td>
+    </tr>
+    <tr>
+      <td>Minat</td>
+      <td>Sebagian besar murid memiliki minat tinggi pada pengamatan visual (gambar hewan/tumbuhan) dan aktivitas luar kelas.</td>
+    </tr>
+    <tr>
+      <td>Kebutuhan Belajar</td>
+      <td>Terdapat kelompok murid yang memerlukan bantuan visual konkret dan kelompok yang siap untuk analisis hubungan ekosistem.</td>
+    </tr>
+  </table>
+
+  <h4>C. Materi Pelajaran</h4>
+  <ol>
+    <li>Konsep Keanekaragaman Hayati
+      <ol type="a">
+        <li>Pengertian Keanekaragaman Hayati.</li>
+        <li>Tingkatan Keanekaragaman (Gen, Jenis, Ekosistem).</li>
+      </ol>
+    </li>
+    <li>Keanekaragaman Hayati di Indonesia
+      <ol type="a">
+        <li>Kekayaan Flora dan Fauna Indonesia.</li>
+        <li>Garis Wallace dan Garis Weber.</li>
+        <li>Pembagian wilayah (Asiatis, Peralihan, Australis).</li>
+      </ol>
+    </li>
+    <li>Manfaat dan Pelestarian
+      <ol type="a">
+        <li>Manfaat Keanekaragaman Hayati bagi Manusia.</li>
+        <li>Ancaman terhadap Keanekaragaman Hayati.</li>
+        <li>Upaya Pelestarian (In-situ dan Eks-situ).</li>
+      </ol>
+    </li>
+  </ol>
+
+  <h4>D. Dimensi Profil Lulusan (Permendikdasmen No 10 Thn 2025)</h4>
+  <table>
+    <tr>
+      <th>No</th>
+      <th>Dimensi</th>
+      <th>Elemen Kunci yang Dikembangkan</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Beriman, Bertakwa kepada Tuhan YME, dan Berakhlak Mulia</td>
+      <td>Akhlak kepada alam; Memahami keterhubungan ekosistem Bumi dan menjaga lingkungan.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Bergotong Royong</td>
+      <td>Kolaborasi; Bekerja sama dalam kelompok untuk memecahkan masalah lingkungan.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Mandiri</td>
+      <td>Pemahaman diri dan situasi; Bertanggung jawab atas tugas pengamatan individu.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Bernalar Kritis</td>
+      <td>Memperoleh dan memproses informasi; Menganalisis penyebab penurunan biodiversitas.</td>
+    </tr>
+  </table>
+
+  <h4>E. Desain Pembelajaran</h4>
+  <table>
+    <tr>
+      <th>Komponen</th>
+      <th>Keterangan</th>
+    </tr>
+    <tr>
+      <td>Capaian Pembelajaran (CP)</td>
+      <td>Peserta didik menyelidiki bagaimana hubungan saling ketergantungan antar komponen biotik-abiotik serta keanekaragaman hayati di lingkungan sekitar.</td>
+    </tr>
+    <tr>
+      <td>Hubungan Lintas Disiplin</td>
+      <td>Bahasa Indonesia (Menyusun laporan), Seni Rupa (Membuat poster pelestarian).</td>
+    </tr>
+    <tr>
+      <td>Tujuan Pembelajaran (TP)</td>
+      <td>1. Mengidentifikasi tingkatan keanekaragaman hayati.<br>2. Menganalisis persebaran flora fauna di Indonesia.<br>3. Merancang aksi nyata pelestarian lingkungan.</td>
+    </tr>
+    <tr>
+      <td>Praktik Pedagogis</td>
+      <td>Problem Based Learning (PBL) dan Observasi Lapangan.</td>
+    </tr>
+    <tr>
+      <td>Pemanfaatan Teknologi</td>
+      <td>Video dokumenter flora fauna, Google Earth untuk melihat habitat, dan Canva untuk poster.</td>
+    </tr>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h3>2. PENGALAMAN BELAJAR (RINCIAN PER PERTEMUAN)</h3>
+
+  <h4>Pertemuan 1: Mengenal Keanekaragaman Hayati (3 JP - 105 Menit)</h4>
+  <ol>
+    <li><strong>Kegiatan Awal (15 Menit)</strong>
+      <ol type="a">
+        <li>Guru membuka kelas dengan salam dan doa.</li>
+        <li>Apersepsi: Guru menunjukkan dua buah apel yang berbeda warna dan bertanya, "Mengapa mereka berbeda meski sama-sama apel?" <u>(Joyful Learning)</u>.</li>
+        <li>Menyampaikan tujuan pembelajaran hari ini.</li>
+      </ol>
+    </li>
+    <li><strong>Kegiatan Inti (75 Menit)</strong>
+      <ol type="a">
+        <li>Murid keluar kelas untuk melakukan "Ekspedisi Taman Sekolah" mencatat berbagai jenis tumbuhan dan hewan yang ditemukan <u>(Discovery Learning)</u>.</li>
+        <li>Murid berkelompok mendiskusikan perbedaan yang mereka temukan pada spesies yang sama (misal: warna bunga mawar) <u>(4C - Collaboration)</u>.</li>
+        <li>Guru menjelaskan konsep keanekaragaman tingkat gen, jenis, dan ekosistem menggunakan media gambar.</li>
+        <li>Murid mempresentasikan hasil temuan lapangan di depan kelas <u>(4C - Communication)</u>.</li>
+      </ol>
+    </li>
+    <li><strong>Kegiatan Penutup (15 Menit)</strong>
+      <ol type="a">
+        <li>Guru dan murid merangkum definisi keanekaragaman hayati.</li>
+        <li>Refleksi singkat: "Satu hal baru yang aku tahu hari ini adalah..."</li>
+        <li>Penugasan membaca materi wilayah persebaran flora fauna Indonesia.</li>
+      </ol>
+    </li>
+  </ol>
+
+  <h4>Pertemuan 2: Jelajah Flora dan Fauna Indonesia (3 JP - 105 Menit)</h4>
+  <ol>
+    <li><strong>Kegiatan Awal (15 Menit)</strong>
+      <ol type="a">
+        <li>Guru memutar video singkat suara-suara hutan Indonesia.</li>
+        <li>Game tebak gambar: "Siapa Aku?" (menampilkan potongan gambar hewan endemik) <u>(Joyful Learning)</u>.</li>
+      </ol>
+    </li>
+    <li><strong>Kegiatan Inti (75 Menit)</strong>
+      <ol type="a">
+        <li>Guru membagi kelas menjadi 3 kelompok besar: Wilayah Asiatis, Peralihan, dan Australis.</li>
+        <li>Setiap kelompok menganalisis karakteristik wilayahnya dan hewan khas yang ada di sana menggunakan peta buta <u>(Bernalar Kritis)</u>.</li>
+        <li>Murid membuat "Peta Keanekaragaman Nusantara" dengan menempelkan gambar hewan pada lokasi yang tepat <u>(4C - Creativity)</u>.</li>
+        <li>Diskusi mengenai Garis Wallace dan Garis Weber sebagai pembatas biogeografi.</li>
+      </ol>
+    </li>
+    <li><strong>Kegiatan Penutup (15 Menit)</strong>
+      <ol type="a">
+        <li>Evaluasi mandiri melalui kuis interaktif singkat.</li>
+        <li>Apresiasi terhadap hasil karya peta kelompok.</li>
+        <li>Doa penutup.</li>
+      </ol>
+    </li>
+  </ol>
+
+  <h4>Pertemuan 3: Pelestarian dan Aksi Nyata (2 JP - 70 Menit)</h4>
+  <ol>
+    <li><strong>Kegiatan Awal (10 Menit)</strong>
+      <ol type="a">
+        <li>Guru menunjukkan berita singkat tentang kepunahan salah satu hewan di Indonesia.</li>
+        <li>Tanya jawab: "Apa yang terjadi jika hewan tersebut hilang selamanya?" <u>(Problem Posing)</u>.</li>
+      </ol>
+    </li>
+    <li><strong>Kegiatan Inti (45 Menit)</strong>
+      <ol type="a">
+        <li>Murid berdiskusi tentang penyebab kerusakan habitat (penebangan liar, polusi, dll) <u>(4C - Critical Thinking)</u>.</li>
+        <li>Guru menjelaskan perbedaan suaka margasatwa, taman nasional (In-situ) dan kebun binatang (Eks-situ).</li>
+        <li>Murid secara mandiri membuat draf poster ajakan melestarikan salah satu hewan endemik Indonesia <u>(Mandiri)</u>.</li>
+      </ol>
+    </li>
+    <li><strong>Kegiatan Penutup (15 Menit)</strong>
+      <ol type="a">
+        <li>Pelaksanaan Asesmen Sumatif Bab 2.</li>
+        <li>Refleksi akhir bab dan penguatan karakter untuk menyayangi makhluk ciptaan Tuhan.</li>
+      </ol>
+    </li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <h3>3. ASESMEN</h3>
+  <table>
+    <tr>
+      <th>Jenis Asesmen</th>
+      <th>Metode</th>
+      <th>Instrumen</th>
+    </tr>
+    <tr>
+      <td>Asesmen Awal</td>
+      <td>Tanya Jawab Lisan</td>
+      <td>Daftar pertanyaan pemantik tentang hewan di sekitar.</td>
+    </tr>
+    <tr>
+      <td>Asesmen Formatif</td>
+      <td>Observasi & Unjuk Kerja</td>
+      <td>Lembar observasi diskusi kelompok dan LKPD.</td>
+    </tr>
+    <tr>
+      <td>Asesmen Sumatif</td>
+      <td>Tes Tertulis</td>
+      <td>Soal pilihan ganda dan esai di akhir bab.</td>
+    </tr>
+  </table>
+
+  <h3>4. PENGAYAAN DAN REMEDIAL</h3>
+  <ul>
+    <li><strong>Pengayaan:</strong> Murid yang telah melampaui TP diberikan tugas membuat artikel sederhana tentang peran teknologi dalam konservasi hewan langka.</li>
+    <li><strong>Remedial:</strong> Murid yang belum mencapai TP diberikan pendampingan khusus dan penyederhanaan materi melalui kartu gambar (flashcards) flora fauna.</li>
+  </ul>
+
+  <h3>5. REFLEKSI DIRI</h3>
+  <p><strong>Refleksi Peserta Didik:</strong></p>
+  <ul>
+    <li>Bagian mana dari materi ini yang paling menarik bagimu? Mengapa?</li>
+    <li>Apa kesulitan yang kamu hadapi saat mencoba membedakan wilayah fauna Indonesia?</li>
+  </ul>
+  <p><strong>Refleksi Pendidik:</strong></p>
+  <ul>
+    <li>Apakah alokasi waktu sudah efektif untuk kegiatan observasi lapangan?</li>
+    <li>Sejauh mana keterlibatan aktif murid dalam diskusi kelompok?</li>
+  </ul>
+
+  <table class="signature-table">
+    <tr>
+      <td>
+        Mengetahui,<br>
+        Kepala Sekolah SD Negeri 1 Nusantara<br><br><br><br>
+        <strong><u>Dra. Siti Aminah, M.Pd.</u></strong><br>
+        NIP. 197002021995122001
+      </td>
+      <td>
+        Jakarta, 15 Juli 2026<br>
+        Guru Kelas 5<br><br><br><br>
+        <strong><u>Budi Santoso, S.Pd.</u></strong><br>
+        NIP. 198501012010011001
+      </td>
+    </tr>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h3>7. LAMPIRAN</h3>
+
+  <h4>A. BAHAN AJAR</h4>
+  <div style="background-color: #f9f9f9; padding: 15px; border: 1px dashed #000;">
+    <strong>Ringkasan Materi: Keanekaragaman Hayati</strong><br>
+    Keanekaragaman hayati (biodiversitas) adalah variasi makhluk hidup di bumi. Indonesia dikenal sebagai negara <i>megabiodiversity</i> karena letak geografisnya di antara dua benua.<br><br>
+    <strong>Tiga Wilayah Fauna Indonesia:</strong>
+    <ol>
+      <li><strong>Asiatis (Barat):</strong> Mirip hewan Asia (Gajah, Harimau, Orangutan). Dipisahkan garis Wallace.</li>
+      <li><strong>Peralihan (Tengah):</strong> Hewan endemik asli Indonesia (Komodo, Anoa, Maleo).</li>
+      <li><strong>Australis (Timur):</strong> Mirip hewan Australia (Kanguru pohon, Burung Cendrawasih). Dipisahkan garis Weber.</li>
+    </ol>
+    <strong>Upaya Pelestarian:</strong> In-situ (di habitat asli seperti Taman Nasional Komodo) dan Eks-situ (di luar habitat asli seperti Taman Safari).
+  </div>
+
+  <div class="lkpd-container">
+    <div class="lkpd-header">
+      <p class="lkpd-title">LEMBAR KERJA PESERTA DIDIK (LKPD) 1</p>
+      <p class="lkpd-subtitle">Topik: Observasi Keanekaragaman Hayati Sekolah</p>
+    </div>
+    <p>Nama Kelompok: ........................... <br> Anggota: .......................................</p>
+    <p><strong>Petunjuk:</strong> Amati lingkungan sekolahmu, temukan 5 jenis makhluk hidup dan catat perbedaannya!</p>
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Nama Makhluk Hidup</th>
+        <th>Ciri-ciri Fisik</th>
+        <th>Keterangan (Warna/Ukuran)</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="lkpd-container">
+    <div class="lkpd-header">
+      <p class="lkpd-title">LEMBAR KERJA PESERTA DIDIK (LKPD) 2</p>
+      <p class="lkpd-subtitle">Topik: Pemetaan Flora Fauna Indonesia</p>
+    </div>
+    <p><strong>Tugas:</strong> Pasangkan nama hewan berikut dengan wilayah yang tepat!</p>
+    <ul>
+      <li>Gajah Sumatera &rarr; (........................)</li>
+      <li>Burung Cendrawasih &rarr; (........................)</li>
+      <li>Komodo &rarr; (........................)</li>
+      <li>Badak Bercula Satu &rarr; (........................)</li>
+    </ul>
+    <p><i>Pilihan: Asiatis / Peralihan / Australis</i></p>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h4>C. INSTRUMEN PENILAIAN</h4>
+  
+  <strong>1. Kisi-kisi Soal Evaluasi</strong>
+  <table>
+    <tr>
+      <th>Tujuan Pembelajaran</th>
+      <th>Indikator Soal</th>
+      <th>Bentuk Soal</th>
+      <th>No Soal</th>
+    </tr>
+    <tr>
+      <td>Identifikasi tingkatan biodiversitas</td>
+      <td>Disajikan contoh, murid menentukan tingkat gen/jenis.</td>
+      <td>Pilihan Ganda</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Analisis persebaran fauna</td>
+      <td>Murid menyebutkan garis pembatas wilayah fauna.</td>
+      <td>Esai</td>
+      <td>2</td>
+    </tr>
+  </table>
+
+  <strong>2. Soal Evaluasi & Kunci Jawaban</strong>
+  <ol>
+    <li>Perbedaan warna kulit pada manusia merupakan contoh keanekaragaman tingkat...
+      <br>a. Jenis b. Gen c. Ekosistem d. Populasi
+    </li>
+    <li>Sebutkan 2 contoh hewan yang berada di wilayah peralihan!</li>
+  </ol>
+  <p><strong>Kunci Jawaban:</strong> 1. b (Gen), 2. Komodo, Anoa, atau Maleo.</p>
+
+  <strong>3. Rubrik Penilaian Sikap (Profil Pelajar Pancasila)</strong>
+  <table>
+    <tr>
+      <th>Kriteria</th>
+      <th>Sangat Baik (4)</th>
+      <th>Baik (3)</th>
+      <th>Cukup (2)</th>
+      <th>Perlu Bimbingan (1)</th>
+    </tr>
+    <tr>
+      <td>Gotong Royong</td>
+      <td>Aktif berbagi tugas dan membantu teman.</td>
+      <td>Aktif dalam tugas kelompok.</td>
+      <td>Hanya mengerjakan tugas sendiri.</td>
+      <td>Pasif.</td>
+    </tr>
+    <tr>
+      <td>Bernalar Kritis</td>
+      <td>Mampu bertanya dan menjawab dengan logis.</td>
+      <td>Mampu menjawab pertanyaan guru.</td>
+      <td>Menjawab namun kurang relevan.</td>
+      <td>Tidak memberikan pendapat.</td>
+    </tr>
+  </table>
+
+  <strong>4. Rubrik Keterampilan (Pembuatan Poster/Peta)</strong>
+  <table>
+    <tr>
+      <th>Aspek</th>
+      <th>Skor 4</th>
+      <th>Skor 3</th>
+      <th>Skor 2</th>
+      <th>Skor 1</th>
+    </tr>
+    <tr>
+      <td>Akurasi Data</td>
+      <td>Semua data wilayah benar.</td>
+      <td>Sebagian besar benar.</td>
+      <td>Banyak kesalahan data.</td>
+      <td>Data tidak akurat.</td>
+    </tr>
+    <tr>
+      <td>Kerapihan</td>
+      <td>Sangat rapi dan estetik.</td>
+      <td>Rapi namun kurang warna.</td>
+      <td>Kurang rapi.</td>
+      <td>Berantakan.</td>
+    </tr>
+  </table>
+
+</body>
+</html>

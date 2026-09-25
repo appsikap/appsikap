@@ -1,0 +1,281 @@
+﻿<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset='utf-8'>
+  <title>Rencana Pembelajaran Mendalam - IPAS Kelas 5</title>
+  <style>
+    @page { size: A4 portrait; margin: 2.5cm; }
+    body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; line-height: 1.5; color: #000; }
+    h2, h3, h4 { font-family: 'Times New Roman', Times, serif; text-transform: uppercase; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 15px; table-layout: fixed; }
+    th, td { border: 1px solid #000; padding: 8px; vertical-align: top; word-wrap: break-word; }
+    th { background-color: #f2f2f2; font-weight: bold; text-align: center; }
+    ol { margin-top: 5px; margin-bottom: 5px; padding-left: 25px; }
+    ul { margin-top: 5px; margin-bottom: 5px; padding-left: 20px; }
+    li { margin-bottom: 5px; }
+    .lkpd-container { border: 2px solid #000; padding: 20px; margin-top: 20px; page-break-inside: avoid; background-color: #ffffff; }
+    .lkpd-header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 15px; background-color: #e0f7fa; }
+    .lkpd-title { font-size: 16pt; font-weight: bold; margin: 0; }
+    .lkpd-subtitle { font-size: 12pt; margin: 0; }
+    .page-break { page-break-before: always; }
+    .signature-table { border: none; margin-top: 30px; }
+    .signature-table td { border: none; text-align: center; }
+    .highlight-box { border: 1px solid #000; padding: 10px; background-color: #f9f9f9; margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <!-- HEADER JUDUL -->
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h2 style="margin: 0; font-size: 16pt;">RENCANA PEMBELAJARAN MENDALAM (MODUL AJAR)</h2>
+    <h3 style="margin: 0; font-size: 14pt;">IPAS KELAS 5 - FASE C</h3>
+    <h4 style="margin: 0; font-size: 12pt;">BAB 2: HARMONI DALAM EKOSISTEM (TOPIK: CAHAYA DAN MATA)</h4>
+  </div>
+
+  <!-- 1. INFORMASI UMUM -->
+  <h3>1. INFORMASI UMUM</h3>
+  <table>
+    <tr>
+      <td width="30%"><strong>Nama Penyusun</strong></td>
+      <td width="70%">Budi Santoso, S.Pd. (NIP: 198501012010011001)</td>
+    </tr>
+    <tr>
+      <td><strong>Satuan Pendidikan</strong></td>
+      <td>SD Negeri 1 Nusantara</td>
+    </tr>
+    <tr>
+      <td><strong>Tahun Ajaran</strong></td>
+      <td>2026/2027</td>
+    </tr>
+    <tr>
+      <td><strong>Jenjang / Kelas / Fase</strong></td>
+      <td>SD / Kelas 5 / Fase C</td>
+    </tr>
+    <tr>
+      <td><strong>Alokasi Waktu</strong></td>
+      <td>3 JP (3 x 35 Menit = 105 Menit) - 1 Pertemuan Terintegrasi</td>
+    </tr>
+    <tr>
+      <td><strong>Kompetensi Awal</strong></td>
+      <td>Peserta didik telah mengenal berbagai sumber cahaya di lingkungan sekitar dan fungsi dasar indra penglihatan.</td>
+    </tr>
+    <tr>
+      <td><strong>Profil Lulusan (Permendikdasmen No. 10/2025)</strong></td>
+      <td>
+        <ol>
+          <li>Mengenal Tuhan YME dan Berakhlak Mulia</li>
+          <li>Cinta Tanah Air dan Budaya Bangsa</li>
+          <li>Mandiri</li>
+          <li>Bergotong Royong</li>
+          <li>Bernalar Kritis</li>
+          <li>Kreatif</li>
+          <li>Literasi</li>
+          <li>Numerasi</li>
+        </ol>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 2. TUJUAN PEMBELAJARAN -->
+  <h3>2. TUJUAN PEMBELAJARAN</h3>
+  <div class="highlight-box">
+    <ol type="a">
+      <li>Peserta didik dapat mendemonstrasikan sifat-sifat cahaya (merambat lurus, menembus benda bening, dipantulkan, dibiaskan, diuraikan) melalui serangkaian percobaan mandiri.</li>
+      <li>Peserta didik dapat menganalisis hubungan antara sifat cahaya dengan mekanisme kerja mata manusia sebagai indra penglihatan.</li>
+      <li>Peserta didik dapat merumuskan cara menjaga kesehatan mata sebagai wujud syukur kepada Tuhan YME.</li>
+    </ol>
+  </div>
+
+  <!-- 3. PENGALAMAN BELAJAR -->
+  <h3>3. PENGALAMAN BELAJAR (105 MENIT)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Tahapan</th>
+        <th>Kegiatan Pembelajaran</th>
+        <th>Waktu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pendahuluan</strong></td>
+        <td>
+          <ol>
+            <li>Guru membuka pelajaran dengan salam dan doa (Religius).</li>
+            <li>Apersepsi: Guru mematikan lampu dan menutup gorden, lalu bertanya "Mengapa kita sulit melihat dalam gelap?" (Critical Thinking).</li>
+            <li>Penyampaian tujuan pembelajaran dan motivasi (Joyful Learning).</li>
+          </ol>
+        </td>
+        <td>15 Menit</td>
+      </tr>
+      <tr>
+        <td><strong>Kegiatan Inti</strong></td>
+        <td>
+          <ol type="a">
+            <li><strong>Eksplorasi Sifat Cahaya:</strong>
+              <br>(1) Peserta didik dibagi menjadi 5 kelompok (Gotong Royong).
+              <br>(2) Setiap kelompok melakukan "Station Rotation" untuk menguji 5 sifat cahaya menggunakan alat peraga (Cahaya merambat lurus, cermin, gelas air, prisma) (4C: Collaboration, Creativity).
+            </li>
+            <li><strong>Elaborasi Mekanisme Mata:</strong>
+              <br>(1) Guru menyajikan video animasi tentang bagaimana cahaya masuk ke pupil dan ditangkap retina (Literasi Digital).
+              <br>(2) Peserta didik menggambar diagram mata dan alur cahaya (Kreatif).
+            </li>
+            <li><strong>Diskusi & Presentasi:</strong>
+              <br>(1) Kelompok mempresentasikan hasil temuan sifat cahaya dikaitkan dengan fungsi mata (Communication).
+            </li>
+          </ol>
+        </td>
+        <td>75 Menit</td>
+      </tr>
+      <tr>
+        <td><strong>Penutup</strong></td>
+        <td>
+          <ol>
+            <li>Evaluasi mandiri melalui kuis singkat (Numerasi: menghitung skor).</li>
+            <li>Refleksi: Apa hal paling menarik hari ini?</li>
+            <li>Guru memberikan penguatan tentang pentingnya menjaga kesehatan mata dari radiasi gadget.</li>
+            <li>Doa penutup.</li>
+          </ol>
+        </td>
+        <td>15 Menit</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 4. ASESMEN -->
+  <h3>4. ASESMEN</h3>
+  <ol type="1">
+    <li><strong>Asesmen Diagnostik:</strong> Tanya jawab lisan di awal pembelajaran.</li>
+    <li><strong>Asesmen Formatif:</strong> Observasi kinerja saat praktikum sifat cahaya (Rubrik terlampir).</li>
+    <li><strong>Asesmen Sumatif:</strong> Tes tertulis pilihan ganda dan esai mengenai sifat cahaya dan bagian mata.</li>
+  </ol>
+
+  <!-- 5. PENGAYAAN DAN REMEDIAL -->
+  <h3>5. PENGAYAAN DAN REMEDIAL</h3>
+  <ul>
+    <li><strong>Pengayaan:</strong> Peserta didik membuat alat optik sederhana (Periskop) dari barang bekas.</li>
+    <li><strong>Remedial:</strong> Bimbingan perorangan untuk memahami pembiasan cahaya melalui media air.</li>
+  </ul>
+
+  <!-- 6. REFLEKSI GURU -->
+  <h3>6. REFLEKSI GURU</h3>
+  <div class="highlight-box">
+    <p>1. Apakah seluruh peserta didik mencapai tujuan pembelajaran?</p>
+    <p>2. Kendala apa yang ditemukan saat manajemen kelompok praktikum?</p>
+    <p>3. Apakah media yang digunakan sudah cukup membantu visualisasi mekanisme mata?</p>
+  </div>
+
+  <!-- TANDA TANGAN -->
+  <table class="signature-table">
+    <tr>
+      <td width="50%">
+        Mengetahui,<br>
+        Kepala SD Negeri 1 Nusantara<br><br><br><br>
+        <strong><u>Dra. Siti Aminah, M.Pd.</u></strong><br>
+        NIP. 197002021995122001
+      </td>
+      <td width="50%">
+        Jakarta, 15 Juli 2026<br>
+        Guru Kelas 5<br><br><br><br>
+        <strong><u>Budi Santoso, S.Pd.</u></strong><br>
+        NIP. 198501012010011001
+      </td>
+    </tr>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- 7. LAMPIRAN -->
+  <h2 style="text-align: center;">LAMPIRAN-LAMPIRAN</h2>
+
+  <!-- BAHAN AJAR RINGKAS -->
+  <h3>A. RINGKASAN MATERI</h3>
+  <div style="border: 1px solid #000; padding: 10px;">
+    <strong>1. Sifat-Sifat Cahaya:</strong>
+    <ul>
+      <li>Merambat Lurus: Cahaya senter tidak berbelok kecuali mengenai penghalang.</li>
+      <li>Menembus Benda Bening: Cahaya bisa melewati kaca transparan.</li>
+      <li>Pemantulan: Cahaya memantul pada permukaan mengkilap (cermin).</li>
+      <li>Pembiasan: Cahaya tampak patah saat berpindah medium (udara ke air).</li>
+      <li>Penguraian (Dispersi): Cahaya putih matahari terurai menjadi pelangi.</li>
+    </ul>
+    <strong>2. Bagian Mata:</strong> Kornea (pelindung), Pupil (celah cahaya), Iris (pengatur cahaya/warna mata), Lensa (memfokuskan), Retina (layar penangkap bayangan), Saraf Optik (pengirim sinyal ke otak).
+  </div>
+
+  <!-- LKPD -->
+  <div class="lkpd-container">
+    <div class="lkpd-header">
+      <p class="lkpd-title">LEMBAR KERJA PESERTA DIDIK (LKPD)</p>
+      <p class="lkpd-subtitle">Mata Pelajaran: IPAS | Topik: Detektif Cahaya</p>
+    </div>
+    
+    <p><strong>Nama Kelompok:</strong> ........................................</p>
+    <p><strong>Anggota:</strong> ........................................................</p>
+    
+    <h4>Misi 1: Eksperimen Sifat Cahaya</h4>
+    <table>
+      <tr>
+        <th>Percobaan</th>
+        <th>Apa yang Terjadi? (Hasil Pengamatan)</th>
+        <th>Sifat Cahaya</th>
+      </tr>
+      <tr>
+        <td>Senter diarahkan ke karton berlubang sejajar</td>
+        <td><br><br></td>
+        <td>........................</td>
+      </tr>
+      <tr>
+        <td>Senter diarahkan ke cermin datar</td>
+        <td><br><br></td>
+        <td>........................</td>
+      </tr>
+      <tr>
+        <td>Pensil dimasukkan ke gelas berisi air</td>
+        <td><br><br></td>
+        <td>........................</td>
+      </tr>
+    </table>
+
+    <h4>Misi 2: Analisis Mata</h4>
+    <p>Jelaskan mengapa mata kita memerlukan cahaya untuk melihat benda!</p>
+    <div style="border: 1px solid #000; height: 60px;"></div>
+  </div>
+
+  <!-- INSTRUMEN PENILAIAN -->
+  <h3>B. INSTRUMEN PENILAIAN (RUBRIK KINERJA PRAKTIKUM)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Kriteria</th>
+        <th>Sangat Baik (4)</th>
+        <th>Baik (3)</th>
+        <th>Cukup (2)</th>
+        <th>Perlu Bimbingan (1)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Persiapan Alat</td>
+        <td>Membawa dan menyiapkan alat dengan sangat lengkap dan rapi.</td>
+        <td>Menyiapkan alat dengan lengkap.</td>
+        <td>Alat kurang lengkap namun bisa mengikuti kegiatan.</td>
+        <td>Tidak menyiapkan alat.</td>
+      </tr>
+      <tr>
+        <td>Ketepatan Analisis</td>
+        <td>Mampu menjelaskan 5 sifat cahaya dengan tepat dan logis.</td>
+        <td>Mampu menjelaskan 3-4 sifat cahaya dengan tepat.</td>
+        <td>Hanya mampu menjelaskan 1-2 sifat cahaya.</td>
+        <td>Belum mampu menjelaskan sifat cahaya.</td>
+      </tr>
+      <tr>
+        <td>Kerjasama Tim</td>
+        <td>Sangat aktif berkontribusi dan menghargai pendapat teman.</td>
+        <td>Aktif berkontribusi dalam kelompok.</td>
+        <td>Hanya sesekali membantu anggota kelompok.</td>
+        <td>Pasif atau mengganggu kelompok lain.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size: 9pt; font-style: italic;">*Dicetak otomatis untuk keperluan administrasi kurikulum SD Negeri 1 Nusantara Tahun Ajaran 2026/2027.</p>
+</body>
+</html>

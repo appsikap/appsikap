@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIKAP Desktop - Sistem Informasi Karakter & Poin Siswa</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon" style="background: transparent; padding: 2px;">
+          <img src="icon.png" alt="SIKAP Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
+        </div>
+        <div class="logo-text">
+          <h2>SIKAP</h2>
+          <span>Desktop Edition v1.0</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <button class="nav-item active" data-tab="dashboard">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard & Overview</span>
+        </button>
+        <button class="nav-item" data-tab="siswa">
+          <i class="fa-solid fa-users"></i>
+          <span>Data Siswa</span>
+        </button>
+        <button class="nav-item" data-tab="catat-poin">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <span>Catat Poin & Pelanggaran</span>
+        </button>
+        <button class="nav-item" data-tab="kategori">
+          <i class="fa-solid fa-list-check"></i>
+          <span>Kategori Aktivitas</span>
+        </button>
+        <button class="nav-item" data-tab="hadiah">
+          <i class="fa-solid fa-gift"></i>
+          <span>Hadiah & Penukaran</span>
+        </button>
+        <button class="nav-item" data-tab="pengaturan">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Pengaturan Sekolah</span>
+        </button>
+        <button class="nav-item highlight-btn" data-tab="backup">
+          <i class="fa-solid fa-database"></i>
+          <span>Backup & Restore Center</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="school-badge">
+          <i class="fa-solid fa-school"></i>
+          <div>
+            <strong id="display-nama-sekolah">SD/SMP/SMA Negeri 1</strong>
+            <small id="display-tahun-pelajaran">Tahun: 2025/2026</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="header-title">
+          <h1 id="page-title">Dashboard Utama</h1>
+          <p id="page-subtitle">Ringkasan statistik perkembangan karakter dan saldo poin murid.</p>
+        </div>
+
+        <div class="header-actions">
+          <button class="btn btn-outline" id="btn-quick-import">
+            <i class="fa-solid fa-file-import"></i> Impor Backup Android (.json)
+          </button>
+          <button class="btn btn-success" id="btn-quick-export">
+            <i class="fa-solid fa-file-export"></i> Ekspor Backup (.json)
+          </button>
+          <button class="btn btn-primary" id="btn-export-excel">
+            <i class="fa-solid fa-file-excel"></i> Cetak Laporan CSV/Excel
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB 1: DASHBOARD -->
+      <section id="tab-dashboard" class="tab-pane active">
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card blue shadow-glow">
+            <div class="stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
+            <div class="stat-info">
+              <span class="stat-label">Total Murid</span>
+              <h2 class="stat-value" id="stat-total-siswa">0</h2>
+              <span class="stat-desc">Terdaftar di sistem</span>
+            </div>
+          </div>
+
+          <div class="stat-card emerald shadow-glow">
+            <div class="stat-icon"><i class="fa-solid fa-thumbs-up"></i></div>
+            <div class="stat-info">
+              <span class="stat-label">Perbuatan Baik</span>
+              <h2 class="stat-value" id="stat-poin-baik">+0</h2>
+              <span class="stat-desc">Catatan terpuji murid</span>
+            </div>
+          </div>
+
+          <div class="stat-card rose shadow-glow">
+            <div class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="stat-info">
+              <span class="stat-label">Pelanggaran</span>
+              <h2 class="stat-value" id="stat-poin-buruk">0</h2>
+              <span class="stat-desc">Pengurangan poin murid</span>
+            </div>
+          </div>
+
+          <div class="stat-card amber shadow-glow">
+            <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="stat-info">
+              <span class="stat-label">Murid Sangat Baik</span>
+              <h2 class="stat-value" id="stat-sangat-baik">0</h2>
+              <span class="stat-desc">Sangat teruji ($\ge$ 100 poin)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leaderboards & Alerts Row -->
+        <div class="dashboard-grid">
+          <!-- Top Performers -->
+          <div class="card glass-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-award text-amber"></i> Top Murid Berprestasi / Terpuji</h3>
+              <span class="badge badge-success">Sangat Baik</span>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Peringkat</th>
+                      <th>Nama Siswa</th>
+                      <th>Kelas</th>
+                      <th>Saldo Poin</th>
+                      <th>Status Karakter</th>
+                    </tr>
+                  </thead>
+                  <tbody id="top-siswa-tbody">
+                    <tr><td colspan="5" class="text-center text-muted">Belum ada data murid</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alert / Need Guidance -->
+          <div class="card glass-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-bell text-rose"></i> Perlu Pembinaan / Peringatan</h3>
+              <span class="badge badge-danger">Atensi Guru</span>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Nama Siswa</th>
+                      <th>Kelas</th>
+                      <th>Saldo Poin</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="alert-siswa-tbody">
+                    <tr><td colspan="4" class="text-center text-muted">Tidak ada murid dalam kategori atensi</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity History Log -->
+        <div class="card glass-card mt-4">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-clock-rotate-left text-indigo"></i> Riwayat Pencatatan Terakhir</h3>
+            <button class="btn btn-sm btn-outline" id="btn-refresh-history"><i class="fa-solid fa-rotate"></i> Refresh</button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Waktu</th>
+                    <th>Nama Siswa</th>
+                    <th>Kelas</th>
+                    <th>Kategori / Aktivitas</th>
+                    <th>Nilai Poin</th>
+                    <th>Pencatat</th>
+                    <th>Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody id="latest-history-tbody">
+                  <tr><td colspan="7" class="text-center text-muted">Belum ada riwayat poin</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: DATA SISWA -->
+      <section id="tab-siswa" class="tab-pane">
+        <div class="card glass-card">
+          <div class="card-header toolbar">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="siswa-search" placeholder="Cari nama siswa atau kelas...">
+            </div>
+            <div class="filter-group">
+              <select id="siswa-filter-kelas">
+                <option value="Semua">Semua Kelas</option>
+              </select>
+            </div>
+            <div class="action-buttons">
+              <button class="btn btn-primary" id="btn-add-siswa"><i class="fa-solid fa-user-plus"></i> Tambah Siswa</button>
+              <button class="btn btn-outline" id="btn-import-siswa-txt"><i class="fa-solid fa-file-arrow-up"></i> Impor Massal (TXT)</button>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama Siswa</th>
+                    <th>Kelas</th>
+                    <th>L/P</th>
+                    <th>Saldo Poin</th>
+                    <th>Status Karakter</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="siswa-table-body">
+                  <!-- Data rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: CATAT POIN & PELANGGARAN -->
+      <section id="tab-catat-poin" class="tab-pane">
+        <div class="grid-2-cols">
+          <!-- Form Catat -->
+          <div class="card glass-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-pen-to-square text-indigo"></i> Form Pencatatan Karakter Murid</h3>
+            </div>
+            <div class="card-body">
+              <form id="form-catat-poin">
+                <div class="form-group">
+                  <label for="input-catat-siswa"><i class="fa-solid fa-user"></i> Pilih Siswa *</label>
+                  <select id="input-catat-siswa" required>
+                    <option value="">-- Pilih Murid --</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <label for="input-catat-kategori" style="margin-bottom: 0;"><i class="fa-solid fa-list"></i> Pilih Kategori Aktivitas *</label>
+                    <button type="button" class="btn btn-sm btn-outline" id="btn-quick-manage-kategori" style="padding: 2px 10px; font-size: 11px;">
+                      <i class="fa-solid fa-pen-to-square"></i> Kelola / Edit Kategori
+                    </button>
+                  </div>
+                  <select id="input-catat-kategori" required>
+                    <option value="">-- Pilih Kategori --</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col">
+                    <label for="input-catat-tanggal"><i class="fa-solid fa-calendar"></i> Tanggal</label>
+                    <input type="date" id="input-catat-tanggal">
+                  </div>
+                  <div class="form-group col">
+                    <label for="input-catat-pencatat"><i class="fa-solid fa-user-tie"></i> Guru / Pencatat</label>
+                    <input type="text" id="input-catat-pencatat" placeholder="Nama Guru / Guru Piket">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="input-catat-keterangan"><i class="fa-solid fa-comment-dots"></i> Keterangan / Catatan Tambahan</label>
+                  <textarea id="input-catat-keterangan" rows="3" placeholder="Contoh: Membantu membersihkan halaman sekolah saat jam istirahat"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success btn-block">
+                  <i class="fa-solid fa-floppy-disk"></i> Simpan Catatan Poin
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Riwayat Terkini Form Side -->
+          <div class="card glass-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-list-ol"></i> Riwayat Pencatatan Terakhir</h3>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive" style="max-height: 450px; overflow-y: auto;">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Siswa</th>
+                      <th>Kategori</th>
+                      <th>Poin</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="side-riwayat-tbody">
+                    <!-- History rows -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: KATEGORI AKTIVITAS -->
+      <section id="tab-kategori" class="tab-pane">
+        <div class="card glass-card">
+          <div class="card-header toolbar" style="flex-wrap: wrap; gap: 10px;">
+            <h3><i class="fa-solid fa-tags text-indigo"></i> Kelola & Edit Kategori Aktivitas</h3>
+            <div class="action-buttons" style="display: flex; gap: 8px; align-items: center; margin-left: auto;">
+              <button class="btn btn-success" id="btn-add-kategori-positif"><i class="fa-solid fa-plus"></i> Tambah Poin Positif</button>
+              <button class="btn btn-danger" id="btn-add-kategori-pelanggaran"><i class="fa-solid fa-plus"></i> Tambah Pelanggaran</button>
+              <button class="btn btn-primary" id="btn-add-kategori"><i class="fa-solid fa-plus"></i> Tambah Umum</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Filter Bar Kategori -->
+            <div class="kategori-filter-bar" style="display: flex; gap: 10px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+              <button class="btn btn-sm btn-primary kat-filter-btn active" data-filter="Semua"><i class="fa-solid fa-list"></i> Semua Kategori</button>
+              <button class="btn btn-sm btn-outline kat-filter-btn" data-filter="Perbuatan Baik"><i class="fa-solid fa-thumbs-up text-emerald"></i> Poin Positif (+)</button>
+              <button class="btn btn-sm btn-outline kat-filter-btn" data-filter="Pelanggaran"><i class="fa-solid fa-triangle-exclamation text-rose"></i> Pelanggaran (-)</button>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama Kategori Aktivitas</th>
+                    <th>Jenis</th>
+                    <th>Nilai Poin</th>
+                    <th>Keterangan</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="kategori-table-body">
+                  <!-- Kategori rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: HADIAH & PENUKARAN -->
+      <section id="tab-hadiah" class="tab-pane">
+        <div class="grid-2-cols">
+          <!-- Daftar Hadiah -->
+          <div class="card glass-card">
+            <div class="card-header toolbar">
+              <h3><i class="fa-solid fa-gift text-amber"></i> Katalog Hadiah Karakter</h3>
+              <button class="btn btn-sm btn-primary" id="btn-add-hadiah"><i class="fa-solid fa-plus"></i> Tambah Hadiah</button>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Nama Hadiah</th>
+                      <th>Poin Dibutuhkan</th>
+                      <th>Stok</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="hadiah-table-body">
+                    <!-- Hadiah rows -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pengajuan Hadiah -->
+          <div class="card glass-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-envelope-open-text text-emerald"></i> Permohonan Tukar Hadiah Murid</h3>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Siswa</th>
+                      <th>Hadiah</th>
+                      <th>Status</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="pengajuan-table-body">
+                    <!-- Requests -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: PENGATURAN SEKOLAH -->
+      <section id="tab-pengaturan" class="tab-pane">
+        <div class="card glass-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-gear text-indigo"></i> Konfigurasi Sekolah & Skor Karakter</h3>
+          </div>
+          <div class="card-body">
+            <form id="form-pengaturan">
+              <div class="form-row">
+                <div class="form-group col">
+                  <label>Nama Sekolah</label>
+                  <input type="text" id="setting-nama-sekolah" required>
+                </div>
+                <div class="form-group col">
+                  <label>Tahun Pelajaran</label>
+                  <input type="text" id="setting-tahun-pelajaran" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col">
+                  <label>Nama Kepala Sekolah</label>
+                  <input type="text" id="setting-kepala-sekolah" required>
+                </div>
+                <div class="form-group col">
+                  <label>Nama Guru / TTD Laporan</label>
+                  <input type="text" id="setting-guru-ttd" required>
+                </div>
+                <div class="form-group col">
+                  <label>Peran Guru TTD</label>
+                  <input type="text" id="setting-peran-guru" required>
+                </div>
+              </div>
+
+              <hr class="divider">
+
+              <h4>Batas Poin Kualifikasi Karakter</h4>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label>Batas Sangat Baik ($\ge$)</label>
+                  <input type="number" id="setting-batas-sangat-baik" required>
+                </div>
+                <div class="form-group col">
+                  <label>Batas Baik ($\ge$)</label>
+                  <input type="number" id="setting-batas-baik" required>
+                </div>
+                <div class="form-group col">
+                  <label>Batas Perlu Pembinaan ($\ge$)</label>
+                  <input type="number" id="setting-batas-pembinaan" required>
+                </div>
+                <div class="form-group col">
+                  <label>Batas Peringatan ($\ge$)</label>
+                  <input type="number" id="setting-batas-peringatan" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Simpan Konfigurasi</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 7: BACKUP & RESTORE CENTER -->
+      <section id="tab-backup" class="tab-pane">
+        <div class="card glass-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-database text-emerald"></i> Pusat Backup & Restorasi Data JSON (Android Compatible)</h3>
+          </div>
+          <div class="card-body">
+            <div class="backup-grid">
+              <!-- Export Section -->
+              <div class="backup-card">
+                <div class="icon-circle emerald"><i class="fa-solid fa-download"></i></div>
+                <h4>Ekspor Backup Data (.json)</h4>
+                <p>Simpan seluruh data siswa, poin, riwayat, dan pengaturan ke file JSON. Berkas ini dapat di-import langsung ke aplikasi **Android SIKAP** agar data di HP dan PC terhubung.</p>
+                <button class="btn btn-success btn-block" id="btn-export-json"><i class="fa-solid fa-file-export"></i> Unduh File Backup JSON</button>
+              </div>
+
+              <!-- Import Section -->
+              <div class="backup-card">
+                <div class="icon-circle blue"><i class="fa-solid fa-upload"></i></div>
+                <h4>Impor Backup dari Android (.json)</h4>
+                <p>Pilih file `.json` hasil backup dari aplikasi Android SIKAP untuk memulihkan seluruh data siswa di PC Windows ini tanpa internet.</p>
+                <input type="file" id="input-json-file" accept=".json" style="display: none;">
+                <button class="btn btn-primary btn-block" id="btn-trigger-import-json"><i class="fa-solid fa-folder-open"></i> Pilih File JSON Backup</button>
+              </div>
+            </div>
+
+            <!-- Demo / Reset Section -->
+            <div class="reset-box mt-4">
+              <div class="reset-info">
+                <h4><i class="fa-solid fa-wand-magic-sparkles text-amber"></i> Muat Data Contoh (Demo Data)</h4>
+                <p>Ingin mencoba antarmuka dengan data contoh siswa, perbuatan baik, dan pelanggaran?</p>
+              </div>
+              <button class="btn btn-outline" id="btn-load-demo"><i class="fa-solid fa-database"></i> Muat Data Demo</button>
+              <button class="btn btn-danger" id="btn-reset-db"><i class="fa-solid fa-trash"></i> Kosongkan Database PC</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL: ADD / EDIT SISWA -->
+  <div class="modal" id="modal-siswa">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3 id="modal-siswa-title">Tambah Data Siswa</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <form id="form-siswa">
+        <input type="hidden" id="siswa-id">
+        <div class="form-group">
+          <label>Nama Lengkap Siswa *</label>
+          <input type="text" id="siswa-nama" required placeholder="Contoh: Ahmad Subagyo">
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Kelas *</label>
+            <input type="text" id="siswa-kelas" required placeholder="Contoh: 5A / 9B">
+          </div>
+          <div class="form-group col">
+            <label>Jenis Kelamin *</label>
+            <select id="siswa-jk" required>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Saldo Poin Awal</label>
+          <input type="number" id="siswa-poin" value="100" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Siswa</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD / EDIT KATEGORI -->
+  <div class="modal" id="modal-kategori">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3 id="modal-kategori-title">Tambah Kategori Aktivitas</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <form id="form-kategori">
+        <input type="hidden" id="kategori-id">
+        <div class="form-group">
+          <label>Nama Kategori Aktivitas *</label>
+          <input type="text" id="kategori-nama" required placeholder="Contoh: Jujur mengembalikan barang temuan">
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Jenis Kategori *</label>
+            <select id="kategori-jenis" required>
+              <option value="Perbuatan Baik">Perbuatan Baik (+ Poin)</option>
+              <option value="Pelanggaran">Pelanggaran (- Poin)</option>
+            </select>
+          </div>
+          <div class="form-group col">
+            <label>Nilai Poin *</label>
+            <input type="number" id="kategori-poin" required placeholder="Contoh: 10 atau -15">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Keterangan</label>
+          <textarea id="kategori-keterangan" rows="2" placeholder="Penjelasan singkat kategori..."></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Kategori</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD HADIAH -->
+  <div class="modal" id="modal-hadiah">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3>Tambah Katalog Hadiah</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <form id="form-hadiah">
+        <input type="hidden" id="hadiah-id">
+        <div class="form-group">
+          <label>Nama Hadiah *</label>
+          <input type="text" id="hadiah-nama" required placeholder="Contoh: Buku Catatan Pintar">
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Poin Dibutuhkan *</label>
+            <input type="number" id="hadiah-poin" required placeholder="Contoh: 30">
+          </div>
+          <div class="form-group col">
+            <label>Stok Hadiah *</label>
+            <input type="number" id="hadiah-stok" required value="10">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Keterangan</label>
+          <textarea id="hadiah-keterangan" rows="2"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Hadiah</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  
+  <script src="app.js"></script>
+</body>
+</html>

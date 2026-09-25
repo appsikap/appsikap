@@ -1,0 +1,300 @@
+﻿<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+	<meta charset='utf-8'>
+	<title>Rencana Pembelajaran Mendalam</title>
+	<style>
+		@page { size: A4 portrait; margin: 2.5cm; }
+		body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; line-height: 1.5; color: #000; }
+		h2, h3, h4 { font-family: 'Times New Roman', Times, serif; margin-top: 20px; margin-bottom: 10px; }
+		table { width: 100%; border-collapse: collapse; margin-bottom: 20px; table-layout: fixed; }
+		th, td { border: 1px solid #000; padding: 10px; vertical-align: top; word-wrap: break-word; }
+		th { background-color: #f2f2f2; font-weight: bold; text-align: center; }
+		ol, ul { margin-top: 5px; margin-bottom: 5px; padding-left: 25px; }
+		li { margin-bottom: 8px; text-align: justify; }
+		.text-center { text-align: center; }
+		.underline { text-decoration: underline; }
+		.bold { font-weight: bold; }
+		.section-title { background-color: #e9e9e9; padding: 5px 10px; border: 1px solid #000; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; }
+	</style>
+</head>
+<body>
+	<div style="text-align: center; margin-bottom: 30px;">
+		<h2 style="margin: 0; font-size: 16pt;">RENCANA PEMBELAJARAN MENDALAM (MODUL AJAR)</h2>
+		<h3 style="margin: 0; font-size: 14pt; text-transform: uppercase;">IPAS TINGKAT SD KELAS 5 SEMESTER GANJIL</h3>
+		<h4 style="margin: 0; font-size: 12pt;">TAHUN AJARAN 2026/2027</h4>
+	</div>
+
+	<div class="section-title">1. INFORMASI UMUM</div>
+	
+	<p class="bold">A. Identitas Modul</p>
+	<table>
+		<tr>
+			<td width="30%">Nama Penyusun</td>
+			<td width="70%">Budi Santoso, S.Pd.</td>
+		</tr>
+		<tr>
+			<td>NIP</td>
+			<td>198501012010011001</td>
+		</tr>
+		<tr>
+			<td>Satuan Pendidikan</td>
+			<td>SD Negeri 1 Nusantara</td>
+		</tr>
+		<tr>
+			<td>Fase / Kelas / Semester</td>
+			<td>C / 5 (Lima) / Ganjil</td>
+		</tr>
+		<tr>
+			<td>Mata Pelajaran</td>
+			<td>Ilmu Pengetahuan Alam dan Sosial (IPAS)</td>
+		</tr>
+		<tr>
+			<td>Bab / Topik</td>
+			<td>Bab 2: Harmoni dalam Ekosistem / Topik: Mata (Indra Penglihatan)</td>
+		</tr>
+		<tr>
+			<td>Alokasi Waktu</td>
+			<td>3 Pertemuan (9 JP x 35 Menit = 315 Menit)</td>
+		</tr>
+	</table>
+
+	<p class="bold">B. Identifikasi Murid</p>
+	<table>
+		<tr>
+			<th width="33%">Pengetahuan Awal</th>
+			<th width="33%">Minat</th>
+			<th width="34%">Kebutuhan</th>
+		</tr>
+		<tr>
+			<td>Murid umumnya mengetahui bahwa mata digunakan untuk melihat, namun belum memahami struktur anatomi mendalam dan mekanisme pembiasan cahaya.</td>
+			<td>Mayoritas murid tertarik pada aktivitas pengamatan visual, penggunaan alat peraga digital, dan eksperimen sederhana mengenai bayangan dan cahaya.</td>
+			<td>Diperlukan diferensiasi konten bagi murid dengan gangguan penglihatan (misal: duduk di depan) dan gaya belajar kinestetik melalui bongkar pasang model mata.</td>
+		</tr>
+	</table>
+
+	<p class="bold">C. Materi Pelajaran</p>
+	<ol>
+		<li>Anatomi dan Struktur Mata Manusia
+			<ol type="a">
+				<li>Bagian Luar Mata (Alis, Kelopak, Bulu Mata, Kelenjar Air Mata)</li>
+				<li>Bagian Dalam Mata (Kornea, Iris, Pupil, Lensa, Retina, Saraf Optik)</li>
+			</ol>
+		</li>
+		<li>Mekanisme Penglihatan
+			<ol type="a">
+				<li>Proses Masuknya Cahaya ke Mata</li>
+				<li>Pembentukan Bayangan pada Retina</li>
+				<li>Penerjemahan Sinyal oleh Otak</li>
+			</ol>
+		</li>
+		<li>Gangguan dan Pemeliharaan Kesehatan Mata
+			<ol type="a">
+				<li>Jenis Gangguan: Miopi, Hipermetropi, Presbiopi, dan Buta Warna</li>
+				<li>Teknologi Bantu: Kacamata, Lensa Kontak, dan Operasi Lasik</li>
+				<li>Kebiasaan Hidup Sehat untuk Menjaga Mata</li>
+			</ol>
+		</li>
+	</ol>
+
+	<p class="bold">D. Dimensi Profil Lulusan (Permendikdasmen No 10 Thn 2025)</p>
+	<table>
+		<tr>
+			<th width="5%">No</th>
+			<th width="35%">Dimensi</th>
+			<th width="60%">Indikator Ketercapaian dalam Pembelajaran</th>
+		</tr>
+		<tr>
+			<td class="text-center">1</td>
+			<td>Bernalar Kritis</td>
+			<td>Murid mampu menganalisis hubungan antara intensitas cahaya dengan perubahan diameter pupil secara mandiri.</td>
+		</tr>
+		<tr>
+			<td class="text-center">2</td>
+			<td>Bergotong Royong</td>
+			<td>Murid bekerja sama dalam kelompok untuk mendemonstrasikan proses pembentukan bayangan menggunakan lensa cembung.</td>
+		</tr>
+		<tr>
+			<td class="text-center">3</td>
+			<td>Berkeadaban</td>
+			<td>Murid menunjukkan empati dan sikap menghargai terhadap teman atau orang lain yang memiliki keterbatasan penglihatan (disabilitas netra).</td>
+		</tr>
+		<tr>
+			<td class="text-center">4</td>
+			<td>Berkelanjutan</td>
+			<td>Murid berkomitmen menjaga kesehatan mata sebagai aset masa depan dengan mengurangi durasi penggunaan gawai (screen time).</td>
+		</tr>
+	</table>
+
+	<p class="bold">E. Desain Pembelajaran</p>
+	<table>
+		<tr>
+			<th width="20%">Komponen</th>
+			<th width="80%">Deskripsi</th>
+		</tr>
+		<tr>
+			<td>Capaian Pembelajaran (CP)</td>
+			<td>Peserta didik melakukan simulasi dengan menggunakan gambar/bagan/alat bantu sederhana tentang siklus hidup makhluk hidup dan memahami fungsi serta cara menjaga kesehatan panca indra.</td>
+		</tr>
+		<tr>
+			<td>Lintas Disiplin</td>
+			<td>Seni Budaya (Menggambar anatomi mata) dan Matematika (Mengukur jarak pandang ideal).</td>
+		</tr>
+		<tr>
+			<td>Tujuan Pembelajaran (TP)</td>
+			<td>1. Mengidentifikasi bagian-bagian mata beserta fungsinya.<br>2. Menjelaskan alur proses melihat secara sistematis.<br>3. Menganalisis cara mencegah gangguan pada indra penglihatan.</td>
+		</tr>
+		<tr>
+			<td>Praktik Pedagogis</td>
+			<td>Inquiry-Based Learning (Pembelajaran Berbasis Penemuan) dan Problem Based Learning.</td>
+		</tr>
+		<tr>
+			<td>Pemanfaatan Teknologi</td>
+			<td>Video animasi 3D anatomi mata, aplikasi simulasi optik, dan penggunaan proyektor LCD.</td>
+		</tr>
+	</table>
+
+	<div class="section-title">2. PENGALAMAN BELAJAR (RINCIAN PER PERTEMUAN)</div>
+
+	<h3 class="underline">Pertemuan 1: Mengenal Jendela Dunia (3 JP x 35 Menit = 105 Menit)</h3>
+	<p class="bold">Kegiatan Awal (15 Menit)</p>
+	<ol>
+		<li>Guru membuka kelas dengan salam dan doa bersama untuk mengawali pembelajaran dengan keberkahan <u>(Beriman & Bertakwa)</u>.</li>
+		<li>Guru melakukan presensi dan menanyakan kabar kesehatan mata murid (apakah ada yang merasa perih atau buram).</li>
+		<li>Apersepsi: Guru mematikan lampu kelas sejenak, lalu menyalakannya kembali. Guru bertanya, "Apa yang dirasakan mata kalian saat gelap dan saat tiba-tiba terang?" <u>(Inquiry)</u>.</li>
+		<li>Guru menyampaikan tujuan pembelajaran dan memberikan motivasi tentang betapa pentingnya mata sebagai anugerah Tuhan.</li>
+	</ol>
+
+	<p class="bold">Kegiatan Inti (75 Menit)</p>
+	<ol>
+		<li>Murid diminta saling mengamati mata teman sebangkunya secara bergantian untuk melihat bagian-bagian yang tampak dari luar <u>(Joyful Learning)</u>.</li>
+		<li>Guru menayangkan video animasi 3D tentang struktur bagian dalam mata yang tidak terlihat secara langsung <u>(Pemanfaatan Teknologi)</u>.</li>
+		<li>Murid dibagi ke dalam kelompok heterogen (4-5 orang). Setiap kelompok diberikan "Puzzle Anatomi Mata" untuk disusun bersama <u>(4C - Collaboration)</u>.</li>
+		<li>Setiap kelompok berdiskusi untuk memasangkan label fungsi pada setiap bagian mata yang telah disusun <u>(4C - Critical Thinking)</u>.</li>
+		<li>Guru melakukan "Window Shopping", di mana perwakilan kelompok menjelaskan hasil kerja mereka kepada kelompok lain yang berkunjung ke meja mereka <u>(4C - Communication)</u>.</li>
+		<li>Guru memberikan penguatan materi dengan menggunakan model manekin mata (torso) untuk menunjukkan letak retina dan saraf optik secara konkret.</li>
+	</ol>
+
+	<p class="bold">Kegiatan Penutup (15 Menit)</p>
+	<ol>
+		<li>Murid bersama guru merangkum fungsi kornea, iris, pupil, dan lensa dalam satu kalimat kunci.</li>
+		<li>Guru memberikan kuis singkat menggunakan kartu "Benar atau Salah" terkait materi anatomi.</li>
+		<li>Guru menutup pembelajaran dengan memberikan instruksi untuk membawa cermin kecil pada pertemuan berikutnya.</li>
+	</ol>
+
+	<h3 class="underline">Pertemuan 2: Bagaimana Kita Melihat? (3 JP x 35 Menit = 105 Menit)</h3>
+	<p class="bold">Kegiatan Awal (15 Menit)</p>
+	<ol>
+		<li>Guru menyapa murid dan melakukan "Ice Breaking" senam mata sederhana untuk menyegarkan suasana <u>(Joyful Learning)</u>.</li>
+		<li>Guru meninjau kembali materi pertemuan sebelumnya dengan bertanya tentang fungsi pupil.</li>
+		<li>Guru memberikan tantangan: "Bisakah kita melihat benda jika tidak ada cahaya sama sekali?"</li>
+	</ol>
+
+	<p class="bold">Kegiatan Inti (75 Menit)</p>
+	<ol>
+		<li>Eksperimen Pupil: Murid menggunakan cermin yang dibawa untuk melihat perubahan pupil mereka sendiri saat diberikan cahaya senter (secara hati-hati) dan saat berada di area redup <u>(Discovery Learning)</u>.</li>
+		<li>Guru mendemonstrasikan pembiasan cahaya menggunakan gelas berisi air dan pensil yang terlihat patah sebagai analogi kerja lensa mata.</li>
+		<li>Murid secara berkelompok membuat alur perjalanan cahaya dari benda hingga ke otak dalam bentuk "Flowchart Kreatif" di kertas manila <u>(4C - Creativity)</u>.</li>
+		<li>Guru menjelaskan mengapa bayangan yang jatuh di retina sebenarnya terbalik, namun dikoreksi oleh otak. Hal ini memicu diskusi kritis murid <u>(4C - Critical Thinking)</u>.</li>
+		<li>Setiap kelompok mempresentasikan alur penglihatan mereka di depan kelas dengan percaya diri <u>(4C - Communication)</u>.</li>
+	</ol>
+
+	<p class="bold">Kegiatan Penutup (15 Menit)</p>
+	<ol>
+		<li>Guru memberikan apresiasi atas kerja keras kelompok dan presentasi yang menarik.</li>
+		<li>Refleksi singkat: "Bagian mana dari proses melihat yang menurutmu paling ajaib?"</li>
+		<li>Berdoa dan salam penutup.</li>
+	</ol>
+
+	<h3 class="underline">Pertemuan 3: Merawat Mata & Teknologi Optik (3 JP x 35 Menit = 105 Menit)</h3>
+	<p class="bold">Kegiatan Awal (15 Menit)</p>
+	<ol>
+		<li>Guru memulai dengan simulasi "Blind Walk": satu murid ditutup matanya dan dibimbing teman lain untuk berjalan menghindari rintangan <u>(Berkeadaban - Empati)</u>.</li>
+		<li>Diskusi singkat: "Bagaimana rasanya jika kita tidak bisa melihat dengan jelas?"</li>
+	</ol>
+
+	<p class="bold">Kegiatan Inti (75 Menit)</p>
+	<ol>
+		<li>Guru menyajikan studi kasus tentang seorang anak yang hobi bermain game di ruang gelap dan akhirnya mengalami rabun jauh (Miopi) <u>(Problem Based Learning)</u>.</li>
+		<li>Murid berdiskusi dalam kelompok untuk mencari solusi dan cara pencegahan berdasarkan kasus tersebut <u>(4C - Critical Thinking)</u>.</li>
+		<li>Guru memperkenalkan berbagai jenis lensa kacamata (cekung/cembung) sebagai solusi teknologi untuk gangguan mata.</li>
+		<li>Murid membuat poster digital (menggunakan tablet/aplikasi sederhana) atau manual tentang "Tips Menjaga Kesehatan Mata di Era Digital" <u>(4C - Creativity & Berkelanjutan)</u>.</li>
+		<li>Guru mengundang narasumber virtual (video pendek) dari seorang dokter spesialis mata yang memberikan tips praktis 20-20-20.</li>
+	</ol>
+
+	<p class="bold">Kegiatan Penutup (15 Menit)</p>
+	<ol>
+		<li>Evaluasi Sumatif: Murid mengerjakan soal evaluasi akhir bab secara mandiri <u>(Mandiri)</u>.</li>
+		<li>Guru memberikan pesan moral untuk selalu bersyukur dan tidak meremehkan teman yang berkacamata.</li>
+		<li>Kelas diakhiri dengan doa dan merapikan alat belajar bersama-masing.</li>
+	</ol>
+
+	<div class="section-title">3. ASESMEN</div>
+	<table>
+		<tr>
+			<th width="20%">Jenis Asesmen</th>
+			<th width="30%">Metode & Bentuk</th>
+			<th width="50%">Indikator Penilaian</th>
+		</tr>
+		<tr>
+			<td>Asesmen Awal (Diagnostic)</td>
+			<td>Tanya jawab lisan dan K-W-L Chart (Know, Want to know, Learned).</td>
+			<td>Mengukur kesiapan belajar dan pemahaman awal tentang fungsi mata.</td>
+		</tr>
+		<tr>
+			<td>Asesmen Formatif (Proses)</td>
+			<td>Observasi diskusi kelompok, rubrik presentasi, dan hasil flowchart alur melihat.</td>
+			<td>Menilai partisipasi, kemampuan kolaborasi, dan ketepatan penjelasan proses biologis.</td>
+		</tr>
+		<tr>
+			<td>Asesmen Sumatif (Akhir)</td>
+			<td>Tes tertulis (Pilihan ganda kompleks dan esai penalaran).</td>
+			<td>Mengukur penguasaan materi anatomi, mekanisme, dan cara perawatan mata secara komprehensif.</td>
+		</tr>
+	</table>
+
+	<div class="section-title">4. PENGAYAAN DAN REMEDIAL</div>
+	<p class="bold">Strategi Pengayaan:</p>
+	<ul>
+		<li>Murid yang telah melampaui kriteria ketercapaian diberikan proyek mandiri untuk meneliti cara kerja mata pada hewan nokturnal (seperti kucing atau burung hantu) dan membandingkannya dengan mata manusia.</li>
+		<li>Diberikan akses ke simulasi virtual reality (VR) tentang pembedahan mata digital.</li>
+	</ul>
+	<p class="bold">Strategi Remedial:</p>
+	<ul>
+		<li>Bimbingan individual bagi murid yang belum memahami perbedaan fungsi bagian-bagian mata melalui penggunaan kartu gambar (flashcards).</li>
+		<li>Penyederhanaan materi mekanisme penglihatan menggunakan video dengan durasi lebih singkat dan bahasa yang lebih sederhana (peer tutoring/tutor sebaya).</li>
+	</ul>
+
+	<div class="section-title">5. REFLEKSI DIRI</div>
+	<p class="bold">Refleksi Peserta Didik:</p>
+	<ol>
+		<li>Apakah aku sudah bisa menyebutkan minimal 5 bagian mata beserta fungsinya dengan benar?</li>
+		<li>Apa hal baru yang paling mengejutkan yang aku pelajari tentang cara mataku bekerja hari ini?</li>
+		<li>Kebiasaan buruk apa yang akan aku ubah mulai hari ini untuk menjaga kesehatan mataku?</li>
+	</ol>
+	<p class="bold">Refleksi Pendidik:</p>
+	<ol>
+		<li>Apakah media pembelajaran (video/manekin) sudah cukup efektif membantu murid memahami materi yang abstrak?</li>
+		<li>Bagian mana dari proses pembelajaran yang paling diminati murid dan mana yang membuat mereka bosan?</li>
+		<li>Apakah alokasi waktu 3 pertemuan sudah cukup untuk membahas topik ini secara mendalam tanpa terburu-buru?</li>
+	</ol>
+
+	<br><br>
+
+	<table style="border: none;">
+		<tr>
+			<td style="border: none; text-align: center;">
+				Mengetahui,<br>
+				Kepala SD Negeri 1 Nusantara<br><br><br><br><br>
+				<span class="bold"><u>Dra. Siti Aminah, M.Pd.</u></span><br>
+				NIP. 197002021995122001
+			</td>
+			<td style="border: none; text-align: center;">
+				Jakarta, 15 Juli 2026<br>
+				Guru Kelas 5<br><br><br><br><br>
+				<span class="bold"><u>Budi Santoso, S.Pd.</u></span><br>
+				NIP. 198501012010011001
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

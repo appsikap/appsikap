@@ -1,0 +1,471 @@
+﻿
+      <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+      <head>
+        <meta charset='utf-8'>
+        <title>Rencana Pembelajaran Mendalam</title>
+        <style>
+          @page { size: A4 portrait; margin: 2.5cm; }
+          body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; line-height: 1.5; }
+          h2, h3, h4 { font-family: 'Times New Roman', Times, serif; }
+          table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+          th, td { border: 1px solid #000; padding: 6px 8px; vertical-align: top; }
+          th { background-color: #f2f2f2; font-weight: bold; }
+          ol { margin-top: 5px; margin-bottom: 5px; padding-left: 20px; }
+          li { margin-bottom: 5px; }
+          .lkpd-container { border: 2px solid #000; padding: 20px; margin-top: 20px; page-break-inside: avoid; }
+          .lkpd-header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 15px; background-color: #e0f7fa; }
+          .lkpd-title { font-size: 16pt; font-weight: bold; margin: 0; }
+          .lkpd-subtitle { font-size: 12pt; margin: 0; }
+          .page-break { page-break-before: always; }
+        </style>
+      </head>
+      <body>
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+          <h2 style="margin: 0; font-size: 16pt;">RENCANA PEMBELAJARAN MENDALAM</h2>
+          <h3 style="margin: 0; font-size: 14pt;">IPAS SD KELAS 5</h3>
+        </div>
+
+        <h4>1. INFORMASI UMUM</h4>
+        <p><b>A. Identitas Modul</b></p>
+        <table>
+          <tr><td width="30%">Nama Penyusun</td><td>Budi Santoso, S.Pd.</td></tr>
+          <tr><td>Satuan Pendidikan</td><td>SD Negeri 1 Nusantara</td></tr>
+          <tr><td>Tahun Ajaran</td><td>2026/2027</td></tr>
+          <tr><td>Mata Pelajaran</td><td>Ilmu Pengetahuan Alam dan Sosial (IPAS)</td></tr>
+          <tr><td>Fase / Kelas</td><td>C / Kelas 5</td></tr>
+          <tr><td>Bab / Topik</td><td>Bab 2 / Keanekaragaman Hayati</td></tr>
+          <tr><td>Alokasi Waktu</td><td>8 JP (280 menit)</td></tr>
+        </table>
+
+        <p><b>B. Identifikasi Murid</b></p>
+        <table>
+          <tr>
+            <th>Kriteria</th>
+            <th>Kondisi Awal / Kebutuhan</th>
+          </tr>
+          <tr>
+            <td>Pengetahuan Awal</td>
+            <td>Sebagian besar peserta didik sudah mampu membedakan antara hewan dan tumbuhan, namun belum memahami konsep ekosistem dan persebaran flora/fauna endemik Indonesia.</td>
+          </tr>
+          <tr>
+            <td>Minat</td>
+            <td>Peserta didik memiliki ketertarikan tinggi pada aktivitas di luar ruangan (observasi) dan media visual yang melibatkan gambar hewan/tumbuhan langka.</td>
+          </tr>
+          <tr>
+            <td>Kebutuhan Belajar</td>
+            <td>Dibutuhkan pendekatan scaffolding berupa gambar konkret, video pendek, dan kegiatan praktik kelompok untuk memfasilitasi gaya belajar kinestetik dan visual.</td>
+          </tr>
+        </table>
+
+        <p><b>C. Materi Pelajaran</b></p>
+        <ol>
+          <li>Pengertian Keanekaragaman Hayati
+            <ol type="a">
+              <li>Tingkat Genetik</li>
+              <li>Tingkat Spesies</li>
+              <li>Tingkat Ekosistem</li>
+            </ol>
+          </li>
+          <li>Persebaran Flora dan Fauna di Indonesia
+            <ol type="a">
+              <li>Tipe Asiatis (Bagian Barat)
+                <ol>
+                  <li>Karakteristik Mamalia Besar</li>
+                  <li>Contoh Hewan: Harimau Sumatera, Badak Bercula Satu</li>
+                </ol>
+              </li>
+              <li>Tipe Peralihan (Bagian Tengah)
+                <ol>
+                  <li>Karakteristik Endemik Khas</li>
+                  <li>Contoh Hewan: Komodo, Anoa, Babi Rusa</li>
+                </ol>
+              </li>
+              <li>Tipe Australis (Bagian Timur)
+                <ol>
+                  <li>Karakteristik Mamalia Berkantung dan Burung Indah</li>
+                  <li>Contoh Hewan: Kanguru Pohon, Cendrawasih</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>Manfaat dan Pelestarian
+            <ol type="a">
+              <li>Manfaat sebagai sumber pangan dan obat</li>
+              <li>Upaya Pelestarian In-Situ dan Ex-Situ</li>
+            </ol>
+          </li>
+        </ol>
+
+        <p><b>D. Dimensi Profil Lulusan (Permendikdasmen No 10 Tahun 2025)</b></p>
+        <table>
+          <tr>
+            <th width="30%">Dimensi SKL</th>
+            <th>Fokus Pengembangan pada Modul Ini</th>
+          </tr>
+          <tr>
+            <td>Keimanan dan ketakwaan terhadap Tuhan YME</td>
+            <td>Menumbuhkan rasa syukur dan peduli terhadap ciptaan Tuhan melalui pengamatan alam sekitar.</td>
+          </tr>
+          <tr>
+            <td>Penalaran Kritis</td>
+            <td>Menganalisis hubungan antara kondisi geografis dengan tipe fauna yang mendiami suatu wilayah.</td>
+          </tr>
+          <tr>
+            <td>Kolaborasi</td>
+            <td>Bekerja sama dalam kelompok saat melakukan observasi dan menyusun peta persebaran flora fauna.</td>
+          </tr>
+          <tr>
+            <td>Komunikasi</td>
+            <td>Mempresentasikan hasil proyek kelompok dan mengemukakan pendapat di depan kelas dengan bahasa yang jelas.</td>
+          </tr>
+        </table>
+
+        <p><b>E. Desain Pembelajaran</b></p>
+        <table>
+          <tr><td>Capaian Pembelajaran</td><td>Peserta didik menyelidiki ragam sumber daya alam yang ada di wilayah tempat tinggalnya serta persebaran flora dan fauna di Indonesia.</td></tr>
+          <tr><td>Lintas Disiplin Ilmu</td><td>Seni Rupa (menggambar peta dan poster), Bahasa Indonesia (menulis laporan hasil observasi).</td></tr>
+          <tr><td>Tujuan Pembelajaran</td><td>1. Peserta didik dapat mengidentifikasi keanekaragaman hayati di lingkungan sekitar dengan tepat.<br/>2. Peserta didik dapat membedakan fauna Asiatis, Peralihan, dan Australis beserta contohnya.<br/>3. Peserta didik dapat membuat gagasan upaya pelestarian flora dan fauna langka.</td></tr>
+          <tr><td>Praktik Pedagogis</td><td>Project-Based Learning, Inquiry, Diskusi Kelompok, Observasi Lingkungan.</td></tr>
+          <tr><td>Pemanfaatan Teknologi</td><td>Penggunaan proyektor/video interaktif hewan langka, pemanfaatan tablet/chromebook untuk mencari informasi.</td></tr>
+        </table>
+
+        <h4>2. PENGALAMAN BELAJAR (RINCIAN PER PERTEMUAN)</h4>
+
+        <p><b>Pertemuan 1: Observasi Keanekaragaman di Lingkungan Sekitar (3 JP / 105 menit)</b></p>
+        <p><b>Kegiatan Awal</b></p>
+        <ol>
+          <li>Guru membuka pelajaran dengan salam hangat, doa bersama, dan mengecek kehadiran. <u>(Joyful Learning)</u></li>
+          <li>Guru memandu ice breaking "Tebak Suara Hewan" untuk memusatkan perhatian. <u>(Joyful Learning)</u></li>
+          <li>Guru melakukan apersepsi dengan menanyakan, "Apa saja hewan dan tumbuhan yang kalian lihat saat perjalanan ke sekolah tadi?" <u>(4C - Communication)</u></li>
+          <li>Guru menyampaikan tujuan pembelajaran hari ini.</li>
+        </ol>
+        <p><b>Kegiatan Inti</b></p>
+        <ol>
+          <li>Guru membagi peserta didik ke dalam kelompok kecil terdiri dari 4-5 anak. <u>(4C - Collaboration)</u></li>
+          <li>Guru membagikan LKPD 1 dan menjelaskan prosedur observasi lingkungan sekolah.</li>
+          <li>Peserta didik keluar kelas untuk mengamati, mencatat, dan mengelompokkan berbagai jenis tumbuhan dan hewan kecil yang ditemukan di taman sekolah. <u>(Inquiry-Based Learning)</u>, <u>(Meaningful Learning)</u></li>
+          <li>Peserta didik berdiskusi dalam kelompok untuk mengklasifikasikan temuan mereka berdasarkan ciri-ciri tertentu. <u>(4C - Critical Thinking)</u>, <u>(4C - Collaboration)</u></li>
+          <li>Setiap kelompok kembali ke kelas dan mempresentasikan hasil observasi mereka. <u>(4C - Communication)</u></li>
+          <li>Guru memberikan penguatan materi mengenai pengertian keanekaragaman hayati tingkat spesies berdasarkan temuan siswa.</li>
+        </ol>
+        <p><b>Kegiatan Penutup</b></p>
+        <ol>
+          <li>Peserta didik bersama guru menyimpulkan kegiatan hari ini. <u>(Meaningful Learning)</u></li>
+          <li>Guru memberikan apresiasi kepada kelompok yang bekerja paling kompak.</li>
+          <li>Guru meminta peserta didik menutup mata sejenak, menarik napas dalam, dan bersyukur atas keindahan alam ciptaan Tuhan. <u>(Mindful Learning)</u></li>
+          <li>Doa penutup dan salam.</li>
+        </ol>
+
+        <p><b>Pertemuan 2: Eksplorasi Persebaran Flora dan Fauna Indonesia (3 JP / 105 menit)</b></p>
+        <p><b>Kegiatan Awal</b></p>
+        <ol>
+          <li>Guru membuka dengan doa dan menyapa peserta didik.</li>
+          <li>Guru menampilkan peta buta Indonesia di proyektor dan bertanya, "Di pulau manakah Komodo tinggal?" <u>(4C - Critical Thinking)</u></li>
+          <li>Guru menghubungkan jawaban siswa dengan materi pembagian zona fauna (Garis Wallace dan Weber).</li>
+        </ol>
+        <p><b>Kegiatan Inti</b></p>
+        <ol>
+          <li>Guru menayangkan video pendek interaktif tentang kekayaan fauna di berbagai pulau di Indonesia. <u>(Joyful Learning)</u></li>
+          <li>Guru membagikan LKPD 2 berupa Peta Indonesia dan potongan gambar hewan-hewan endemik.</li>
+          <li>Secara berkelompok, peserta didik berdiskusi untuk menempelkan gambar hewan pada pulau yang tepat sesuai zonanya (Asiatis, Peralihan, Australis). <u>(4C - Collaboration)</u>, <u>(4C - Critical Thinking)</u></li>
+          <li>Peserta didik menghias peta persebaran tersebut sekreatif mungkin. <u>(4C - Creativity)</u></li>
+          <li>Perwakilan kelompok melakukan "Gallery Walk" (berkeliling melihat karya kelompok lain) dan memberikan komentar positif. <u>(4C - Communication)</u></li>
+          <li>Guru memberikan umpan balik dan meluruskan miskonsepsi jika ada gambar hewan yang salah penempatan.</li>
+        </ol>
+        <p><b>Kegiatan Penutup</b></p>
+        <ol>
+          <li>Peserta didik menuliskan satu hewan endemik favorit mereka dan alasan mengapa mereka menyukainya di buku catatan. <u>(Meaningful Learning)</u></li>
+          <li>Guru menyampaikan rencana proyek pembuatan poster kampanye untuk pertemuan berikutnya.</li>
+          <li>Salam penutup.</li>
+        </ol>
+
+        <p><b>Pertemuan 3: Kampanye Pelestarian Keanekaragaman Hayati (2 JP / 70 menit)</b></p>
+        <p><b>Kegiatan Awal</b></p>
+        <ol>
+          <li>Berdoa dan menyiapkan kondisi kelas agar kondusif.</li>
+          <li>Guru menunjukkan gambar hutan yang gundul dan hewan yang kehilangan habitat, lalu memancing empati siswa. "Apa yang kalian rasakan melihat ini?" <u>(Mindful Learning)</u></li>
+        </ol>
+        <p><b>Kegiatan Inti</b></p>
+        <ol>
+          <li>Guru menjelaskan ancaman terhadap keanekaragaman hayati dan konsep pelestarian In-Situ serta Ex-Situ.</li>
+          <li>Peserta didik secara berpasangan mengerjakan LKPD 3, merancang sebuah poster mini bertema "Selamatkan Hewan Endemik Kita". <u>(4C - Creativity)</u>, <u>(4C - Collaboration)</u></li>
+          <li>Peserta didik merumuskan kalimat ajakan (persuasif) yang menarik pada posternya. <u>(4C - Critical Thinking)</u></li>
+          <li>Setiap pasangan berdiri dan membacakan pesan dari poster mereka di hadapan teman-teman. <u>(4C - Communication)</u>, <u>(Joyful Learning)</u></li>
+        </ol>
+        <p><b>Kegiatan Penutup</b></p>
+        <ol>
+          <li>Guru memandu refleksi menyeluruh mengenai Bab Keanekaragaman Hayati.</li>
+          <li>Melaksanakan asesmen sumatif (tes tertulis) secara mandiri.</li>
+          <li>Guru mengumpulkan poster untuk dipajang di mading kelas.</li>
+          <li>Doa penutup pelajaran.</li>
+        </ol>
+
+        <h4>3. ASESMEN</h4>
+        <table>
+          <tr>
+            <th>Jenis Asesmen</th>
+            <th>Teknik</th>
+            <th>Instrumen</th>
+          </tr>
+          <tr>
+            <td>Awal / Diagnostik</td>
+            <td>Tanya Jawab Lisan</td>
+            <td>Pertanyaan pemantik tentang jenis hewan di sekitar rumah.</td>
+          </tr>
+          <tr>
+            <td>Formatif</td>
+            <td>Observasi Kinerja & LKPD</td>
+            <td>Rubrik penilaian gotong royong dan ketepatan mengisi LKPD 1 dan LKPD 2.</td>
+          </tr>
+          <tr>
+            <td>Sumatif</td>
+            <td>Tes Tertulis & Proyek</td>
+            <td>Soal pilihan ganda/isian singkat, dan Rubrik Penilaian Poster (LKPD 3).</td>
+          </tr>
+        </table>
+
+        <h4>4. PENGAYAAN DAN REMEDIAL</h4>
+        <p><b>Pengayaan:</b> Peserta didik yang telah mencapai tujuan pembelajaran diminta mencari artikel/berita tentang penemuan spesies baru di Indonesia atau upaya konservasi yang berhasil, lalu menceritakannya secara singkat kepada guru.</p>
+        <p><b>Remedial:</b> Peserta didik yang masih kesulitan membedakan zona fauna akan dikelompokkan dan diberikan bimbingan khusus oleh guru menggunakan media puzzle hewan yang lebih sederhana (tutor sebaya juga dapat dilibatkan).</p>
+
+        <h4>5. REFLEKSI DIRI</h4>
+        <p><b>Refleksi Peserta Didik:</b></p>
+        <ol>
+          <li>Bagian mana dari pelajaran ini yang paling menyenangkan?</li>
+          <li>Hewan endemik apa yang paling ingin kamu lindungi? Mengapa?</li>
+          <li>Apakah kamu mengalami kesulitan saat bekerjasama dalam kelompok?</li>
+        </ol>
+        <p><b>Refleksi Pendidik:</b></p>
+        <ol>
+          <li>Apakah alokasi waktu untuk kegiatan observasi di luar kelas sudah cukup?</li>
+          <li>Apakah media peta dan potongan gambar efektif meningkatkan pemahaman siswa tentang zonasi fauna?</li>
+          <li>Langkah apa yang perlu diperbaiki untuk pertemuan di masa mendatang?</li>
+        </ol>
+
+        <br/><br/>
+        <table style="border: none; width: 100%;">
+          <tr style="border: none;">
+            <td style="border: none; text-align: center; width: 50%;">
+              Mengetahui,<br/>Kepala Sekolah<br/><br/><br/><br/><br/>
+              <b><u>Dra. Siti Aminah, M.Pd.</u></b><br/>
+              NIP. 197002021995122001
+            </td>
+            <td style="border: none; text-align: center; width: 50%;">
+              Jakarta, 15 Juli 2026<br/>Guru Kelas<br/><br/><br/><br/><br/>
+              <b><u>Budi Santoso, S.Pd.</u></b><br/>
+              NIP. 198501012010011001
+            </td>
+          </tr>
+        </table>
+
+        <!-- LAMPIRAN -->
+        <div class="page-break"></div>
+        <h4>7. LAMPIRAN</h4>
+        
+        <p><b>A. BAHAN AJAR</b></p>
+        <div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; background-color: #fcfcfc;">
+          <h3 style="text-align: center;">Ringkasan Materi: Keanekaragaman Hayati Indonesia</h3>
+          <p>Halo, Anak-anak hebat! Tahukah kamu bahwa Indonesia adalah "Mega-Biodiversity"? Artinya, negara kita memiliki sangat banyak jenis makhluk hidup! Mari kita pelajari bersama.</p>
+          
+          <p><b>1. Apa itu Keanekaragaman Hayati?</b><br/>
+          Keanekaragaman hayati adalah variasi kehidupan yang ada di bumi, mulai dari perbedaan gen (seperti warna bunga mawar yang bermacam-macam), perbedaan spesies (kucing, anjing, harimau), hingga perbedaan ekosistem (pantai, gurun, hutan).</p>
+          
+          <p><b>2. Pembagian Wilayah Fauna di Indonesia</b><br/>
+          Seorang ilmuwan bernama Alfred Russel Wallace membagi wilayah hewan di Indonesia menjadi tiga zona lho:</p>
+          <ul>
+            <li><b>Bagian Barat (Asiatis):</b> Mirip hewan di benua Asia. Mamalianya besar-besar!<br/><i>Contoh: Gajah, Harimau Sumatera, Badak, Orang Utan.</i> [Gambar: Siluet Gajah]</li>
+            <li><b>Bagian Tengah (Peralihan):</b> Ini adalah hewan-hewan spesial yang aslinya cuma ada di Indonesia! <br/><i>Contoh: Komodo, Burung Maleo, Anoa, Babi Rusa.</i> [Gambar: Siluet Komodo]</li>
+            <li><b>Bagian Timur (Australis):</b> Mirip hewan di Australia. Banyak hewan berkantung dan burung berbulu indah.<br/><i>Contoh: Kanguru Pohon, Burung Cendrawasih, Kasuari.</i> [Gambar: Siluet Cendrawasih]</li>
+          </ul>
+
+          <p><b>3. Mengapa Harus Dilestarikan?</b><br/>
+          Hewan dan tumbuhan sangat penting karena menjadi sumber makanan, obat-obatan, dan menjaga alam agar tidak rusak. Kalau hewan-hewan itu punah, keseimbangan alam akan kacau. Kita bisa melestarikannya dengan menjaga kebersihan lingkungan dan tidak merusak hutan!</p>
+        </div>
+
+        <div class="page-break"></div>
+        <p><b>B. LEMBAR KERJA PESERTA DIDIK (LKPD)</b></p>
+        
+        <!-- LKPD 1 -->
+        <div class="lkpd-container">
+          <div class="lkpd-header">
+            <h3 class="lkpd-title">LKPD 1: DETEKTIF ALAM SEKITAR</h3>
+            <p class="lkpd-subtitle">Mata Pelajaran: IPAS | Kelas: 5 | Pertemuan 1</p>
+          </div>
+          <table style="width: 50%; border: none;">
+            <tr><td style="border: none; padding: 2px;">Nama Kelompok</td><td style="border: none; padding: 2px;">: .......................................</td></tr>
+            <tr><td style="border: none; padding: 2px;">Anggota</td><td style="border: none; padding: 2px;">: 1................ 2................ 3................ 4................</td></tr>
+            <tr><td style="border: none; padding: 2px;">Hari/Tanggal</td><td style="border: none; padding: 2px;">: .......................................</td></tr>
+          </table>
+          
+          <p><b>Tujuan Kegiatan:</b> Peserta didik dapat mengidentifikasi berbagai makhluk hidup di lingkungan sekolah.</p>
+          <p><b>Alat dan Bahan:</b> Papan jalan, alat tulis, kaca pembesar (jika ada).</p>
+          <p><b>Langkah Kerja:</b></p>
+          <ol>
+            <li>Keluarlah ke taman sekolah dengan tertib bersama kelompokmu.</li>
+            <li>Carilah minimal 3 jenis tumbuhan dan 3 jenis hewan kecil/serangga.</li>
+            <li>Amati ciri-cirinya dan catat ke dalam tabel di bawah ini.</li>
+          </ol>
+          
+          <p><b>Tabel Hasil Pengamatan:</b></p>
+          <table>
+            <tr style="background-color: #ffe0b2;">
+              <th width="5%">No</th>
+              <th>Nama Makhluk Hidup</th>
+              <th>Jenis (Hewan/Tumbuhan)</th>
+              <th>Ciri-ciri Fisik (Warna, bentuk, dll)</th>
+              <th>Lokasi Ditemukan</th>
+            </tr>
+            <tr><td>1</td><td><br/><br/></td><td></td><td></td><td></td></tr>
+            <tr><td>2</td><td><br/><br/></td><td></td><td></td><td></td></tr>
+            <tr><td>3</td><td><br/><br/></td><td></td><td></td><td></td></tr>
+            <tr><td>4</td><td><br/><br/></td><td></td><td></td><td></td></tr>
+            <tr><td>5</td><td><br/><br/></td><td></td><td></td><td></td></tr>
+          </table>
+          
+          <p><b>Pertanyaan Diskusi:</b></p>
+          <p>1. Apakah semua tumbuhan yang kalian temukan memiliki bentuk daun yang sama? Jelaskan!</p>
+          <div style="border-bottom: 1px dotted #000; height: 30px; margin-bottom: 10px;"></div>
+          <p>2. Mengapa di taman sekolah kita terdapat berbagai macam makhluk hidup?</p>
+          <div style="border-bottom: 1px dotted #000; height: 30px; margin-bottom: 20px;"></div>
+          
+          <p><b>Kesimpulan:</b></p>
+          <div style="border: 1px solid #000; height: 80px; padding: 10px;"></div>
+        </div>
+
+        <div class="page-break"></div>
+        <!-- LKPD 2 -->
+        <div class="lkpd-container">
+          <div class="lkpd-header">
+            <h3 class="lkpd-title">LKPD 2: PETA ZONASI FAUNA INDONESIA</h3>
+            <p class="lkpd-subtitle">Mata Pelajaran: IPAS | Kelas: 5 | Pertemuan 2</p>
+          </div>
+          <p><b>Tujuan Kegiatan:</b> Membedakan dan mengelompokkan hewan berdasarkan wilayah persebarannya di Indonesia.</p>
+          <p><b>Langkah Kerja:</b></p>
+          <ol>
+            <li>Amati gambar Peta Indonesia buta yang telah dibagikan gurumu.</li>
+            <li>Guntinglah gambar-gambar hewan yang tersedia di lembar lampiran terpisah.</li>
+            <li>Diskusikan dengan teman kelompokmu, pada pulau manakah hewan tersebut seharusnya berada.</li>
+            <li>Tempelkan gambar hewan pada peta dengan rapi, lalu warnai peta tersebut!</li>
+          </ol>
+          <div style="text-align: center; border: 2px dashed #999; padding: 50px; margin: 20px 0; background-color: #f9f9f9;">
+            <i>[Area Penempelan Peta dan Gambar Hewan oleh Siswa]</i><br/>
+            (Guru menyediakan lembaran peta A3 dan potongan gambar: Orang Utan, Harimau, Komodo, Anoa, Cendrawasih, Kanguru Pohon)
+          </div>
+        </div>
+
+        <div class="page-break"></div>
+        <p><b>C. INSTRUMEN PENILAIAN</b></p>
+        
+        <p><b>1. Kisi-kisi Soal Evaluasi Sumatif</b></p>
+        <table>
+          <tr>
+            <th>No</th>
+            <th>Tujuan Pembelajaran</th>
+            <th>Indikator Soal</th>
+            <th>Level Kognitif</th>
+            <th>Bentuk Soal</th>
+            <th>Nomor Soal</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Membedakan fauna Asiatis, Peralihan, dan Australis</td>
+            <td>Disajikan nama hewan, siswa dapat menentukan zona wilayahnya.</td>
+            <td>C2 (Memahami)</td>
+            <td>Pilihan Ganda</td>
+            <td>1, 2</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Membedakan fauna Asiatis, Peralihan, dan Australis</td>
+            <td>Siswa dapat menyebutkan ciri khas hewan dari zona Australis.</td>
+            <td>C2 (Memahami)</td>
+            <td>Isian Singkat</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Membuat gagasan upaya pelestarian</td>
+            <td>Siswa dapat menganalisis dampak kepunahan dan memberikan solusi.</td>
+            <td>C4 (Menganalisis)</td>
+            <td>Uraian</td>
+            <td>4</td>
+          </tr>
+        </table>
+
+        <p><b>2. Soal Evaluasi (Tes Tertulis)</b></p>
+        <p>1. Harimau Sumatera dan Badak Bercula Satu merupakan hewan yang termasuk dalam tipe...<br/>
+        a. Australis &nbsp;&nbsp;&nbsp; b. Peralihan &nbsp;&nbsp;&nbsp; c. Asiatis &nbsp;&nbsp;&nbsp; d. Eropa</p>
+        <p>2. Hewan endemik yang hanya bisa ditemukan di Pulau Komodo dan sekitarnya masuk ke dalam zona fauna bagian...<br/>
+        a. Barat &nbsp;&nbsp;&nbsp; b. Tengah &nbsp;&nbsp;&nbsp; c. Timur &nbsp;&nbsp;&nbsp; d. Utara</p>
+        <p>3. Sebutkan satu ciri khas mamalia yang berasal dari zona Australis (Bagian Timur Indonesia)!<br/>
+        Jawab: ................................................................................</p>
+        <p>4. Hutan di daerah Kalimantan banyak ditebang untuk dijadikan lahan perkebunan. Apa dampak penebangan tersebut bagi Orang Utan dan apa yang bisa kita lakukan untuk mencegah kepunahannya?<br/>
+        Jawab: ................................................................................</p>
+
+        <p><i>Kunci Jawaban & Pedoman Penskoran:</i><br/>
+        1. c (Skor 20)<br/>
+        2. b (Skor 20)<br/>
+        3. Mamalia memiliki kantung di perutnya (contoh: kanguru pohon). (Skor 20)<br/>
+        4. Dampaknya: Kehilangan tempat tinggal (habitat) dan sumber makanan. Solusi: Melakukan reboisasi, menghentikan penebangan liar, dan membuat cagar alam/suaka margasatwa. (Skor 40)</p>
+
+        <p><b>3. Rubrik Penilaian Sikap (Observasi P5)</b></p>
+        <table>
+          <tr>
+            <th>Kriteria / Dimensi</th>
+            <th>Sangat Baik (4)</th>
+            <th>Baik (3)</th>
+            <th>Cukup (2)</th>
+            <th>Perlu Bimbingan (1)</th>
+          </tr>
+          <tr>
+            <td><b>Kolaborasi</b></td>
+            <td>Sangat aktif berpartisipasi dan membantu teman kelompok.</td>
+            <td>Aktif berpartisipasi dalam kelompok.</td>
+            <td>Berpartisipasi namun pasif.</td>
+            <td>Tidak mau bekerjasama.</td>
+          </tr>
+          <tr>
+            <td><b>Komunikasi</b></td>
+            <td>Menyampaikan pendapat dengan sangat jelas, sopan, dan percaya diri.</td>
+            <td>Menyampaikan pendapat dengan jelas.</td>
+            <td>Berpendapat jika ditanya oleh guru.</td>
+            <td>Belum berani menyampaikan pendapat.</td>
+          </tr>
+        </table>
+
+        <p><b>4. Rubrik Penilaian Keterampilan (Proyek Poster LKPD 3)</b></p>
+        <table>
+          <tr>
+            <th>Aspek yang Dinilai</th>
+            <th>Skor 4 (Sangat Baik)</th>
+            <th>Skor 3 (Baik)</th>
+            <th>Skor 2 (Cukup)</th>
+            <th>Skor 1 (Kurang)</th>
+          </tr>
+          <tr>
+            <td>Kesesuaian Tema</td>
+            <td>Poster sangat sesuai dengan ajakan melestarikan fauna endemik.</td>
+            <td>Poster sesuai dengan tema pelestarian.</td>
+            <td>Poster kurang fokus pada fauna endemik.</td>
+            <td>Poster tidak sesuai tema.</td>
+          </tr>
+          <tr>
+            <td>Kreativitas & Estetika</td>
+            <td>Desain sangat menarik, komposisi warna dan gambar sangat rapi.</td>
+            <td>Desain menarik dan rapi.</td>
+            <td>Desain cukup, ada sedikit coretan.</td>
+            <td>Desain tidak rapi / asal-asalan.</td>
+          </tr>
+          <tr>
+            <td>Pesan Persuasif</td>
+            <td>Kalimat ajakan sangat kuat, singkat, padat, dan jelas.</td>
+            <td>Kalimat ajakan cukup jelas.</td>
+            <td>Kalimat terlalu panjang / seperti teks biasa.</td>
+            <td>Tidak ada kalimat ajakan.</td>
+          </tr>
+        </table>
+
+      </body>
+      </html>
+    

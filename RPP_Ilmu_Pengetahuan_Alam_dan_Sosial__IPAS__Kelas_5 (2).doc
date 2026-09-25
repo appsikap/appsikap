@@ -1,0 +1,343 @@
+﻿<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+	<meta charset='utf-8'>
+	<title>Rencana Pembelajaran Mendalam</title>
+	<style>
+		@page { size: A4 portrait; margin: 2.5cm; }
+		body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; line-height: 1.5; color: #000; }
+		h2, h3, h4 { font-family: 'Times New Roman', Times, serif; margin-top: 20px; margin-bottom: 10px; }
+		table { width: 100%; border-collapse: collapse; margin-bottom: 20px; table-layout: fixed; word-wrap: break-word; }
+		th, td { border: 1px solid #000; padding: 8px; vertical-align: top; text-align: left; }
+		th { background-color: #f2f2f2; font-weight: bold; text-align: center; }
+		ol, ul { margin-top: 5px; margin-bottom: 5px; padding-left: 25px; }
+		li { margin-bottom: 8px; text-align: justify; }
+		.page-break { page-break-before: always; }
+		.text-center { text-align: center; }
+		.underline { text-decoration: underline; }
+		.bold { font-weight: bold; }
+	</style>
+</head>
+<body>
+	<div style="text-align: center; margin-bottom: 30px;">
+		<h2 style="margin: 0; font-size: 16pt;">RENCANA PEMBELAJARAN MENDALAM (MODUL AJAR)</h2>
+		<h3 style="margin: 0; font-size: 14pt; text-transform: uppercase;">IPAS KELAS 5 - KURIKULUM MERDEKA</h3>
+		<h4 style="margin: 0; font-size: 12pt;">Tahun Ajaran 2026/2027</h4>
+	</div>
+
+	<h3>1. INFORMASI UMUM</h3>
+	
+	<h4>A. Identitas Modul</h4>
+	<table>
+		<tr>
+			<th width="30%">Nama Penyusun</th>
+			<td>Budi Santoso, S.Pd.</td>
+		</tr>
+		<tr>
+			<th>NIP</th>
+			<td>198501012010011001</td>
+		</tr>
+		<tr>
+			<th>Satuan Pendidikan</th>
+			<td>SD Negeri 1 Nusantara</td>
+		</tr>
+		<tr>
+			<th>Fase / Kelas</th>
+			<td>Fase C / Kelas 5</td>
+		</tr>
+		<tr>
+			<th>Mata Pelajaran</th>
+			<td>Ilmu Pengetahuan Alam dan Sosial (IPAS)</td>
+		</tr>
+		<tr>
+			<th>Bab / Topik</th>
+			<td>Bab 2 / Listrik dan Magnet</td>
+		</tr>
+		<tr>
+			<th>Alokasi Waktu</th>
+			<td>10 JP (10 x 35 Menit)</td>
+		</tr>
+	</table>
+
+	<h4>B. Identifikasi Murid</h4>
+	<table>
+		<tr>
+			<th width="30%">Aspek</th>
+			<th>Karakteristik Murid</th>
+		</tr>
+		<tr>
+			<td>Pengetahuan Awal</td>
+			<td>Murid telah mengenal konsep dasar energi dan beberapa benda elektronik di rumah, namun belum memahami mekanisme aliran arus listrik dan sifat kemagnetan secara saintifik.</td>
+		</tr>
+		<tr>
+			<td>Minat</td>
+			<td>Memiliki ketertarikan tinggi pada aktivitas bongkar-pasang (hands-on), penggunaan gawai, dan eksperimen yang menghasilkan efek visual/nyata.</td>
+		</tr>
+		<tr>
+			<td>Kebutuhan Belajar</td>
+			<td>Memerlukan visualisasi konkret untuk konsep abstrak (aliran elektron), instruksi bertahap dalam praktik, dan ruang untuk bereksplorasi secara mandiri.</td>
+		</tr>
+	</table>
+
+	<h4>C. Materi Pelajaran</h4>
+	<ol>
+		<li>Listrik Statis dan Dinamis
+			<ol type="a">
+				<li>Gejala Listrik Statis dalam kehidupan sehari-hari.</li>
+				<li>Arus Listrik dan Komponen Listrik Sederhana.</li>
+				<li>Rangkaian Listrik:
+					<ol type="1">
+						<li>Rangkaian Seri: Karakteristik dan kelemahannya.</li>
+						<li>Rangkaian Paralel: Karakteristik dan keunggulannya.</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+		<li>Magnet dan Pemanfaatannya
+			<ol type="a">
+				<li>Sifat-sifat Magnet (Tarik-menarik, Tolak-menolak, Kutub).</li>
+				<li>Jenis Magnet (Alami dan Buatan).</li>
+				<li>Cara Membuat Magnet: Induksi, Gosokan, dan Elektromagnetik.</li>
+			</ol>
+		</li>
+	</ol>
+
+	<h4>D. Dimensi Profil Lulusan (Permendikdasmen No 10 Thn 2025)</h4>
+	<table>
+		<tr>
+			<th width="5%">No</th>
+			<th width="30%">Dimensi</th>
+			<th>Indikator Perilaku yang Dikembangkan</th>
+		</tr>
+		<tr>
+			<td class="text-center">1</td>
+			<td>Bernalar Kritis</td>
+			<td>Mengidentifikasi, mengklarifikasi, dan mengolah informasi tentang cara kerja rangkaian listrik dan medan magnet.</td>
+		</tr>
+		<tr>
+			<td class="text-center">2</td>
+			<td>Kreatif</td>
+			<td>Menghasilkan karya orisinal berupa modifikasi rangkaian listrik sederhana dan pembuatan magnet buatan.</td>
+		</tr>
+		<tr>
+			<td class="text-center">3</td>
+			<td>Mandiri</td>
+			<td>Mengatur pikiran, perasaan, dan perilaku dirinya untuk mencapai tujuan belajar dalam melakukan eksperimen secara sistematis.</td>
+		</tr>
+		<tr>
+			<td class="text-center">4</td>
+			<td>Bergotong Royong</td>
+			<td>Membangun tim dan mengelola kerja sama untuk mencapai tujuan bersama dalam menyelesaikan proyek instalasi listrik kelompok.</td>
+		</tr>
+	</table>
+
+	<h4>E. Desain Pembelajaran</h4>
+	<table>
+		<tr>
+			<th width="25%">Komponen</th>
+			<th>Deskripsi Deskriptif</th>
+		</tr>
+		<tr>
+			<td>Capaian Pembelajaran (CP)</td>
+			<td>Peserta didik memahami sistem organ tubuh manusia yang dikaitkan dengan cara menjaga kesehatan tubuhnya; hubungan antar komponen ekosistem; serta gejala kelistrikan dan kemagnetan dalam kehidupan sehari-hari.</td>
+		</tr>
+		<tr>
+			<td>Lintas Disiplin</td>
+			<td>Matematika (Menghitung jumlah komponen dan pola seri-paralel) dan Bahasa Indonesia (Menyusun laporan hasil pengamatan yang logis).</td>
+		</tr>
+		<tr>
+			<td>Tujuan Pembelajaran (TP)</td>
+			<td>1. Peserta didik mampu menganalisis prinsip kerja rangkaian listrik seri dan paralel melalui praktik pembuatan model. 2. Peserta didik mampu membuktikan sifat-sifat magnet dan membuat magnet sederhana melalui berbagai metode.</td>
+		</tr>
+		<tr>
+			<td>Praktik Pedagogis</td>
+			<td>Inquiry-Based Learning (Inkuiri Terbimbing) dan Project Based Learning (PjBL) untuk memberikan pengalaman penemuan konsep secara langsung.</td>
+		</tr>
+		<tr>
+			<td>Pemanfaatan Teknologi</td>
+			<td>Penggunaan simulasi interaktif "PhET Simulation: Circuit Construction Kit" dan video dokumenter tentang pembangkit listrik.</td>
+		</tr>
+	</table>
+
+	<div class="page-break"></div>
+
+	<h3>2. PENGALAMAN BELAJAR</h3>
+
+	<h4>Pertemuan 1: Keajaiban Listrik Statis (2 JP / 70 Menit)</h4>
+	<ol>
+		<li><b>Kegiatan Awal (10 Menit)</b>
+			<ol type="a">
+				<li>Guru membuka kelas dengan salam dan melakukan presensi menggunakan metode "Cek Perasaan" (Murid menunjukkan emoticon sesuai perasaan). <u>(Joyful Learning)</u></li>
+				<li>Apersepsi: Guru menggosokkan penggaris plastik ke rambut kering lalu mendekatkannya pada potongan kertas kecil. Murid diminta mengamati apa yang terjadi.</li>
+				<li>Guru menyampaikan tujuan pembelajaran dan manfaat memahami listrik statis dalam fenomena petir.</li>
+			</ol>
+		</li>
+		<li><b>Kegiatan Inti (50 Menit)</b>
+			<ol type="a">
+				<li>Murid dibagi ke dalam kelompok kecil (3-4 orang) berdasarkan profil belajar.</li>
+				<li>Eksperimen "Balon Ajaib": Murid menggosokkan balon ke kain wol dan mencoba menempelkannya ke dinding atau menarik rambut teman. <u>(Hands-on Learning)</u></li>
+				<li>Diskusi Kelompok: Murid mendiskusikan mengapa benda yang awalnya netral bisa menarik benda lain setelah digosok. <u>(4C - Critical Thinking)</u></li>
+				<li>Guru memberikan penguatan materi menggunakan media visual tentang perpindahan elektron.</li>
+				<li>Murid mencatat hasil pengamatan dalam tabel pengamatan sederhana.</li>
+			</ol>
+		</li>
+		<li><b>Kegiatan Penutup (10 Menit)</b>
+			<ol type="a">
+				<li>Murid melakukan "One Minute Paper" (menulis satu hal terpenting yang dipelajari hari ini).</li>
+				<li>Guru memberikan apresiasi atas partisipasi aktif murid.</li>
+				<li>Doa penutup dan salam.</li>
+			</ol>
+		</li>
+	</ol>
+
+	<h4>Pertemuan 2: Arus Listrik dan Rangkaian Sederhana (3 JP / 105 Menit)</h4>
+	<ol>
+		<li><b>Kegiatan Awal (15 Menit)</b>
+			<ol type="a">
+				<li>Guru memutar video singkat tentang bagaimana lampu di rumah bisa menyala.</li>
+				<li>Tanya jawab: "Apa yang terjadi jika satu saklar dimatikan, namun lampu lain tetap menyala?" <u>(Problem Based Learning)</u></li>
+				<li>Penjelasan singkat mengenai komponen listrik (baterai, kabel, lampu, saklar).</li>
+			</ol>
+		</li>
+		<li><b>Kegiatan Inti (75 Menit)</b>
+			<ol type="a">
+				<li>Eksplorasi Digital: Murid menggunakan tablet/laptop untuk mencoba simulasi PhET tentang rangkaian listrik. <u>(Digital Literacy)</u></li>
+				<li>Praktik Langsung: Murid merakit rangkaian Seri dan rangkaian Paralel menggunakan kit listrik yang disediakan. <u>(4C - Collaboration)</u></li>
+				<li>Analisis Perbandingan: Murid mencoba melepas satu lampu pada rangkaian seri, lalu melakukan hal yang sama pada rangkaian paralel, dan mencatat perbedaannya. <u>(Differentiated Instruction)</u></li>
+				<li>Presentasi: Setiap kelompok mendemonstrasikan hasil rakitannya dan menjelaskan kelebihan masing-masing rangkaian. <u>(4C - Communication)</u></li>
+			</ol>
+		</li>
+		<li><b>Kegiatan Penutup (15 Menit)</b>
+			<ol type="a">
+				<li>Game Edukasi: Kuis cepat menggunakan kartu benar/salah terkait karakteristik rangkaian listrik. <u>(Joyful Learning)</u></li>
+				<li>Guru memberikan umpan balik konstruktif terhadap hasil kerja kelompok.</li>
+				<li>Pemberian tugas refleksi mandiri di rumah.</li>
+			</ol>
+		</li>
+	</ol>
+
+	<h4>Pertemuan 3: Misteri Magnet dan Sifatnya (2 JP / 70 Menit)</h4>
+	<ol>
+		<li><b>Kegiatan Awal (10 Menit)</b>
+			<ol type="a">
+				<li>Guru membawa berbagai jenis benda (peniti, penghapus, uang koin, paku) dan sebuah magnet besar.</li>
+				<li>Murid menebak benda mana yang akan tertarik oleh magnet. <u>(Predicting)</u></li>
+			</ol>
+		</li>
+		<li><b>Kegiatan Inti (50 Menit)</b>
+			<ol type="a">
+				<li>Stasiun Belajar: Terdapat 3 stasiun eksperimen:
+					<ol type="1">
+						<li>Stasiun 1: Uji benda magnetis dan non-magnetis.</li>
+						<li>Stasiun 2: Uji kekuatan gaya magnet (menembus kertas/plastik).</li>
+						<li>Stasiun 3: Interaksi antar kutub (tarik-menarik/tolak-menolak).</li>
+					</ol>
+				</li>
+				<li>Murid berkeliling stasiun (Rolling) secara tertib dalam kelompok. <u>(Active Learning)</u></li>
+				<li>Murid menggambar arah garis gaya magnet berdasarkan pola serbuk besi yang ditaburkan di atas kertas di bawahnya terdapat magnet. <u>(Visual Learning)</u></li>
+				<li>Diskusi kelas untuk menyimpulkan sifat-sifat magnet berdasarkan hasil di setiap stasiun.</li>
+			</ol>
+		</li>
+		<li><b>Kegiatan Penutup (10 Menit)</b>
+			<ol type="a">
+				<li>Refleksi: Murid menyebutkan satu benda di rumah yang memanfaatkan magnet.</li>
+				<li>Guru memberikan kisi-kisi untuk pertemuan berikutnya tentang pembuatan magnet.</li>
+			</ol>
+		</li>
+	</ol>
+
+	<h4>Pertemuan 4: Membuat Magnet dan Evaluasi (3 JP / 105 Menit)</h4>
+	<ol>
+		<li><b>Kegiatan Awal (15 Menit)</b>
+			<ol type="a">
+				<li>Review singkat tentang sifat magnet melalui lagu gubahan bertema magnet. <u>(Joyful Learning)</u></li>
+				<li>Guru menunjukkan paku besar yang tidak memiliki gaya magnet, lalu menanyakan "Bagaimana cara mengubah paku ini menjadi magnet?"</li>
+			</ol>
+		</li>
+		<li><b>Kegiatan Inti (75 Menit)</b>
+			<ol type="a">
+				<li>Workshop Pembuatan Magnet: Murid mempraktikkan 3 cara pembuatan magnet:
+					<ol type="1">
+						<li>Cara Gosokan: Menggosok paku dengan magnet searah.</li>
+						<li>Cara Induksi: Menempelkan paku pada magnet.</li>
+						<li>Cara Elektromagnetik: Melilitkan kabel pada paku dan disambungkan ke baterai. <u>(4C - Creativity)</u></li>
+					</ol>
+				</li>
+				<li>Murid menguji kekuatan magnet buatan mereka dengan menghitung berapa banyak klip kertas yang bisa menempel.</li>
+				<li>Asesmen Sumatif: Murid mengerjakan tes tulis objektif dan esai singkat mengenai konsep listrik dan magnet.</li>
+			</ol>
+		</li>
+		<li><b>Kegiatan Penutup (15 Menit)</b>
+			<ol type="a">
+				<li>Pameran Karya: Murid memajang hasil magnet buatannya di meja masing-masing (Gallery Walk).</li>
+				<li>Refleksi Akhir Bab: Murid mengisi jurnal belajar tentang pengalaman paling berkesan selama bab ini.</li>
+				<li>Penutupan resmi dengan doa dan motivasi belajar.</li>
+			</ol>
+		</li>
+	</ol>
+
+	<div class="page-break"></div>
+
+	<h3>3. ASESMEN</h3>
+	<table>
+		<tr>
+			<th width="20%">Jenis Asesmen</th>
+			<th width="30%">Metode & Bentuk</th>
+			<th>Instrumen / Indikator</th>
+		</tr>
+		<tr>
+			<td><b>Asesmen Awal</b></td>
+			<td>Tes Diagnostik Kognitif (Lisan & Gambar)</td>
+			<td>Mengidentifikasi pemahaman dasar tentang benda yang menggunakan listrik dan benda yang bisa ditarik magnet.</td>
+		</tr>
+		<tr>
+			<td><b>Asesmen Formatif</b></td>
+			<td>Observasi Kinerja & Lembar Kerja (LKK)</td>
+			<td>Ketepatan merakit rangkaian seri/paralel, keberhasilan membuat elektromagnet, dan kemampuan bekerja sama dalam tim.</td>
+		</tr>
+		<tr>
+			<td><b>Asesmen Sumatif</b></td>
+			<td>Tes Tertulis (Pilihan Ganda & Uraian)</td>
+			<td>Menganalisis fenomena listrik statis, membedakan rangkaian listrik, dan menjelaskan cara pembuatan magnet.</td>
+		</tr>
+	</table>
+
+	<h3>4. PENGAYAAN DAN REMEDIAL</h3>
+	<ul>
+		<li><b>Strategi Pengayaan:</b> Murid yang telah mencapai KKM diberikan tantangan untuk membuat proyek "Alarm Pintu Sederhana" menggunakan prinsip rangkaian listrik dan magnet, atau menjadi tutor sebaya bagi temannya.</li>
+		<li><b>Strategi Remedial:</b> Murid yang belum mencapai KKM diberikan bimbingan perorangan dengan penyederhanaan konsep melalui media konkret (alat peraga yang lebih besar) dan tes ulang dengan tingkat kesulitan yang disesuaikan.</li>
+	</ul>
+
+	<h3>5. REFLEKSI DIRI</h3>
+	<h4>A. Refleksi Peserta Didik</h4>
+	<ol>
+		<li>Bagian mana dari pembelajaran listrik dan magnet ini yang paling sulit kamu pahami? Mengapa?</li>
+		<li>Jika kamu menjadi seorang ilmuwan, penemuan apa yang ingin kamu ciptakan menggunakan tenaga magnet?</li>
+		<li>Apakah kamu merasa sudah bekerja sama dengan baik saat melakukan eksperimen kelompok tadi?</li>
+	</ol>
+	
+	<h4>B. Refleksi Pendidik</h4>
+	<ol>
+		<li>Apakah alokasi waktu 10 JP sudah efektif untuk mencakup kedalaman materi listrik dan magnet?</li>
+		<li>Bagian aktivitas mana yang paling membuat murid antusias dan bagian mana yang membuat mereka terlihat jenuh?</li>
+		<li>Sejauh mana penggunaan simulasi PhET membantu murid memahami konsep arus listrik dibandingkan hanya menggunakan alat peraga fisik?</li>
+	</ol>
+
+	<br><br>
+	<table style="border: none;">
+		<tr>
+			<td style="border: none; text-align: center;">
+				Mengetahui,<br>
+				Kepala SD Negeri 1 Nusantara<br><br><br><br>
+				<b><u>Dra. Siti Aminah, M.Pd.</u></b><br>
+				NIP. 197002021995122001
+			</td>
+			<td style="border: none; text-align: center;">
+				Jakarta, 15 Juli 2026<br>
+				Guru Kelas 5<br><br><br><br>
+				<b><u>Budi Santoso, S.Pd.</u></b><br>
+				NIP. 198501012010011001
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
