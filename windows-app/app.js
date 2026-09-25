@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function loadState() {
   try {
     // Attempt to fetch from Supabase
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
       .from('sikap_datastore')
       .select('data')
       .eq('id', 1)
@@ -92,6 +92,8 @@ async function loadState() {
     }
   } catch (e) {
     console.error('Failed to parse state:', e);
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) db = normalizeState(JSON.parse(saved));
   }
   renderAll();
 }
@@ -103,7 +105,7 @@ async function saveState() {
   
   // Save to Supabase
   try {
-    const { error } = await supabase
+    const { error } = await supabaseClient
       .from('sikap_datastore')
       .update({ data: db, updated_at: new Date().toISOString() })
       .eq('id', 1);
