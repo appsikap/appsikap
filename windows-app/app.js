@@ -301,16 +301,18 @@ function renderAll() {
 function renderNotifications() {
   const notifList = document.getElementById('notif-list');
   const notifBadge = document.getElementById('notif-badge');
-  if (!notifList || !notifBadge) return;
+  const notifBadgeMobile = document.getElementById('notif-badge-mobile');
+  if (!notifList) return;
 
   db.notifications = db.notifications || [];
   const unreadCount = db.notifications.filter(n => !n.isRead).length;
 
   if (unreadCount > 0) {
-    notifBadge.style.display = 'flex';
-    notifBadge.textContent = unreadCount;
+    if (notifBadge) { notifBadge.style.display = 'flex'; notifBadge.textContent = unreadCount; }
+    if (notifBadgeMobile) { notifBadgeMobile.style.display = 'flex'; notifBadgeMobile.textContent = unreadCount; }
   } else {
-    notifBadge.style.display = 'none';
+    if (notifBadge) notifBadge.style.display = 'none';
+    if (notifBadgeMobile) notifBadgeMobile.style.display = 'none';
   }
 
   if (db.notifications.length === 0) {
@@ -900,16 +902,14 @@ function setupEventListeners() {
 
   // Notifikasi Sidebar Toggle
   const btnNotif = document.getElementById('btn-notifications');
+  const btnNotifMobile = document.getElementById('btn-notifications-mobile');
   const notifSidebar = document.getElementById('notif-sidebar');
   const btnCloseNotif = document.getElementById('btn-close-notif');
   
-  if (btnNotif && notifSidebar && btnCloseNotif) {
-    btnNotif.addEventListener('click', () => {
-      notifSidebar.style.right = '0px';
-    });
-    btnCloseNotif.addEventListener('click', () => {
-      notifSidebar.style.right = '-400px';
-    });
+  if (notifSidebar && btnCloseNotif) {
+    if (btnNotif) btnNotif.addEventListener('click', () => notifSidebar.style.right = '0px');
+    if (btnNotifMobile) btnNotifMobile.addEventListener('click', () => notifSidebar.style.right = '0px');
+    btnCloseNotif.addEventListener('click', () => notifSidebar.style.right = '-400px');
   }
 
   // JSON Export Buttons

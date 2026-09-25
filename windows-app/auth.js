@@ -145,7 +145,10 @@ function setupAuthForms() {
         const { error } = await supabaseClient.auth.signInWithOAuth({
           provider: 'google',
           options: {
-            redirectTo: window.location.origin + window.location.pathname.replace('login.html', 'index.html')
+            redirectTo: window.location.origin + window.location.pathname.replace('login.html', 'index.html'),
+            queryParams: {
+              prompt: 'select_account'
+            }
           }
         });
         if (error) throw error;
