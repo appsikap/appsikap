@@ -172,7 +172,7 @@ function setupAuthForms() {
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Memeriksa PIN...';
 
       try {
-        const { data, error } = await supabaseClient.rpc('get_student_dashboard', { p_pin: pin });
+        const { data, error } = await supabaseClient.rpc('get_student_dashboard', { pin_input: pin });
         if (error) throw error;
 
         if (!data || data.error) {
