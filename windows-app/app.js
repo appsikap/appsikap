@@ -1121,15 +1121,14 @@ function exportBackupJSON() {
   };
 
   const jsonStr = JSON.stringify(dataToExport, null, 2);
-  const blob = new Blob([jsonStr], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
+  const base64Str = btoa(unescape(encodeURIComponent(jsonStr)));
+  const url = `data:application/json;base64,${base64Str}`;
 
   const dateStr = new Date().toISOString().split('T')[0];
   const a = document.createElement('a');
   a.href = url;
   a.download = `sikap_backup_${dateStr}.json`;
   a.click();
-  URL.revokeObjectURL(url);
 
   showToast('File JSON Backup berhasil diunduh!');
 }
@@ -1145,7 +1144,8 @@ function handleImportJSON(e) {
       const parsed = JSON.parse(evt.target.result);
       db = normalizeState(parsed);
       saveState();
-      showToast('Pemulihan (Restore) data JSON Android sukses 100%!');
+      alert('Berhasil! Data SIKAP berhasil dipulihkan dari file JSON.');
+      window.location.reload();
     } catch (err) {
       alert('Gagal memproses file JSON backup. Pastikan file valid!');
     }
@@ -1222,13 +1222,12 @@ function exportCSV() {
     csv += `"${idx + 1}","${s.nama}","${s.kelas}","${s.jenis_kelamin}","${s.saldo_poin}","${getCharacterStatus(s.saldo_poin)}"\n`;
   });
 
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
+  const base64Str = btoa(unescape(encodeURIComponent(csv)));
+  const url = `data:text/csv;base64,${base64Str}`;
   const a = document.createElement('a');
   a.href = url;
   a.download = `Rekap_Poin_Siswa_${new Date().toISOString().split('T')[0]}.csv`;
   a.click();
-  URL.revokeObjectURL(url);
 
   showToast('Laporan Rekap CSV/Excel diunduh!');
 }
