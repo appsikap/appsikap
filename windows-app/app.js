@@ -15,8 +15,12 @@ function initTheme() {
 function updateThemeIcon() {
   const isLight = document.body.classList.contains('light-mode');
   const icon = document.getElementById('icon-theme');
+  const iconMobile = document.getElementById('icon-theme-mobile');
   if (icon) {
-    icon.className = isLight ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+  }
+  if (iconMobile) {
+    iconMobile.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
   }
 }
 
@@ -407,8 +411,17 @@ function renderDashboard() {
     `).join('');
   }
 
+  // Update Mobile Stats
+  const mStatMurid = document.getElementById('m-stat-murid');
+  const mStatPlus = document.getElementById('m-stat-poin-plus');
+  const mStatMinus = document.getElementById('m-stat-poin-minus');
+  if (mStatMurid) mStatMurid.textContent = siswaList.length;
+  if (mStatPlus) mStatPlus.textContent = `+${baikSum}`;
+  if (mStatMinus) mStatMinus.textContent = `-${burukSum}`;
+
   // Latest History
-  const latestRiwayat = [...riwayatList].sort((a, b) => b.tanggal - a.tanggal).slice(0, 5);
+  const sortedRiwayat = [...riwayatList].sort((a, b) => b.tanggal - a.tanggal);
+  const latestRiwayat = sortedRiwayat.slice(0, 5);
   const latestTbody = document.getElementById('latest-history-tbody');
   if (latestRiwayat.length === 0) {
     latestTbody.innerHTML = `<tr><td colspan="7" class="text-center text-muted">Belum ada riwayat pencatatan</td></tr>`;
@@ -428,6 +441,27 @@ function renderDashboard() {
         </tr>
       `;
     }).join('');
+  }
+  
+  // Full History for Tab Riwayat
+  const fullTbody = document.getElementById('table-riwayat-full');
+  if (fullTbody) {
+    if (sortedRiwayat.length === 0) {
+      fullTbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted">Belum ada riwayat pencatatan</td></tr>`;
+    } else {
+      fullTbody.innerHTML = sortedRiwayat.map(r => {
+        const s = siswaList.find(x => x.id_siswa === r.id_siswa) || { nama: 'Unknown' };
+        const isBaik = r.jenis_catatan === 'Perbuatan Baik';
+        return `
+          <tr>
+            <td><small class="text-muted">${formatDate(r.tanggal)}</small></td>
+            <td><strong>${escapeHtml(s.nama)}</strong></td>
+            <td><small>${escapeHtml(r.keterangan || r.jenis_catatan)}</small></td>
+            <td class="text-right"><strong class="${isBaik ? 'text-emerald' : 'text-rose'}">${isBaik ? '+' : ''}${r.nilai_poin}</strong></td>
+          </tr>
+        `;
+      }).join('');
+    }
   }
 }
 
@@ -625,9 +659,9 @@ function renderAkun() {
 function setupEventListeners() {
   // Theme Toggle
   const btnThemeToggle = document.getElementById('btn-theme-toggle');
-  if (btnThemeToggle) {
-    btnThemeToggle.addEventListener('click', toggleTheme);
-  }
+  const btnThemeMobile = document.getElementById('btn-theme-mobile');
+  if (btnThemeToggle) btnThemeToggle.addEventListener('click', toggleTheme);
+  if (btnThemeMobile) btnThemeMobile.addEventListener('click', toggleTheme);
 
   // Search & Filter Siswa
   document.getElementById('siswa-search').addEventListener('input', renderSiswa);
@@ -937,10 +971,14 @@ function setupNavigation() {
       item.classList.add('active');
       
       // If the tab is inside "Lainnya" menu, also keep the Lainnya bottom nav active
-      if (['kategori', 'pengaturan'].includes(tabId)) {
+      if (['kategori', 'pengaturan', 'hadiah', 'backup'].includes(tabId)) {
         const lainnyaBtn = document.querySelector('.mobile-bottom-nav .nav-item[data-tab="lainnya"]');
         if (lainnyaBtn) lainnyaBtn.classList.add('active');
       }
+
+      // Ensure the bottom nav gets active state if a quick-action button was clicked
+      const bottomNavBtn = document.querySelector(`.mobile-bottom-nav .nav-item[data-tab="${tabId}"]`);
+      if (bottomNavBtn) bottomNavBtn.classList.add('active');
 
       document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
       const activePane = document.getElementById(`tab-${tabId}`);
@@ -962,6 +1000,10 @@ function setupNavigation() {
         case 'catat-poin':
           pageTitle.textContent = 'Pencatatan Poin & Pelanggaran';
           pageSubtitle.textContent = 'Input perbuatan baik atau pengurangan poin pelanggaran murid.';
+          break;
+        case 'riwayat':
+          pageTitle.textContent = 'Seluruh Riwayat Aktivitas';
+          pageSubtitle.textContent = 'Tinjau daftar lengkap catatan poin seluruh siswa.';
           break;
         case 'kategori':
           pageTitle.textContent = 'Kategori Aktivitas';

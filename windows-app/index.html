@@ -106,8 +106,59 @@
 
       <!-- TAB 1: DASHBOARD -->
       <section id="tab-dashboard" class="tab-pane active">
-        <!-- Stats Cards -->
-        <div class="stats-grid">
+        
+        <!-- MOBILE ONLY: Blue Header with Stats -->
+        <div class="mobile-header-blue mobile-only">
+          <div class="mobile-header-top">
+            <div class="mobile-logo-area">
+              <img src="icon.png" alt="Logo" class="mobile-logo">
+              <div class="mobile-titles">
+                <h1>SIKAP</h1>
+                <p>SD/SMP/SMA Negeri 1 • TA 2025/2026</p>
+              </div>
+            </div>
+            <div class="mobile-theme-toggle" id="btn-theme-mobile">
+              <i class="fa-solid fa-sun" id="icon-theme-mobile"></i>
+            </div>
+          </div>
+          
+          <!-- Small 3 Stats for Mobile -->
+          <div class="mobile-stats-row">
+            <div class="m-stat-box">
+              <span>MURID</span>
+              <strong id="m-stat-murid">0</strong>
+            </div>
+            <div class="m-stat-box">
+              <span>POIN (+)</span>
+              <strong id="m-stat-poin-plus">+0</strong>
+            </div>
+            <div class="m-stat-box">
+              <span>POIN (-)</span>
+              <strong id="m-stat-poin-minus">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOBILE ONLY: Quick Action Buttons -->
+        <div class="mobile-quick-actions mobile-only">
+          <button class="m-action-btn nav-item" data-tab="catat-poin">
+            <div class="m-action-icon green"><i class="fa-solid fa-plus"></i></div>
+            <div class="m-action-text">
+              <small>Input</small>
+              <strong>POIN</strong>
+            </div>
+          </button>
+          <button class="m-action-btn nav-item" data-tab="siswa">
+            <div class="m-action-icon blue"><i class="fa-solid fa-user-group"></i></div>
+            <div class="m-action-text">
+              <small>Kelola</small>
+              <strong>MURID</strong>
+            </div>
+          </button>
+        </div>
+
+        <!-- Desktop Stats Cards (Hidden on mobile) -->
+        <div class="stats-grid desktop-only">
           <div class="stat-card blue shadow-glow">
             <div class="stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
             <div class="stat-info">
@@ -221,6 +272,32 @@
                 </thead>
                 <tbody id="latest-history-tbody">
                   <tr><td colspan="7" class="text-center text-muted">Belum ada riwayat poin</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB RIWAYAT (Khusus Mobile dari Bottom Nav) -->
+      <section id="tab-riwayat" class="tab-pane">
+        <div class="card glass-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-clock-rotate-left text-blue"></i> Seluruh Riwayat Aktivitas</h3>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Waktu</th>
+                    <th>Nama Siswa</th>
+                    <th>Aktivitas</th>
+                    <th class="text-right">Poin</th>
+                  </tr>
+                </thead>
+                <tbody id="table-riwayat-full">
+                  <!-- Data Riwayat Penuh -->
                 </tbody>
               </table>
             </div>
@@ -460,6 +537,17 @@
           </div>
           
           <div class="lainnya-list">
+            <button class="lainnya-item nav-item" data-tab="hadiah">
+              <div class="lainnya-icon" style="background: var(--accent-emerald);">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+              <div class="lainnya-text">
+                <h4>Katalog Hadiah</h4>
+                <p>Penukaran poin & permohonan</p>
+              </div>
+              <i class="fa-solid fa-chevron-right chevron"></i>
+            </button>
+            
             <button class="lainnya-item nav-item" data-tab="kategori">
               <div class="lainnya-icon" style="background: var(--accent-amber);">
                 <i class="fa-solid fa-list-check"></i>
@@ -663,9 +751,9 @@
         <span class="fab-label">Catat</span>
       </button>
 
-      <button class="mobile-nav-item nav-item" data-tab="hadiah">
-        <i class="fa-solid fa-gift"></i>
-        <span>Hadiah</span>
+      <button class="mobile-nav-item nav-item" data-tab="riwayat">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>Riwayat</span>
       </button>
       <button class="mobile-nav-item nav-item" data-tab="lainnya">
         <i class="fa-solid fa-ellipsis-h"></i>
