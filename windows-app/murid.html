@@ -152,6 +152,66 @@
 
     .history-badge.baik { color: var(--accent-emerald); }
     .history-badge.buruk { color: var(--accent-rose); }
+
+    /* Progress Bar */
+    .progress-container {
+      width: 100%;
+      height: 12px;
+      background: var(--bg-body);
+      border-radius: 6px;
+      margin-top: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-indigo), var(--accent-emerald));
+      border-radius: 6px;
+      transition: width 0.5s ease;
+    }
+
+    /* Tabs */
+    .student-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .student-tab-btn {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .student-tab-btn.active {
+      background: var(--accent-indigo);
+      color: #fff;
+    }
+    .student-tab-pane {
+      display: none;
+    }
+    .student-tab-pane.active {
+      display: block;
+    }
+
+    /* Reward Card */
+    .reward-card {
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .reward-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--accent-amber);
+    }
   </style>
 </head>
 <body class="dark-mode">
@@ -178,19 +238,45 @@
       <div style="margin-top: 6px;">
         <span class="badge badge-success" id="murid-status-badge">Sangat Baik</span>
       </div>
+      <div class="progress-container">
+        <div class="progress-bar" id="murid-progress" style="width: 0%;"></div>
+      </div>
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 5px;">Progress menuju status Sangat Baik</div>
     </div>
 
-    <!-- Tab Section: Riwayat vs Hadiah -->
-    <div class="card glass-card">
-      <div class="card-header" style="margin-bottom: 1rem;">
-        <h3><i class="fa-solid fa-clock-rotate-left text-indigo"></i> Catatan Poin Saya</h3>
-      </div>
+    <!-- Tabs Navigation -->
+    <div class="student-tabs">
+      <button class="student-tab-btn active" onclick="switchStudentTab('riwayat')"><i class="fa-solid fa-clock-rotate-left"></i> Riwayat Poin</button>
+      <button class="student-tab-btn" id="btn-tab-hadiah" onclick="switchStudentTab('hadiah')" style="display: none;"><i class="fa-solid fa-gift"></i> Katalog Hadiah</button>
+    </div>
 
-      <div id="murid-history-list">
-        <div class="text-center text-muted" style="padding: 2rem;">Memuat catatan poin...</div>
+    <!-- Tab 1: Riwayat Poin -->
+    <div id="tab-riwayat" class="student-tab-pane active">
+      <div class="card glass-card">
+        <div id="murid-history-list">
+          <div class="text-center text-muted" style="padding: 2rem;">Memuat catatan poin...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Katalog Hadiah -->
+    <div id="tab-hadiah" class="student-tab-pane">
+      <div class="card glass-card">
+        <div id="murid-katalog-hadiah" style="padding: 1rem;">
+          <div class="text-center text-muted" style="padding: 2rem;">Memuat katalog hadiah...</div>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function switchStudentTab(tabId) {
+      document.querySelectorAll('.student-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.student-tab-pane').forEach(p => p.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      document.getElementById('tab-' + tabId).classList.add('active');
+    }
+  </script>
 
   <!-- Toast -->
   <div id="toast" class="toast"></div>
@@ -252,6 +338,42 @@
         }).join('');
       }
 
+      // Render Katalog Hadiah if active
+      if (pengaturan.fitur_hadiah_aktif === true) {
+        document.getElementById('btn-tab-hadiah').style.display = 'block';
+        const katalogContainer = document.getElementById('murid-katalog-hadiah');
+        const hadiahList = data.hadiah || [];
+        
+        if (hadiahList.length === 0) {
+          katalogContainer.innerHTML = `<div class="text-center text-muted" style="padding: 1.5rem;">Belum ada hadiah yang ditambahkan oleh guru.</div>`;
+        } else {
+          katalogContainer.innerHTML = hadiahList.map(h => {
+            const canRedeem = pts >= h.poin_dibutuhkan;
+            return `
+              <div class="reward-card">
+                <div class="reward-icon"><i class="fa-solid fa-${h.ikon || 'gift'}"></i></div>
+                <h4 style="margin: 5px 0;">${escapeHtml(h.nama_hadiah)}</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Butuh: <strong class="text-amber">${h.poin_dibutuhkan} Poin</strong></p>
+                <button class="btn ${canRedeem ? 'btn-primary' : 'btn-outline'}" 
+                        ${canRedeem ? '' : 'disabled'}
+                        onclick="tukarHadiah('${escapeHtml(h.nama_hadiah)}', ${h.poin_dibutuhkan}, '${student.nama}')">
+                  ${canRedeem ? '<i class="fa-solid fa-hand-holding-heart"></i> Tukar Sekarang' : '<i class="fa-solid fa-lock"></i> Poin Kurang'}
+                </button>
+              </div>
+            `;
+          }).join('');
+        }
+      }
+
+      // Progress Bar calculation
+      const batasMax = pengaturan.batas_sangat_baik || 100;
+      let percentage = (pts / batasMax) * 100;
+      if (percentage > 100) percentage = 100;
+      if (percentage < 0) percentage = 0;
+      setTimeout(() => {
+        document.getElementById('murid-progress').style.width = percentage + '%';
+      }, 300);
+
       // Logout
       document.getElementById('btn-logout-murid').addEventListener('click', () => {
         sessionStorage.removeItem('SIKAP_MURID_SESSION');
@@ -262,6 +384,13 @@
     function escapeHtml(str) {
       if (!str) return '';
       return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function tukarHadiah(namaHadiah, poin, namaMurid) {
+      if(confirm(`Tukar ${poin} poin Anda dengan ${namaHadiah}?\nKarena keterbatasan sistem, pengajuan ini akan dikirimkan ke Guru via WhatsApp.`)) {
+        const text = encodeURIComponent(`Halo Bapak/Ibu Guru, saya ${namaMurid} ingin menukarkan ${poin} poin SIKAP saya dengan hadiah: ${namaHadiah}. Mohon konfirmasinya ya!`);
+        window.open(`https://wa.me/?text=${text}`, '_blank');
+      }
     }
   </script>
 </body>

@@ -202,7 +202,9 @@ function normalizeState(data) {
     riwayatPoin: data.riwayatPoin || data.riwayats || [],
     pengaturanSekolah: data.pengaturanSekolah || data.pengaturan || defaultState.pengaturanSekolah,
     hadiah: data.hadiah || [],
-    pengajuanHadiah: data.pengajuanHadiah || []
+    pengajuanHadiah: data.pengajuanHadiah || [],
+    guru_profile: data.guru_profile || { name: '', school: '', email: '' },
+    notifications: data.notifications || []
   };
 }
 
@@ -559,6 +561,9 @@ function renderPengaturan() {
   document.getElementById('setting-batas-baik').value = p.batas_baik;
   document.getElementById('setting-batas-pembinaan').value = p.batas_pembinaan;
   document.getElementById('setting-batas-peringatan').value = p.batas_peringatan;
+  
+  const chkHadiah = document.getElementById('setting-fitur-hadiah');
+  if (chkHadiah) chkHadiah.checked = p.fitur_hadiah_aktif === true;
 }
 
 // Render Akun Tab
@@ -766,7 +771,8 @@ function setupEventListeners() {
       batas_sangat_baik: parseInt(document.getElementById('setting-batas-sangat-baik').value) || 100,
       batas_baik: parseInt(document.getElementById('setting-batas-baik').value) || 70,
       batas_pembinaan: parseInt(document.getElementById('setting-batas-pembinaan').value) || 40,
-      batas_peringatan: parseInt(document.getElementById('setting-batas-peringatan').value) || 0
+      batas_peringatan: parseInt(document.getElementById('setting-batas-peringatan').value) || 0,
+      fitur_hadiah_aktif: document.getElementById('setting-fitur-hadiah') ? document.getElementById('setting-fitur-hadiah').checked : false
     };
     saveState();
     showToast('Konfigurasi sekolah diperbarui!');
