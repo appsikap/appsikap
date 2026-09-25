@@ -179,16 +179,27 @@ function setupAuthForms() {
           throw new Error(data ? data.error : 'PIN Murid tidak ditemukan.');
         }
 
+        // Parse the RPC result
+        const appData = typeof data.data === 'string' ? JSON.parse(data.data) : data.data;
+        const studentId = parseInt(data.id_siswa);
+        const siswaObj = (appData.siswa || []).find(s => s.id_siswa === studentId);
+
+        if (!siswaObj) {
+          throw new Error('Data siswa tidak ditemukan di sistem sekolah.');
+        }
+
+        const riwayatSiswa = (appData.riwayatPoin || []).filter(r => r.id_siswa === studentId);
+
         // Store PIN session locally for murid.html
         sessionStorage.setItem('SIKAP_MURID_SESSION', JSON.stringify({
           pin: pin,
-          student: data.siswa,
-          riwayat: data.riwayat,
-          pengaturan: data.pengaturan,
-          hadiah: data.hadiah
+          student: siswaObj,
+          riwayat: riwayatSiswa,
+          pengaturan: appData.pengaturanSekolah || appData.pengaturan || {},
+          hadiah: appData.hadiah || []
         }));
 
-        showAuthToast('Selamat datang, ' + data.siswa.nama + '!');
+        showAuthToast('Selamat datang, ' + siswaObj.nama + '!');
         setTimeout(() => {
           window.location.href = 'murid.html';
         }, 800);
