@@ -163,7 +163,10 @@ async function loadState() {
     } else {
       // First time initialization for new teacher account
       db = JSON.parse(JSON.stringify(defaultState));
-      await saveState();
+      await checkLegacyDataMigration(); // Check for old V1 offline data
+      if (document.getElementById('modal-migrasi-data') && !document.getElementById('modal-migrasi-data').classList.contains('active')) {
+        await saveState();
+      }
     }
   } catch (e) {
     console.error('Failed to parse state:', e);
@@ -171,6 +174,44 @@ async function loadState() {
     if (saved) db = normalizeState(JSON.parse(saved));
   }
   renderAll();
+}
+
+// Check if old offline V1 data exists and prompt user
+async function checkLegacyDataMigration() {
+  const legacyDataStr = localStorage.getItem('SIKAP_DESKTOP_DB_V1');
+  if (legacyDataStr) {
+    const modal = document.getElementById('modal-migrasi-data');
+    if (modal) {
+      modal.classList.add('active');
+      
+      return new Promise((resolve) => {
+        document.getElementById('btn-setuju-migrasi').onclick = async () => {
+          try {
+            const parsed = JSON.parse(legacyDataStr);
+            db = normalizeState(parsed);
+            await saveState();
+            localStorage.setItem('SIKAP_DESKTOP_DB_V1_BACKUP', legacyDataStr);
+            localStorage.removeItem('SIKAP_DESKTOP_DB_V1');
+            showToast('Berhasil! Data lama Anda telah diunggah ke Cloud.');
+            modal.classList.remove('active');
+            renderAll();
+            resolve();
+          } catch (e) {
+            console.error('Migration failed:', e);
+            resolve();
+          }
+        };
+
+        document.getElementById('btn-tolak-migrasi').onclick = async () => {
+          localStorage.setItem('SIKAP_DESKTOP_DB_V1_BACKUP', legacyDataStr);
+          localStorage.removeItem('SIKAP_DESKTOP_DB_V1');
+          modal.classList.remove('active');
+          await saveState();
+          resolve();
+        };
+      });
+    }
+  }
 }
 
 // Save State to Supabase
@@ -193,6 +234,10 @@ async function saveState() {
 
 // Normalize JSON keys for Dual Android/Windows Schema compatibility
 function normalizeState(data) {
+  // Preserve existing profile and notifications if restoring an old backup
+  const existingProfile = window.db ? window.db.guru_profile : { name: '', school: '', email: '' };
+  const existingNotifs = window.db ? window.db.notifications : [];
+
   return {
     app: data.app || 'SIKAP',
     version: data.version || 1,
@@ -203,8 +248,8 @@ function normalizeState(data) {
     pengaturanSekolah: data.pengaturanSekolah || data.pengaturan || defaultState.pengaturanSekolah,
     hadiah: data.hadiah || [],
     pengajuanHadiah: data.pengajuanHadiah || [],
-    guru_profile: data.guru_profile || { name: '', school: '', email: '' },
-    notifications: data.notifications || []
+    guru_profile: data.guru_profile || existingProfile,
+    notifications: data.notifications || existingNotifs
   };
 }
 

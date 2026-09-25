@@ -766,6 +766,25 @@
     </div>
   </div>
 
+  <!-- MODAL: MIGRASI DATA LOKAL -->
+  <div class="modal" id="modal-migrasi-data">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-cloud-arrow-up text-amber"></i> Deteksi Data Offline Lama</h3>
+      </div>
+      <div style="padding: 10px 0 20px 0; font-size: 0.95rem; color: var(--text-main); line-height: 1.5;">
+        Kami mendeteksi adanya data SIKAP versi lama (offline) yang tersimpan di memori perangkat ini. 
+        Karena Anda sekarang menggunakan akun Cloud baru yang masih kosong, apakah Anda ingin mengunggah (migrasi) data lama tersebut ke akun ini?
+        <br><br>
+        <span class="text-muted" style="font-size: 0.85rem;"><i class="fa-solid fa-circle-info"></i> Jika Anda menolak, data lama akan dibiarkan dan Anda akan memulai dengan *database* kosong.</span>
+      </div>
+      <div class="modal-footer" style="justify-content: space-between;">
+        <button type="button" class="btn btn-outline" id="btn-tolak-migrasi"><i class="fa-solid fa-xmark"></i> Mulai dari Nol</button>
+        <button type="button" class="btn btn-primary" id="btn-setuju-migrasi"><i class="fa-solid fa-cloud-arrow-up"></i> Migrasi ke Cloud Sekarang</button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL: LENGKAPI PROFIL GURU -->
   <div class="modal" id="modal-profil-guru">
     <div class="modal-content glass-card">
